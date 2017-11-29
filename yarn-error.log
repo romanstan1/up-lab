@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/Cellar/node/8.9.1/bin/node /usr/local/Cellar/yarn/1.2.1/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/romanstankiewicz/.rbenv/shims:/Users/romanstankiewicz/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.2.1
+
+Node version: 
+  8.9.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "labs-website",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "node-sass-chokidar": "^0.0.3",
+      "npm-run-all": "^4.1.2",
+      "prop-types": "^15.6.0",
+      "react": "^16.0.0",
+      "react-dom": "^16.0.0",
+      "react-router-dom": "^4.2.2",
+      "react-scripts": "1.0.17",
+    },
+    "scripts": {
+      "build-css": "node-sass-chokidar src/ -o src/",
+      "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+      "test": "react-scripts test --env=jsdom",
+      "eject": "react-scripts eject",
+      "start-js": "react-scripts start",
+      "start": "npm-run-all -p watch-css start-js",
+      "build": "npm run build-css && react-scripts build"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/romanstankiewicz/Development/up-labs/package.json: Unexpected token } in JSON at position 302
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:770:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:92:30)
+      at /usr/local/Cellar/yarn/1.2.1/libexec/lib/cli.js:103:13
+      at <anonymous>

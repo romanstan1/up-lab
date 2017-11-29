@@ -1,0 +1,83 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-size: 0px; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none; }
+
+div.logo {
+  position: absolute;
+  top: 0;
+  width: 30%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 0 8%; }
+  div.logo div {
+    align-self: flex-end; }
+    div.logo div a {
+      margin: 0 13px;
+      padding: 5px 2px;
+      font-size: 82%;
+      color: white;
+      border-bottom: 1px solid #022154; }
+      div.logo div a:hover {
+        border-bottom: 1px solid white; }
+
+div.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 0 8%; }
+  div.nav div {
+    align-self: flex-end; }
+    div.nav div a {
+      margin: 0 13px;
+      padding: 5px 2px;
+      font-size: 82%;
+      color: white;
+      border-bottom: 1px solid #022154; }
+      div.nav div a:hover {
+        border-bottom: 1px solid white; }
+
+h2 {
+  position: absolute;
+  transform: translateY(-50%);
+  left: calc(8%); }
+
+div.homepage {
+  width: 100vw;
+  height: 100vh;
+  background: #022154;
+  color: white; }
+  div.homepage h2 {
+    top: 45%; }
+
+div.contact {
+  width: 100vw;
+  height: 65vh;
+  background: #022154;
+  color: white; }
+  div.contact h2 {
+    top: 32%; }
+
+div.thinking {
+  width: 100vw;
+  height: 65vh;
+  background: #022154;
+  color: white; }
+  div.thinking h2 {
+    top: 32%; }

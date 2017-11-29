@@ -1,0 +1,110 @@
+
+$backgroundblue: #022154;
+html {
+  // overflow: hidden;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 0px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+div.logo {
+  position: absolute;
+  top: 0;
+  width: 30%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 0 8%;
+  // background: red;
+  div  {
+    align-self: flex-end;
+    a {
+      margin: 0 13px;
+      padding: 5px 2px;
+      font-size: 82%;
+      color:white;
+      border-bottom: 1px solid $backgroundblue;
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+div.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  // background: grey;
+  padding: 0 8%;
+  div  {
+    align-self: flex-end;
+    a {
+      margin: 0 13px;
+      padding: 5px 2px;
+      font-size: 82%;
+      color:white;
+      border-bottom: 1px solid $backgroundblue;
+      &:hover {
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+}
+
+h2 {
+  position: absolute;
+  transform: translateY(-50%);
+  left: calc(8%);
+}
+
+div.homepage {
+  width: 100vw;
+  height: 100vh;
+  background: $backgroundblue;
+  color: white;
+  h2 {
+    top: 45%;
+  }
+}
+
+div.contact {
+  width: 100vw;
+  height: 65vh;
+  background: $backgroundblue;
+  color: white;
+  h2 {
+    top: 32%;
+  }
+}
+
+div.thinking {
+  width: 100vw;
+  height: 65vh;
+  background: $backgroundblue;
+  color: white;
+  h2 {
+    top: 32%;
+  }
+}
