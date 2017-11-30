@@ -6,9 +6,9 @@ const story = [
   <h2 key='0'><div>We provide the <span>sandbox</span> and the <span>toys</span> to <span className='colorful'>create</span></div></h2>,
   <h2 key='1'><div>The next <span>BIG</span> thing... </div></h2>,
   <h2 key='2'><div>often starts out looking like a <span className='colorful'>plaything.</span></div></h2>,
-  <h2 key='3'><div>But then the <span> technology </span> gets better...</div></h2>,
-  <h2 key='4'><div>and becomes more <span> useful </span> to people...</div></h2>,
-  <h2 key='5'><div>shifting our <span>perception</span> of work.</div></h2>,
+  <h2 key='3'><div>But then the <span> technology </span> gets better.</div></h2>,
+  <h2 key='4'><div>Becoming more <span> useful </span> to people...</div></h2>,
+  <h2 key='5'><div>and shifts our <span>perception</span> of work.</div></h2>,
   <h2 key='6'><div>The people who <span className='colorful'>play...</span></div></h2>,
   <h2 key='7'><div>are the ones who <span> change the world. </span></div></h2>
 ]
