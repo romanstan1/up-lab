@@ -106,12 +106,15 @@ h2 {
     -webkit-background-clip: text;
     color: #b4f25f;
     -webkit-text-fill-color: transparent; }
-  h2.page-title-appear {
+  h2.title-appear {
     opacity: 0.01;
     transform: translate(0%, -200%); }
-    h2.page-title-appear.example-appear-active {
-      transform: translate(0%, -100%);
-      opacity: 1; }
+  h2.story-enter {
+    opacity: 0.01;
+    transform: translate(0%, -200%); }
+  h2.story-appear {
+    opacity: 0.01;
+    transform: translate(0%, -200%); }
 
 div.homepage {
   width: 100vw;

@@ -2,14 +2,22 @@ import React from 'react'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
-const PageTitle = ({children}) =>
+export const PageTitle = ({children}) =>
   <ReactCSSTransitionGroup
-    transitionName="page-title"
+    transitionName="title"
     transitionAppear={true}
     transitionAppearTimeout={300}
-    transitionEnter={false}
-    transitionLeave={false}>
-    <h2>{children}</h2>
+    transitionEnterTimeout={300}
+    transitionLeaveTimeout={300}>
+    <h2> {children} </h2>
   </ReactCSSTransitionGroup>
 
-export default PageTitle
+export const PageStory = ({children}) =>
+  <ReactCSSTransitionGroup
+    transitionName="story"
+    transitionAppear={true}
+    transitionAppearTimeout={300}
+    transitionEnterTimeout={300}
+    transitionLeaveTimeout={300}>
+    {children}
+  </ReactCSSTransitionGroup>

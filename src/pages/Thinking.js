@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 import Nav from '../molecules/Nav'
-import PageTitle from '../molecules/PageTitle'
+import {PageTitle} from '../molecules/PageTitle'
 import Footer from '../molecules/Footer'
 
 

@@ -143,15 +143,50 @@ h2 {
     -webkit-text-fill-color: transparent;
   }
 
-  &.page-title-appear {
+  &.title-appear {
     opacity: 0.01;
     transform: translate(0%, -200%);
-    &.example-appear-active {
-      transform: translate(0%, -100%);
-      opacity: 1;
-    }
   }
+  // &.title-active {
+  //   transform: translate(0%, -100%);
+  //   opacity: 1;
+  // }
+  &.story-enter {
+    opacity: 0.01;
+    transform: translate(0%, -200%);
+  }
+  &.story-appear {
+    opacity: 0.01;
+    transform: translate(0%, -200%);
+  }
+  // &.title-enter.title-enter-active {
+  //   opacity: 1;
+  //   transform: translate(0%, -100%);
+  //   transition: opacity 500ms ease-in;
+  // }
+  // transition: all 0.4s ease;
 }
+
+
+//
+//
+// &.title-appear {
+//   opacity: 0.01;
+//   transform: translate(0%, -200%);
+// }
+// &.title-active {
+//   transform: translate(0%, -100%);
+//   opacity: 1;
+// }
+//
+// .title-leave {
+//   opacity: 1;
+// }
+//
+// .title-leave.title-leave-active {
+//   opacity: 0.01;
+//   transition: opacity 300ms ease-in;
+// }
 
 
 
