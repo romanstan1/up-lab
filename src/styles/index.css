@@ -1,7 +1,11 @@
 body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  font-size: 16px; }
+
+h1, h2, h3, h4, a, div {
+  font-size: 16px; }
 
 h1 {
   font-size: 0px; }
@@ -27,10 +31,8 @@ div.logo {
       margin: 0 13px;
       padding: 5px 2px;
       font-size: 82%;
-      color: white;
-      border-bottom: 1px solid #022154; }
-      div.logo div a:hover {
-        border-bottom: 1px solid white; }
+      color: #e7dfdd;
+      border-bottom: 1px solid #0e0b16; }
 
 div.nav {
   position: absolute;
@@ -48,36 +50,63 @@ div.nav {
       margin: 0 13px;
       padding: 5px 2px;
       font-size: 82%;
-      color: white;
-      border-bottom: 1px solid #022154; }
+      color: #e7dfdd;
+      border-bottom: 1px solid #0e0b16; }
       div.nav div a:hover {
-        border-bottom: 1px solid white; }
+        border-bottom: 1px solid #e7dfdd; }
+
+div.footer {
+  height: 60vh;
+  background: #4717F6; }
 
 h2 {
+  font-weight: 600;
   position: absolute;
-  transform: translateY(-50%);
-  left: calc(8%); }
+  left: calc(8%);
+  transition: 0.4s ease;
+  font-size: 160%; }
+  h2 span {
+    color: #4717F6; }
+  h2 span.create {
+    background: -webkit-linear-gradient(left, #35d6d1 12%, #ecff28 88%) no-repeat;
+    -webkit-background-clip: text;
+    color: #b4f25f;
+    -webkit-text-fill-color: transparent; }
+  h2.page-title-appear {
+    opacity: 0.01;
+    transform: translate(0%, -200%); }
+    h2.page-title-appear.example-appear-active {
+      transform: translate(0%, -50%);
+      opacity: 1; }
 
 div.homepage {
   width: 100vw;
   height: 100vh;
-  background: #022154;
-  color: white; }
+  background: #0e0b16;
+  color: #e7dfdd; }
   div.homepage h2 {
     top: 45%; }
 
 div.contact {
   width: 100vw;
   height: 65vh;
-  background: #022154;
-  color: white; }
+  background: #0e0b16;
+  color: #e7dfdd; }
   div.contact h2 {
+    top: 32%; }
+
+div.about {
+  width: 100vw;
+  height: 65vh;
+  background: #0e0b16;
+  color: #e7dfdd; }
+  div.about h2 {
     top: 32%; }
 
 div.thinking {
   width: 100vw;
   height: 65vh;
-  background: #022154;
-  color: white; }
+  background: #0e0b16;
+  color: #e7dfdd; }
   div.thinking h2 {
     top: 32%; }

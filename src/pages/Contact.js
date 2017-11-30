@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
+
 import Nav from '../molecules/Nav'
+import PageTitle from '../molecules/PageTitle'
+import Footer from '../molecules/Footer'
+
 
 export default class Contact extends Component {
 
@@ -8,12 +11,14 @@ export default class Contact extends Component {
     return [
       <div key='heading' className='contact'>
         <Nav/>
-        <h2> Get in touch... </h2>
+        <PageTitle> Get in touch... </PageTitle>
       </div>,
-      <div key='content'>
+      <div key='content' className='content'>
 
+        <br/><br/> [content]<br/><br/> [content]<br/><br/>  [content] <br/><br/> <br/><br/>
 
-      </div>
+      </div>,
+      <Footer key='footer'/>
     ]
   }
 }

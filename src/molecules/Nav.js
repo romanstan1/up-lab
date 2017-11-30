@@ -5,13 +5,13 @@ export default class Nav extends Component {
 
   render () {
     return [
-      <div className='logo'>
-        <div><Link to="/home">Logo</Link></div>
+      <div key='logo' className='logo'>
+        <div><Link to="/home">Unipro Labs</Link></div>
       </div>,
       <div key='nav' className='nav'>
-        <div><Link to="/home">Home</Link></div>
+        <div><Link to="/about">About</Link></div>
         <div><Link to="/thinking">Thinking</Link></div>
-        <div><Link to="/contact">Get in touch</Link></div>
+        <div><Link to="/contact">Contact</Link></div>
       </div>
     ]
   }

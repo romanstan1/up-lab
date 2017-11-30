@@ -1,5 +1,11 @@
 
-$backgroundblue: #022154;
+$void: #0e0b16;
+$niceblue: #0e01b6;
+$jewel: #4717F6;
+$fuschia: #a239ca;
+$stark: #e7dfdd;
+
+
 html {
   // overflow: hidden;
 }
@@ -8,6 +14,11 @@ body {
   font-family: 'Raleway', sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, a, div {
+  font-size: 16px;
 }
 
 h1 {
@@ -31,18 +42,14 @@ div.logo {
   justify-content: flex-start;
   flex-direction: row;
   padding: 0 8%;
-  // background: red;
   div  {
     align-self: flex-end;
     a {
       margin: 0 13px;
       padding: 5px 2px;
       font-size: 82%;
-      color:white;
-      border-bottom: 1px solid $backgroundblue;
-      &:hover {
-        border-bottom: 1px solid white;
-      }
+      color:$stark;
+      border-bottom: 1px solid $void;
     }
   }
 }
@@ -64,26 +71,56 @@ div.nav {
       margin: 0 13px;
       padding: 5px 2px;
       font-size: 82%;
-      color:white;
-      border-bottom: 1px solid $backgroundblue;
+      color:$stark;
+      border-bottom: 1px solid $void;
       &:hover {
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid $stark;
       }
     }
   }
 }
 
-h2 {
-  position: absolute;
-  transform: translateY(-50%);
-  left: calc(8%);
+div.footer {
+  height: 60vh;
+  background: $jewel;
 }
+
+h2 {
+  font-weight: 600;
+  position: absolute;
+  left: calc(8%);
+  transition: 0.4s ease;
+  font-size: 160%;
+  span {
+    color: $jewel;
+    // font-weight: 600;
+  }
+  span.create {
+    background: -webkit-linear-gradient(left,#35d6d1 12%,#ecff28 88%) no-repeat;
+    -webkit-background-clip: text;
+    color: #b4f25f;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &.page-title-appear {
+    opacity: 0.01;
+    transform: translate(0%, -200%);
+    &.example-appear-active {
+      transform: translate(0%, -50%);
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
 
 div.homepage {
   width: 100vw;
   height: 100vh;
-  background: $backgroundblue;
-  color: white;
+  background: $void;
+  color: $stark;
   h2 {
     top: 45%;
   }
@@ -92,8 +129,17 @@ div.homepage {
 div.contact {
   width: 100vw;
   height: 65vh;
-  background: $backgroundblue;
-  color: white;
+  background: $void;
+  color: $stark;
+  h2 {
+    top: 32%;
+  }
+}
+div.about {
+  width: 100vw;
+  height: 65vh;
+  background: $void;
+  color: $stark;
   h2 {
     top: 32%;
   }
@@ -102,8 +148,8 @@ div.contact {
 div.thinking {
   width: 100vw;
   height: 65vh;
-  background: $backgroundblue;
-  color: white;
+  background: $void;
+  color: $stark;
   h2 {
     top: 32%;
   }
