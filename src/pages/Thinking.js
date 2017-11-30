@@ -11,11 +11,11 @@ export default class Homepage extends Component {
     return [
       <div key='thinking' className='thinking'>
         <Nav/>
-        <PageTitle> Our thinking...</PageTitle>
+        <PageTitle><div> Our thinking... </div></PageTitle>
       </div>,
       <div key='content' className='content'>
 
-          <br/><br/> [content]<br/><br/> [content]<br/><br/>  [content] <br/><br/> <br/><br/>
+        <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
 
       </div>,
       <Footer key='footer'/>

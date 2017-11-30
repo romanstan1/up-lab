@@ -11,11 +11,11 @@ export default class Contact extends Component {
     return [
       <div key='heading' className='contact'>
         <Nav/>
-        <PageTitle> Get in touch... </PageTitle>
+        <PageTitle><div> Get in touch... </div></PageTitle>
       </div>,
       <div key='content' className='content'>
 
-        <br/><br/> [content]<br/><br/> [content]<br/><br/>  [content] <br/><br/> <br/><br/>
+        <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
 
       </div>,
       <Footer key='footer'/>

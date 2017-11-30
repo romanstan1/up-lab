@@ -6,7 +6,7 @@ export default class Nav extends Component {
   render () {
     return [
       <div key='logo' className='logo'>
-        <div><Link to="/home">Unipro Labs</Link></div>
+        <div><Link to="/home">UNIPRO LABS</Link></div>
       </div>,
       <div key='nav' className='nav'>
         <div><Link to="/about">About</Link></div>
