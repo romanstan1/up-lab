@@ -2,10 +2,11 @@ html.homepage {
   overflow: hidden; }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'dinlight', 'helvetica', 'arial', sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  background: ghostwhite; }
 
 h1, h2, h3, h4, a, div {
   font-size: 16px; }
@@ -19,23 +20,51 @@ h1 {
 a {
   text-decoration: none; }
 
+div.white {
+  background: white; }
+
 div.logo {
-  position: absolute;
-  top: 0;
+  top: 0px;
+  left: 100px;
+  z-index: 1000;
   width: 30%;
   height: 60px;
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  padding: 0 8%; }
+  padding: 0;
+  mix-blend-mode: exclusion; }
   div.logo div {
     align-self: flex-end; }
     div.logo div a {
-      margin: 0 13px;
-      padding: 5px 2px;
-      font-size: 82%;
+      position: fixed;
+      top: 40px;
+      left: 100px;
+      display: block;
+      padding: 5px 0;
+      font-size: 100%;
       color: #e7dfdd;
-      border-bottom: 1px solid #0e0b16; }
+      letter-spacing: 3px;
+      width: 250px;
+      transition: 0.2s ease; }
+      div.logo div a span {
+        display: inline-block; }
+      div.logo div a span.sandbox {
+        font-family: 'dinmedium', sans-serif;
+        color: white;
+        margin-left: 2px; }
+      div.logo div a span.square {
+        color: white;
+        margin-left: 3px;
+        background: #66fcf1;
+        background: #00848b;
+        transition: 0.2s ease;
+        width: 6px;
+        height: 6px; }
+      div.logo div a:hover span.square {
+        background: #00cdd7;
+        width: 12px;
+        height: 12px; }
 
 div.nav {
   position: absolute;
@@ -46,20 +75,29 @@ div.nav {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
-  padding: 0 8%; }
+  mix-blend-mode: exclusion; }
   div.nav div {
     align-self: flex-end; }
     div.nav div a {
+      position: fixed;
+      top: 40px;
+      right: 100px;
       margin: 0 13px;
       padding: 5px 2px;
       font-size: 82%;
-      color: #e7dfdd;
-      border-bottom: 1px solid #0e0b16; }
+      color: #00848b;
+      transition: 0.2s ease;
+      transform: translate(50%, 0); }
       div.nav div a:hover {
-        border-bottom: 1px solid #e7dfdd; }
+        font-size: 95%;
+        color: #00cdd7; }
+    div.nav div:nth-of-type(2) a {
+      right: 200px; }
+    div.nav div:nth-of-type(3) a {
+      right: 300px; }
 
 div.footer {
-  height: 70vh;
+  height: 120vh;
   background: #4717F6;
   display: flex;
   flex-direction: row;
@@ -74,7 +112,6 @@ div.footer {
       text-transform: uppercase;
       margin: 12px 0px;
       margin-bottom: 18px;
-      font-weight: 600;
       font-size: 95%; }
     div.footer div.column div.column-link {
       margin: 8px 0px; }
@@ -93,14 +130,15 @@ div.footer {
       height: 10px; }
 
 h2 {
-  font-weight: 600;
   position: absolute;
   left: calc(8%);
   transition: 0.4s ease; }
   h2 div {
-    font-size: 160%; }
+    font-size: 170%; }
   h2 span {
-    color: #4717F6; }
+    font-family: 'dinmedium', sans-serif;
+    font-size: 140%;
+    color: #00cdd7; }
   h2 span.colorful {
     background: -webkit-linear-gradient(left, #35d6d1 12%, #ecff28 88%) no-repeat;
     -webkit-background-clip: text;
@@ -120,6 +158,7 @@ div.homepage {
   width: 100vw;
   height: 100vh;
   background: #0e0b16;
+  background: #011727;
   color: #e7dfdd; }
   div.homepage h2 {
     top: 45%; }
@@ -135,7 +174,7 @@ div.contact {
 div.about {
   width: 100vw;
   height: 65vh;
-  background: #0e0b16;
+  background: #011727;
   color: #e7dfdd; }
   div.about h2 {
     top: 32%; }
@@ -147,6 +186,11 @@ div.thinking {
   color: #e7dfdd; }
   div.thinking h2 {
     top: 32%; }
+
+canvas {
+  width: 100vw;
+  height: 100vw;
+  background: #011727; }
 
 div.scroll-down a {
   position: absolute;
@@ -201,3 +245,59 @@ div.scroll-down a {
     opacity: 0; }
   100% {
     opacity: 0; } }
+
+@font-face {
+  font-family: 'dinregular';
+  src: url("dinregularalternate-webfont.eot");
+  src: url("dinregularalternate-webfont.eot?#iefix") format("embedded-opentype"), url("dinregularalternate-webfont.woff2") format("woff2"), url("dinregularalternate-webfont.woff") format("woff"), url("dinregularalternate-webfont.ttf") format("truetype"), url("dinregularalternate-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinregular';
+  src: url("dinregular-webfont.eot");
+  src: url("dinregular-webfont.eot?#iefix") format("embedded-opentype"), url("dinregular-webfont.woff2") format("woff2"), url("dinregular-webfont.woff") format("woff"), url("dinregular-webfont.ttf") format("truetype"), url("dinregular-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinregular';
+  src: url("dinmediumalternate-webfont.eot");
+  src: url("dinmediumalternate-webfont.eot?#iefix") format("embedded-opentype"), url("dinmediumalternate-webfont.woff2") format("woff2"), url("dinmediumalternate-webfont.woff") format("woff"), url("dinmediumalternate-webfont.ttf") format("truetype"), url("dinmediumalternate-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinmedium';
+  src: url("dinmedium-webfont.eot");
+  src: url("dinmedium-webfont.eot?#iefix") format("embedded-opentype"), url("dinmedium-webfont.woff2") format("woff2"), url("dinmedium-webfont.woff") format("woff"), url("dinmedium-webfont.ttf") format("truetype"), url("dinmedium-webfont.svg#dinmedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinlight';
+  src: url("dinlight-webfont.eot");
+  src: url("dinlight-webfont.eot?#iefix") format("embedded-opentype"), url("dinlight-webfont.woff2") format("woff2"), url("dinlight-webfont.woff") format("woff"), url("dinlight-webfont.ttf") format("truetype"), url("dinlight-webfont.svg#dinlight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinregular';
+  src: url("dinlightalternate-webfont.eot");
+  src: url("dinlightalternate-webfont.eot?#iefix") format("embedded-opentype"), url("dinlightalternate-webfont.woff2") format("woff2"), url("dinlightalternate-webfont.woff") format("woff"), url("dinlightalternate-webfont.ttf") format("truetype"), url("dinlightalternate-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinregular';
+  src: url("dinbold-webfont.eot");
+  src: url("dinbold-webfont.eot?#iefix") format("embedded-opentype"), url("dinbold-webfont.woff2") format("woff2"), url("dinbold-webfont.woff") format("woff"), url("dinbold-webfont.ttf") format("truetype"), url("dinbold-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'dinregular';
+  src: url("dinblackalternate-webfont.eot");
+  src: url("dinblackalternate-webfont.eot?#iefix") format("embedded-opentype"), url("dinblackalternate-webfont.woff2") format("woff2"), url("dinblackalternate-webfont.woff") format("woff"), url("dinblackalternate-webfont.ttf") format("truetype"), url("dinblackalternate-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }

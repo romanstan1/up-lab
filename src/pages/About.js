@@ -12,8 +12,10 @@ export default class About extends Component {
         <Nav/>
         <PageTitle><div> About us...</div></PageTitle>
       </div>,
-      <div key='content' className='content'>
+      <div key='content' className='content white'>
 
+        <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
+        <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
         <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
 
       </div>,
