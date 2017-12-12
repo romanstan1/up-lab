@@ -77,6 +77,7 @@ div.nav {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
+  z-index: 1000;
   mix-blend-mode: difference; }
   div.nav div {
     align-self: flex-end; }
@@ -151,7 +152,94 @@ div.other {
 
 div.content {
   height: 100vh;
-  background: white; }
+  background: white;
+  position: relative; }
+  div.content div.grid {
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    width: 100vw;
+    overflow: hidden; }
+    div.content div.grid div.vert {
+      position: absolute;
+      height: 100vh;
+      top: 0;
+      width: 0px;
+      background: #eaeaea;
+      z-index: 200;
+      display: block;
+      position: absolute;
+      left: 15%; }
+      div.content div.grid div.vert:nth-of-type(1) {
+        left: -50%; }
+      div.content div.grid div.vert:nth-of-type(2) {
+        left: -33.33%; }
+      div.content div.grid div.vert:nth-of-type(3) {
+        left: 0%; }
+      div.content div.grid div.vert:nth-of-type(4) {
+        left: 16.66%; }
+      div.content div.grid div.vert:nth-of-type(5) {
+        left: 33.33%; }
+      div.content div.grid div.vert:nth-of-type(6) {
+        left: 50%; }
+      div.content div.grid div.vert:nth-of-type(7) {
+        left: 66.66%; }
+      div.content div.grid div.vert:nth-of-type(8) {
+        left: 83.33%; }
+      div.content div.grid div.vert:nth-of-type(9) {
+        left: 100%; }
+      div.content div.grid div.vert:nth-of-type(10) {
+        left: 116.66%; }
+      div.content div.grid div.vert:nth-of-type(11) {
+        left: 133.33%; }
+      div.content div.grid div.vert:nth-of-type(12) {
+        left: -66.66%; }
+      div.content div.grid div.vert:nth-of-type(13) {
+        left: -83.33%; }
+      div.content div.grid div.vert:nth-of-type(14) {
+        left: -100%; }
+      div.content div.grid div.vert:nth-of-type(15) {
+        left: 150%; }
+      div.content div.grid div.vert:nth-of-type(16) {
+        left: 166.66%; }
+      div.content div.grid div.vert:nth-of-type(17) {
+        left: 183.33%; }
+      div.content div.grid div.vert:nth-of-type(18) {
+        left: -116.66%; }
+      div.content div.grid div.vert:nth-of-type(19) {
+        left: -133.33%; }
+      div.content div.grid div.vert:nth-of-type(19) {
+        left: -150%; }
+      div.content div.grid div.vert:nth-of-type(20) {
+        left: -166.66%; }
+      div.content div.grid div.vert:nth-of-type(21) {
+        left: -183.33%; }
+      div.content div.grid div.vert:nth-of-type(22) {
+        left: -16.66%; }
+      div.content div.grid div.vert::after {
+        content: '';
+        position: absolute;
+        height: 200vh;
+        top: 0;
+        width: 1px;
+        background: #eaeaea;
+        z-index: 200;
+        display: block;
+        position: absolute;
+        transform: rotate(45deg);
+        transform-origin: top left; }
+      div.content div.grid div.vert::before {
+        content: '';
+        position: absolute;
+        height: 200vh;
+        top: 0;
+        width: 1px;
+        background: #eaeaea;
+        z-index: 200;
+        display: block;
+        position: absolute;
+        transform: rotate(-45deg);
+        transform-origin: top left; }
 
 canvas {
   width: 100vw;
@@ -215,6 +303,7 @@ div.footer {
         font-size: 100%;
         color: #858585;
         letter-spacing: 3px;
+        width: 85vw;
         transition: 0.2s ease; }
         div.footer div.footerLogo div a span {
           display: inline-block; }
@@ -231,6 +320,7 @@ div.footer {
           width: 6px;
           height: 6px; }
         div.footer div.footerLogo div a:hover span.square {
+          margin-left: 70vw;
           background: #00cdd7;
           width: 12px;
           height: 12px; }
