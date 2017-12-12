@@ -4,11 +4,16 @@ import np from './perlin'
 import fragmentShader from './shaders/frag.glsl.js'
 import vertexShader from './shaders/vertex.glsl.js'
 
-var canvas, width, height, renderer, scene, camera, loader, dotTexture, radius, sphereGeom, dotsGeom
-var bufferDotsGeom, positions, attributePositions
-var shaderMaterial
-var dots
-var mouse
+var canvas, width, height, renderer, scene, camera, loader, dotTexture, radius
+var bufferDotsGeom, positions, attributePositions, frameRequest
+var shaderMaterial, mouse, dots, sphereGeom, dotsGeom
+var start = true
+
+
+export function stopAnimation() {
+    console.log("stopAnimation")
+    TweenMax.ticker.removeEventListener("tick", render);
+}
 
 export function init () {
     canvas = document.querySelector('#scene');
@@ -78,25 +83,22 @@ export function init () {
     window.addEventListener("mousemove", onMouseMove);
 }
 
-
 function animateDot(index, vector) {
-        TweenMax.to(vector, 4, {
-            x: 0,
-            z: 0,
-            ease:Back.easeOut,
-            delay: Math.abs(vector.y/radius) * 2,
-            repeat:-1,
-            yoyo: true,
-            yoyoEase:Back.easeOut,
-            onUpdate: function () {
-                updateDot(index, vector);
-            }
-        });
+    TweenMax.to(vector, 4, {
+        x: 0,
+        z: 0,
+        ease:Back.easeOut,
+        delay: Math.abs(vector.y/radius) * 2,
+        repeat:-1,
+        yoyo: true,
+        yoyoEase:Back.easeOut,
+        onUpdate: () => updateDot(index, vector)
+    })
 }
 
 function updateDot(index, vector) {
-        positions[index*3] = vector.x;
-        positions[index*3+2] = vector.z;
+    positions[index*3] = vector.x;
+    positions[index*3+2] = vector.z;
 }
 
 
@@ -128,7 +130,7 @@ function onMouseMove(e) {
 
 
 var resizeTm;
-// window.addEventListener("resize", function(){
-//     resizeTm = clearTimeout(resizeTm);
-//     resizeTm = setTimeout(onResize, 200);
-// });
+window.addEventListener("resize", function(){
+    resizeTm = clearTimeout(resizeTm);
+    resizeTm = setTimeout(onResize, 200);
+});
