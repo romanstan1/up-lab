@@ -1,6 +1,16 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
+// {/* <div key='logo' className='footer-logo'>
+//   <div>
+//     <Link to="/home">
+//     <span className='unipro'>UNIPRO</span>
+//     <span className='sandbox'>SANDBOX</span>
+//     <span className='square'></span>
+//     {/* <svg><circle id="overlay" cx="0" cy="0" r="2"/></svg> */}
+//   </Link>
+// </div>
+// </div> */}
 
 const LineSpacer = () => <div className='lineSpacer'> </div>
 
@@ -9,6 +19,15 @@ export default class Footer extends Component {
   render () {
     return [
       <div key='nav' className='footer'>
+        <div key='logo' className='footerLogo'>
+          <div>
+            <Link to="/home">
+              <span className='unipro'>UNIPRO</span>
+              <span className='sandbox'>SANDBOX</span>
+              <span className='square'></span>
+            </Link>
+          </div>
+        </div>
 
         {/* <div className='column'>
           <div className='column-title'>Stalk us</div>

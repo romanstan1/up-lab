@@ -140,50 +140,6 @@ div.nav {
   }
 }
 
-div.footer {
-  height: 13vh;
-  background: $blueblack;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  color: $void;
-  div.column {
-    border-top: 1px solid $stark;
-    margin: 90px 2%;
-    padding: 10px 15px 0 0 ;
-    // background: ghostwhite;
-    div.column-title {
-      text-transform: uppercase;
-      margin: 12px 0px;
-      margin-bottom: 18px;
-      // font-weight: 600;
-      font-size: 95%;
-    }
-    div.column-link {
-      margin: 8px 0px;
-      a {
-        color: $stark;
-        border-bottom: 2px solid $fuschia;
-        // line-height: 25px;
-        padding: 2px 0px;
-        font-size: 95%;
-      }
-    }
-    div.column-text {
-      padding: 2px 0px;
-      color: $stark;
-      margin: 8px 0px;
-      font-size: 95%;
-    }
-    div.lineSpacer {
-      line-height: 10px;
-      height: 10px;
-    }
-
-  }
-}
-
 h2 {
   text-align: center;
   // text-transform: uppercase;
@@ -301,6 +257,70 @@ div.scroll-down a {
     -webkit-animation: sdb10 2s infinite;
     animation: sdb10 2s infinite;
     box-sizing: border-box;
+  }
+}
+
+div.footer {
+  height: 13vh;
+  background: $blueblack;
+  position: relative;
+  div.footerLogo {
+    // background: red;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    z-index: 1000;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 0;
+    mix-blend-mode:difference;
+    div  {
+      align-self: center;
+      position: relative;
+      // background: green;
+      a {
+        top: 00px;
+        left: 100px;
+        display: block;
+        padding: 5px 0;
+        font-size: 100%;
+        // transform: translate(0%, -50%);
+        color:#858585;
+        // border-bottom: 10px solid red;
+        letter-spacing: 3px;
+        // width: 250px;
+        transition: 0.2s ease;
+        // background: red;
+        span {
+          display: inline-block;
+        }
+        span.sandbox {
+          font-family: 'dinmedium', sans-serif;
+          color:$stark;
+          margin-left: 2px;
+        }
+        span.square {
+          color:white;
+          margin-left: 3px;
+          background: $theturk;
+          background: $relturk;
+          transition: 0.2s ease;
+          width: 6px;
+          height: 6px;
+          // font-size: 300%;
+        }
+        &:hover {
+          span.square {
+            background: $hovercolor;
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
   }
 }
 
