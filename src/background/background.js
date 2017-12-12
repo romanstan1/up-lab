@@ -6,13 +6,15 @@ import vertexShader from './shaders/vertex.glsl.js'
 
 var canvas, width, height, renderer, scene, camera, loader, dotTexture, radius
 var bufferDotsGeom, positions, attributePositions, frameRequest
-var shaderMaterial, mouse, dots, sphereGeom, dotsGeom
-var start = true
-
+var shaderMaterial, mouse, dots, sphereGeom, dotsGeom, resizeTm
 
 export function stopAnimation() {
     console.log("stopAnimation")
     TweenMax.ticker.removeEventListener("tick", render);
+    window.removeEventListener("resize", () => {
+        resizeTm = clearTimeout(resizeTm);
+        resizeTm = setTimeout(onResize, 200);
+    })
 }
 
 export function init () {
@@ -43,13 +45,13 @@ export function init () {
     light2.position.set(-200, 300, 400);
     scene.add(light2);
 
+    radius = 14;
     camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 2000);
-    camera.position.set(0, -20, 80);
+    camera.position.set(0, -radius - 2, 80);
 
     loader = new THREE.TextureLoader();
     loader.crossOrigin = "Anonymous";
     dotTexture = loader.load('dotTexture.png');
-    radius = 13;
     sphereGeom = new THREE.IcosahedronGeometry(radius, 5);
     dotsGeom = new THREE.Geometry();
     bufferDotsGeom = new THREE.BufferGeometry();
@@ -81,6 +83,10 @@ export function init () {
 
     TweenMax.ticker.addEventListener("tick", render);
     window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("resize", () => {
+        resizeTm = clearTimeout(resizeTm);
+        resizeTm = setTimeout(onResize, 200);
+    })
 }
 
 function animateDot(index, vector) {
@@ -127,10 +133,3 @@ function onMouseMove(e) {
         ease:Power1.easeOut
     });
 }
-
-
-var resizeTm;
-window.addEventListener("resize", function(){
-    resizeTm = clearTimeout(resizeTm);
-    resizeTm = setTimeout(onResize, 200);
-});

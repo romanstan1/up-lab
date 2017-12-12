@@ -8,11 +8,11 @@ export default class About extends Component {
 
   render () {
     return [
-      <div key='heading' className='about'>
+      <div key='heading' className='about other'>
         <Nav/>
         <PageTitle><div> About us...</div></PageTitle>
       </div>,
-      <div key='content' className='content white'>
+      <div key='content' className='content'>
 
         <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>
         <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/>

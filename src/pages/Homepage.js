@@ -69,9 +69,6 @@ export default class Homepage extends Component {
 				<Nav/>
         <PageStory>{story[this.state.storyNumber]}</PageStory>
         <Background />
-        {/* <Surface width={300} height={300}>
-          <HelloBlue blue={0.5} />
-        </Surface> */}
         {/* <div className="scroll-down">
           <a href=""><span></span></a>
         </div> */}

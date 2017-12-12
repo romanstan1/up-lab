@@ -9,7 +9,7 @@ export default class Homepage extends Component {
 
   render () {
     return [
-      <div key='thinking' className='thinking'>
+      <div key='thinking' className='thinking other'>
         <Nav/>
         <PageTitle><div> Our thinking... </div></PageTitle>
       </div>,

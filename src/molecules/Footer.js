@@ -10,7 +10,7 @@ export default class Footer extends Component {
     return [
       <div key='nav' className='footer'>
 
-        <div className='column'>
+        {/* <div className='column'>
           <div className='column-title'>Stalk us</div>
           <div className='column-link'><Link to="/about">LinkedIn</Link></div>
           <div className='column-link'><Link to="/about">LinkedIn</Link></div>
@@ -41,7 +41,7 @@ export default class Footer extends Component {
         <div className='column'>
           <div className='column-title'>Work with us</div>
           <div className='column-link'><Link to="/about">careers@theuniprogroup.com</Link></div>
-        </div>
+        </div> */}
 
       </div>
     ]

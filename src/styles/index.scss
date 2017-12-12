@@ -45,7 +45,7 @@ div.white {
 }
 
 div.logo {
-  // position: fixed;
+  position: fixed;
   top: 0px;
   left: 100px;
   z-index: 1000;
@@ -55,16 +55,17 @@ div.logo {
   justify-content: flex-start;
   flex-direction: row;
   padding: 0;
-  mix-blend-mode:exclusion;
+  mix-blend-mode:difference;
   div  {
     align-self: flex-end;
     a {
       position: fixed;
-      top: 40px;
+      top: 60px;
       left: 100px;
       display: block;
       padding: 5px 0;
       font-size: 100%;
+      transform: translate(0%, -50%);
       color:$stark;
       // border-bottom: 10px solid red;
       letter-spacing: 3px;
@@ -101,7 +102,7 @@ div.logo {
 }
 
 div.nav {
-  position: absolute;
+    position: fixed;
   top: 0;
   right: 0;
   width: 70%;
@@ -111,22 +112,22 @@ div.nav {
   flex-direction: row;
   // background: grey;
   // padding: 0 8%;
-  mix-blend-mode:exclusion;
+  mix-blend-mode:difference;
   div  {
     align-self: flex-end;
     a {
       // text-transform: uppercase;
-      position: fixed;
-      top: 40px;
+      position: absolute;
+      top: 60px;
       right: 100px;
       margin: 0 13px;
       padding: 5px 2px;
       font-size: 82%;
       color:$relturk;
       transition: 0.2s ease;
-      transform: translate(50%, 0);
+      transform: translate(50%, -50%);
       &:hover {
-        font-size: 95%;
+        font-size: 88%;
         color:$hovercolor;
       }
     }
@@ -140,8 +141,8 @@ div.nav {
 }
 
 div.footer {
-  height: 120vh;
-  background: $jewel;
+  height: 13vh;
+  background: $blueblack;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -184,9 +185,10 @@ div.footer {
 }
 
 h2 {
+  text-align: center;
   // text-transform: uppercase;
   position: absolute;
-  left: calc(8%);
+  left: 12%;
   transition: 0.4s ease;
   div {
     font-size: 170%;
@@ -198,6 +200,7 @@ h2 {
     // font-weight: 600;
   }
   span.colorful {
+    font-size: 160%;
     background: -webkit-linear-gradient(left,#35d6d1 12%,#ecff28 88%) no-repeat;
     -webkit-background-clip: text;
     color: #b4f25f;
@@ -208,10 +211,6 @@ h2 {
     opacity: 0.01;
     transform: translate(0%, -200%);
   }
-  // &.title-active {
-  //   transform: translate(0%, -100%);
-  //   opacity: 1;
-  // }
   &.story-enter {
     opacity: 0.01;
     transform: translate(0%, -200%);
@@ -220,61 +219,39 @@ h2 {
     opacity: 0.01;
     transform: translate(0%, -200%);
   }
-  // &.title-enter.title-enter-active {
-  //   opacity: 1;
-  //   transform: translate(0%, -100%);
-  //   transition: opacity 500ms ease-in;
-  // }
-  // transition: all 0.4s ease;
 }
 
-
-//
-//
-// &.title-appear {
-//   opacity: 0.01;
-//   transform: translate(0%, -200%);
-// }
-// &.title-active {
-//   transform: translate(0%, -100%);
-//   opacity: 1;
-// }
-//
-// .title-leave {
-//   opacity: 1;
-// }
-//
-// .title-leave.title-leave-active {
-//   opacity: 0.01;
-//   transition: opacity 300ms ease-in;
-// }
-
-
-
-
-
 div.homepage {
+  position: absolute;
   width: 100vw;
   height: 100vh;
-  background: $void;
   background: $blueblack;
-  // background: -webkit-linear-gradient(left,$void 32%,#262649 88%) no-repeat;
   color: $stark;
+  // text-align: center;
   h2 {
-    top: 45%;
+    display: inline-block;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    width: 100%;
+    top: 50%;
   }
 }
 
 div.contact {
-  width: 100vw;
-  height: 65vh;
-  background: $void;
-  color: $stark;
   h2 {
     top: 32%;
   }
 }
 div.about {
+  h2 {
+  }
+}
+
+div.thinking {
+  h2 {
+  }
+}
+div.other {
   width: 100vw;
   height: 65vh;
   background: $blueblack;
@@ -283,15 +260,9 @@ div.about {
     top: 32%;
   }
 }
-
-div.thinking {
-  width: 100vw;
-  height: 65vh;
-  background: $void;
-  color: $stark;
-  h2 {
-    top: 32%;
-  }
+div.content {
+  height: 100vh;
+  background: white;
 }
 
 canvas {

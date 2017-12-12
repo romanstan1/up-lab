@@ -9,7 +9,7 @@ export default class Contact extends Component {
 
   render () {
     return [
-      <div key='heading' className='contact'>
+      <div key='heading' className='contact other'>
         <Nav/>
         <PageTitle><div> Get in touch... </div></PageTitle>
       </div>,
