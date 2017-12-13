@@ -1,23 +1,36 @@
 import React, {Component} from 'react'
+import Logo from './Logo'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {selectNav} from '../store/modules/actions'
 
-export default class Nav extends Component {
+const NavLink = ({text, selected, children}) => {
+  const active = selected === text? `item ${text} active` : `item ${text}`
+  return (
+      <div className={active} data-value={text}>
+        <Link to={`/${text}`}>{children || text}</Link>
+      </div>
+    )
+}
+
+class Nav extends Component {
 
   render () {
+    const {selected} = this.props
     return (
     <div className="wrapper">
+
       <div key='nav' className='nav'>
-        <div className='logo'>
-          <Link to="/home">
-            <span className='unipro'>UNIPRO</span>
-            <span className='sandbox'>SANDBOX</span>
-            <span className='square'></span>
-          </Link>
-        </div>
-        <div className='item about'><Link to="/about">ABOUT</Link></div>
-        <div className='item thinking'><Link to="/thinking">THINKING</Link></div>
-        <div className='item contact'><Link to="/contact">CONTACT</Link></div>
+
+        <Logo/>
+        {['about','thinking', 'contact'].map(item =>
+          <NavLink key={item} selected={selected} text={item}/>)}
+
       </div>
     </div>)
   }
 }
+
+export default connect(state => ({
+  selected: state.data.selectedNav
+}))(Nav)

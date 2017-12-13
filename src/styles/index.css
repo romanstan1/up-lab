@@ -77,6 +77,7 @@ div.nav {
     div.nav div.item.about {
       right: calc(35px + 66px + 33px + 70px + 25px); }
     div.nav div.item a {
+      text-transform: uppercase;
       padding: 2px 5px;
       font-size: 13px;
       color: #00848b;
@@ -84,6 +85,9 @@ div.nav {
       div.nav div.item a:hover {
         font-size: 14px;
         color: #00cdd7; }
+    div.nav div.item.active a {
+      color: #00cdd7;
+      font-size: 14px; }
 
 h2.story {
   text-align: center;

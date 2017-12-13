@@ -104,6 +104,7 @@ div.nav {
     &.thinking { right: calc(35px + 66px + 33px);}   // width 70px
     &.about { right: calc(35px + 66px + 33px + 70px + 25px);}
     a {
+      text-transform: uppercase;
       padding: 2px 5px;
       font-size: 13px;
       color:$relturk;
@@ -113,6 +114,11 @@ div.nav {
         color:$hovercolor;
       }
     }
+    &.active a{
+      color:$hovercolor;
+      font-size: 14px;
+    }
+
   }
 }
 
@@ -296,8 +302,6 @@ div.content {
       //   transform: rotate(90deg);
       //   // transform-origin: bottom left;
       // }
-
-
     }
   }
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import Logo from './Logo'
 
 export default class Footer extends Component {
 
@@ -7,15 +8,7 @@ export default class Footer extends Component {
     return [
       <div key='nav' className='footer'>
         <div className="wrapper">
-          <div key='logo' className='logo'>
-            <div>
-              <Link to="/home">
-                <span className='unipro'>UNIPRO</span>
-                <span className='sandbox'>SANDBOX</span>
-                <span className='square'></span>
-              </Link>
-            </div>
-          </div>
+          <Logo/>
         </div>
       </div>
     ]
