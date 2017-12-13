@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 
 import Nav from '../molecules/Nav'
 import Footer from '../molecules/Footer'
-import {PageTitle} from '../molecules/PageTitle'
 
 export default class Error extends Component {
 
@@ -13,9 +12,7 @@ export default class Error extends Component {
       </div>,
       <div key='content' className='content'>
         <br/><br/>
-        <PageTitle><div> 404 Page Not Found </div></PageTitle>
-
-        <br/><br/> <br/><br/> <br/><br/> 
+        <div> 404 Page Not Found </div>
       </div>,
       <Footer key='footer'/>
     ]

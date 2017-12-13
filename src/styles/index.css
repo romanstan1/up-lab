@@ -89,33 +89,37 @@ div.nav {
       color: #00cdd7;
       font-size: 14px; }
 
-h2.story {
+h2.title {
   text-align: center;
   position: absolute;
-  left: 12%;
   transition: 0.4s ease;
-  font-size: 18px; }
-  h2.story div {
+  font-size: 18px;
+  display: block;
+  left: 0%;
+  transform: translate(0%, -50%);
+  width: 100%;
+  top: 50%; }
+  h2.title div {
     font-size: 170%; }
-  h2.story span {
+  h2.title span {
     font-family: 'dinmedium', sans-serif;
     font-size: 140%;
     color: #00cdd7; }
-  h2.story span.colorful {
+  h2.title span.colorful {
     font-size: 160%;
     background: -webkit-linear-gradient(left, #35d6d1 12%, #ecff28 88%) no-repeat;
     -webkit-background-clip: text;
     color: #b4f25f;
     -webkit-text-fill-color: transparent; }
-  h2.story.title-appear {
+  h2.title.story-enter {
     opacity: 0.01;
-    transform: translate(0%, -200%); }
-  h2.story.story-enter {
+    transform: translate(0%, -300%); }
+  h2.title.story-leave {
     opacity: 0.01;
-    transform: translate(0%, -200%); }
-  h2.story.story-appear {
+    transform: translate(0%, 100%); }
+  h2.title.story-appear {
     opacity: 0.01;
-    transform: translate(0%, -200%); }
+    transform: translate(0%, -300); }
 
 div.homepage {
   position: absolute;
@@ -123,19 +127,13 @@ div.homepage {
   height: 100vh;
   background: #011727;
   color: #e7dfdd; }
-  div.homepage h2 {
-    display: inline-block;
-    left: 50%;
-    transform: translate(-50%, -65%);
-    width: 100%;
-    top: 50%; }
 
 div.contact h2 {
   top: 32%; }
 
 div.other {
   width: 100%;
-  height: 65vh;
+  height: 100vh;
   background: #011727;
   color: #e7dfdd; }
   div.other h2 {

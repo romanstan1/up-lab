@@ -122,13 +122,16 @@ div.nav {
   }
 }
 
-h2.story {
+h2.title {
   text-align: center;
-  // text-transform: uppercase;
   position: absolute;
-  left: 12%;
   transition: 0.4s ease;
   font-size: 18px;
+  display: block;
+  left: 0%;
+  transform: translate(0%, -50%);
+  width: 100%;
+  top: 50%;
   div {
     font-size: 170%;
   }
@@ -136,7 +139,6 @@ h2.story {
     font-family: 'dinmedium', sans-serif;
     font-size: 140%;
     color: $hovercolor;
-    // font-weight: 600;
   }
   span.colorful {
     font-size: 160%;
@@ -146,17 +148,17 @@ h2.story {
     -webkit-text-fill-color: transparent;
   }
 
-  &.title-appear {
-    opacity: 0.01;
-    transform: translate(0%, -200%);
-  }
   &.story-enter {
     opacity: 0.01;
-    transform: translate(0%, -200%);
+    transform: translate(0%, -300%);
+  }
+  &.story-leave {
+    opacity: 0.01;
+    transform: translate(0%, 100%);
   }
   &.story-appear {
     opacity: 0.01;
-    transform: translate(0%, -200%);
+    transform: translate(0%, -300);
   }
 }
 
@@ -166,14 +168,6 @@ div.homepage {
   height: 100vh;
   background: $blueblack;
   color: $stark;
-  // text-align: center;
-  h2 {
-    display: inline-block;
-    left: 50%;
-    transform: translate(-50%, -65%);
-    width: 100%;
-    top: 50%;
-  }
 }
 
 div.contact {
@@ -192,7 +186,7 @@ div.thinking {
 }
 div.other {
   width: 100%;
-  height: 65vh;
+  height: 100vh;
   background: $blueblack;
   color: $stark;
   h2 {

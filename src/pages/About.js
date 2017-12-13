@@ -40,10 +40,10 @@ export default class About extends Component {
     return [
       <div key='heading' className='about other'>
         <Nav/>
-        <PageTitle><div> About us...</div></PageTitle>
       </div>,
       <div key='content' className='content'>
-        <GridLines/>
+        <br/><br/>
+        <div> About us...</div>
       </div>,
       <Footer key='footer'/>
     ]
