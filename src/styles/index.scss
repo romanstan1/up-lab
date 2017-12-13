@@ -13,69 +13,62 @@ $hovercolor:#00cdd7;
 
 $aGrey: #858585;
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html.homepage{
   overflow: hidden;
 }
 
 body {
-  // font-family: 'dinregular';
   font-family: 'dinlight', 'helvetica', 'arial', sans-serif;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-size: 16px;
-  background: ghostwhite;
+  position: relative;
 }
 
-h1, h2, h3, h4, a, div {
-  font-size: 16px;
+div.wrapper {
+  position: relative;
+  width: 85%;
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 h1 {
   font-size: 0px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 a {
   text-decoration: none;
 }
 
-div.white {
-  background: white;
-}
-
-div.logo {
+div.nav {
   position: fixed;
-  top: 0px;
-  left: 100px;
+  top: 0;
+  width: 85%;
+  margin: 0 auto;
+  height: 70px;
   z-index: 1000;
-  width: 30%;
-  height: 60px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
-  padding: 0;
   mix-blend-mode:difference;
-  div  {
-    align-self: flex-end;
+  // background: green;
+  max-width: 1920px;
+  div.logo {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    transform: translate(0%, 50%);
     a {
-      position: fixed;
-      top: 60px;
-      left: 100px;
-      display: block;
-      padding: 5px 0;
-      font-size: 100%;
-      transform: translate(0%, -50%);
-      color:$stark;
-      // border-bottom: 10px solid red;
-      letter-spacing: 3px;
-      width: 250px;
-      transition: 0.2s ease;
-      // background: red;
+      font-size: 16px;
+      padding: 2px 5px;
       span {
+        color:$stark;
         display: inline-block;
+        letter-spacing: 3px;
       }
       span.sandbox {
         font-family: 'dinmedium', sans-serif;
@@ -90,7 +83,6 @@ div.logo {
         transition: 0.2s ease;
         width: 6px;
         height: 6px;
-        // font-size: 300%;
       }
       &:hover {
         span.square {
@@ -101,52 +93,36 @@ div.logo {
       }
     }
   }
-}
-
-div.nav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 70%;
-  height: 60px;
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
-  z-index: 1000;
-  mix-blend-mode:difference;
-  div  {
-    align-self: flex-end;
+  div.item  {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+    font-size: 0;
+    transform: translate(50%, 50%);
+    &.contact { right: 33px;} // width 66px at 13px font-size
+    &.thinking { right: calc(35px + 66px + 33px);}   // width 70px
+    &.about { right: calc(35px + 66px + 33px + 70px + 25px);}
     a {
-      // text-transform: uppercase;
-      position: absolute;
-      top: 60px;
-      right: 100px;
-      margin: 0 13px;
-      padding: 5px 2px;
-      font-size: 82%;
+      padding: 2px 5px;
+      font-size: 13px;
       color:$relturk;
       transition: 0.2s ease;
-      transform: translate(50%, -50%);
       &:hover {
-        font-size: 88%;
+        font-size: 14px;
         color:$hovercolor;
       }
-    }
-    &:nth-of-type(2) a {
-      right: 200px;
-    }
-    &:nth-of-type(3) a {
-      right: 300px;
     }
   }
 }
 
-h2 {
+h2.story {
   text-align: center;
   // text-transform: uppercase;
   position: absolute;
   left: 12%;
   transition: 0.4s ease;
+  font-size: 18px;
   div {
     font-size: 170%;
   }
@@ -180,7 +156,7 @@ h2 {
 
 div.homepage {
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: $blueblack;
   color: $stark;
@@ -209,7 +185,7 @@ div.thinking {
   }
 }
 div.other {
-  width: 100vw;
+  width: 100%;
   height: 65vh;
   background: $blueblack;
   color: $stark;
@@ -225,76 +201,101 @@ div.content {
     position: absolute;
     height: 100vh;
     top:0;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     div.vert{
       position: absolute;
       height: 100vh;
       top:0;
-      width: 0px;
+      width: 1px;
       background: #eaeaea;
       z-index: 200;
-      display: block;
+      display: none;
       position: absolute;
-      left: 15%;
-      // transform: translate(-50%,0);
-      &:nth-of-type(1) {left: -50%;}
-      &:nth-of-type(2) {left: -33.33%;}
-      &:nth-of-type(3) {left: 0%;}
+      left: 0%;
 
-      &:nth-of-type(4) {left: 16.66%;}
-      &:nth-of-type(5) {left: 33.33%;}
-      &:nth-of-type(6) {left: 50%;}
-      &:nth-of-type(7) {left: 66.66%;}
-      &:nth-of-type(8) {left: 83.33%;}
+      &:nth-of-type(1) {left: 16.66%;}
+      &:nth-of-type(2) {left: 33.33%;}
+      &:nth-of-type(3) {left: 50%;}
+      &:nth-of-type(4) {left: 66.66%;}
+      &:nth-of-type(5) {left: 83.33%;}
 
-      &:nth-of-type(9) {left: 100%;}
-      &:nth-of-type(10) {left: 116.66%;}
-      &:nth-of-type(11) {left: 133.33%;}
+      // &:nth-of-type(1) {left: 7.14285%;}
+      // &:nth-of-type(2) {left: 14.285%;}
+      // &:nth-of-type(3) {left: 21.428%;}
+      //
+      // &:nth-of-type(4) {left: 28.571%;}
+      // &:nth-of-type(5) {left: 35.714%;}
+      // &:nth-of-type(6) {left: 42.857%;}
+      //
+      // &:nth-of-type(7) {left: 49.999%;}
+      // &:nth-of-type(8) {left: 57.142%;}
+      //
+      // &:nth-of-type(9) {left: 64.285%;}
+      // &:nth-of-type(10) {left: 71.428%;}
+      // &:nth-of-type(11) {left: 78.571%;}
+      //
+      // &:nth-of-type(12) {left: 85.714%;}
+      // &:nth-of-type(13) {left: 92.857%;}
 
-      &:nth-of-type(12) {left: -66.66%;}
-      &:nth-of-type(13) {left: -83.33%;}
-      &:nth-of-type(14) {left: -100%;}
 
-      &:nth-of-type(15) {left: 150%;}
-      &:nth-of-type(16) {left: 166.66%;}
-      &:nth-of-type(17) {left: 183.33%;}
+      // &:nth-of-type(1) {left: -50%;}
+      // &:nth-of-type(2) {left: -33.33%;}
+      // &:nth-of-type(3) {left: 0%;}
+      //
+      // &:nth-of-type(4) {left: 16.66%;}
+      // &:nth-of-type(5) {left: 33.33%;}
+      // &:nth-of-type(6) {left: 50%;}
+      // &:nth-of-type(7) {left: 66.66%;}
+      // &:nth-of-type(8) {left: 83.33%;}
+      //
+      // &:nth-of-type(9) {left: 100%;}
+      // &:nth-of-type(10) {left: 116.66%;}
+      // &:nth-of-type(11) {left: 133.33%;}
+      //
+      // &:nth-of-type(12) {left: -66.66%;}
+      // &:nth-of-type(13) {left: -83.33%;}
+      // &:nth-of-type(14) {left: -100%;}
+      //
+      // &:nth-of-type(15) {left: 150%;}
+      // &:nth-of-type(16) {left: 166.66%;}
+      // &:nth-of-type(17) {left: 183.33%;}
+      //
+      // &:nth-of-type(18) {left: -116.66%;}
+      // &:nth-of-type(19) {left: -133.33%;}
+      //
+      // &:nth-of-type(19) {left: -150%;}
+      // &:nth-of-type(20) {left: -166.66%;}
+      // &:nth-of-type(21) {left: -183.33%;}
+      //
+      // &:nth-of-type(22) {left: -16.66%;}
 
-      &:nth-of-type(18) {left: -116.66%;}
-      &:nth-of-type(19) {left: -133.33%;}
-
-      &:nth-of-type(19) {left: -150%;}
-      &:nth-of-type(20) {left: -166.66%;}
-      &:nth-of-type(21) {left: -183.33%;}
-
-      &:nth-of-type(22) {left: -16.66%;}
-
-      &::after {
-        content: '';
-        position: absolute;
-        height: 200vh;
-        top:0;
-        width: 1px;
-        background: #eaeaea;
-        z-index: 200;
-        display: block;
-        position: absolute;
-        transform: rotate(45deg);
-        transform-origin: top left;
-      }
-      &::before {
-        content: '';
-        position: absolute;
-        height: 200vh;
-        top:0;
-        width: 1px;
-        background: #eaeaea;
-        z-index: 200;
-        display: block;
-        position: absolute;
-        transform: rotate(-45deg);
-        transform-origin: top left;
-      }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   height: 200vh;
+      //   top:0;
+      //   width: 1px;
+      //   background: #eaeaea;
+      //   z-index: 200;
+      //   display: block;
+      //   position: absolute;
+      //   transform: rotate(180deg);
+      //   transform-origin: top left;
+      // }
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   height: 200vh;
+      //   top:0;
+      //   width: 1px;
+      //   background: #eaeaea;
+      //   z-index: 200;
+      //   display: block;
+      //   position: absolute;
+      //   transform: rotate(90deg);
+      //   // transform-origin: bottom left;
+      // }
 
 
     }
@@ -302,150 +303,54 @@ div.content {
 }
 
 canvas {
-  width: 100vw;
-  height: 100vw;
-  background: $blueblack;
-}
-
-div.scroll-down a {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
-  padding-top: 60px;
-  span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 25px;
-    height: 45px;
-    margin-left: -15px;
-    border: 1px solid $stark;
-    border-radius: 50px;
-    box-sizing: border-box;
-  }
-  span::before {
-    position: absolute;
-    top: 9px;
-    left: 50%;
-    content: '';
-    width: 6px;
-    height: 6px;
-    margin-left: -3px;
-    background-color: $stark;
-    border-radius: 100%;
-    -webkit-animation: sdb10 2s infinite;
-    animation: sdb10 2s infinite;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  height: 100vh;
+  // background: $blueblack;
+  // background: grey;
 }
 
 div.footer {
-  height: 13vh;
+  height: 14vh;
   background: $blueblack;
   position: relative;
-  div.footerLogo {
-    // background: red;
+  div.logo {
+    display: inline-block;
     position: absolute;
-    bottom: 0px;
-    left: 100px;
-    z-index: 1000;
-    width: 30%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    padding: 0;
-    mix-blend-mode:difference;
-    div  {
-      align-self: center;
-      position: relative;
-      // background: green;
-      a {
-        top: 00px;
-        left: 100px;
-        display: block;
-        padding: 5px 0;
-        font-size: 100%;
-        // transform: translate(0%, -50%);
+    top: 7vh;
+    left:0;
+    transform: translate(0%, -50%);
+    a {
+      font-size: 16px;
+      padding: 2px 5px;
+      span {
         color:$aGrey;
-        // border-bottom: 10px solid red;
+        display: inline-block;
         letter-spacing: 3px;
-        width: 85vw;
+      }
+      span.sandbox {
+        font-family: 'dinmedium', sans-serif;
+        color:$stark;
+        margin-left: 2px;
+      }
+      span.square {
+        color:white;
+        margin-left: 3px;
+        background: $theturk;
+        background: $relturk;
         transition: 0.2s ease;
-        // background: red;
-        span {
-          display: inline-block;
-        }
-        span.sandbox {
-          font-family: 'dinmedium', sans-serif;
-          color:$stark;
-          margin-left: 2px;
-        }
+        width: 6px;
+        height: 6px;
+      }
+      &:hover {
         span.square {
-          color:white;
-          margin-left: 3px;
-          background: $theturk;
-          background: $relturk;
-          transition: 0.2s ease;
-          width: 6px;
-          height: 6px;
-          // font-size: 300%;
-        }
-        &:hover {
-          span.square {
-            margin-left: 70vw;
-            background: $hovercolor;
-            width: 12px;
-            height: 12px;
-          }
+          background: $hovercolor;
+          width: 12px;
+          height: 12px;
         }
       }
     }
   }
 }
-
-@-webkit-keyframes sdb10 {
-  0% {
-    -webkit-transform: translate(0, 0);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    -webkit-transform: translate(0, 20px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes sdb10 {
-  0% {
-    transform: translate(0, 0);
-    opacity: 0;
-  }
-  40% {
-    opacity: 1;
-  }
-  80% {
-    transform: translate(0, 20px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-
-
-
-
-
-
-
-
 
 
 @font-face {
@@ -458,11 +363,7 @@ div.footer {
          url('dinregularalternate-webfont.svg#dinregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'dinregular';
@@ -474,11 +375,7 @@ div.footer {
          url('dinregular-webfont.svg#dinregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'dinregular';
@@ -490,11 +387,7 @@ div.footer {
          url('dinmediumalternate-webfont.svg#dinregular') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'dinmedium';
@@ -506,11 +399,7 @@ div.footer {
          url('dinmedium-webfont.svg#dinmedium') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'dinlight';
@@ -524,7 +413,6 @@ div.footer {
     font-style: normal;
 
 }
-
 
 @font-face {
     font-family: 'dinregular';

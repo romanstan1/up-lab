@@ -24,30 +24,20 @@ export function init () {
 
     renderer = new THREE.WebGLRenderer({
         canvas: canvas,
-        antialias: true
+        antialias: true,
+        alpha: true
     });
     renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1);
     renderer.setSize(width, height);
-    renderer.setClearColor(0x011727);
-    // renderer.setClearColor(0x59c384);
 
     scene = new THREE.Scene();
 
     var light = new THREE.HemisphereLight(0xffffff, 0x0C056D, 0.6);
-    // light = new THREE.HemisphereLight(0xffffff, 0xf64c72, 0.6);
     scene.add(light);
-
-    // light = new THREE.DirectionalLight(0xf64c72, 0.7);
-    light = new THREE.DirectionalLight(0x590D82, 0.7);
-    light.position.set(200, 300, 400);
-    scene.add(light);
-    var light2 = light.clone();
-    light2.position.set(-200, 300, 400);
-    scene.add(light2);
 
     radius = 14;
-    camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 2000);
-    camera.position.set(0, -radius - 2, 80);
+    camera = new THREE.PerspectiveCamera(10, width / height, 0.1, 2000);
+    camera.position.set(0, 0, 80);
 
     loader = new THREE.TextureLoader();
     loader.crossOrigin = "Anonymous";

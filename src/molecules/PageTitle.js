@@ -9,7 +9,7 @@ export const PageTitle = ({children}) =>
     transitionAppearTimeout={300}
     transitionEnterTimeout={300}
     transitionLeaveTimeout={300}>
-    <h2> {children} </h2>
+    <h2 className='title'> {children} </h2>
   </ReactCSSTransitionGroup>
 
 export const PageStory = ({children}) =>
