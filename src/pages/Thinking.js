@@ -1,21 +1,8 @@
 import React, {Component} from 'react'
+import PageTemplate from '../molecules/PageTemplate'
 
-import Nav from '../molecules/Nav'
-import Footer from '../molecules/Footer'
-
-
-export default class Homepage extends Component {
-
+export default class Thinking extends Component {
   render () {
-    return [
-      <div key='thinking' className='thinking other'>
-        <Nav/>
-      </div>,
-      <div key='content' className='content'>
-        <br/><br/>
-        <div> Our thinking... </div>
-      </div>,
-      <Footer key='footer'/>
-    ]
+    return <PageTemplate key='thinking' page='thinking'/>
   }
 }

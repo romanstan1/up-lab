@@ -54,7 +54,7 @@ export default class Homepage extends Component {
   componentDidMount () {
     const html = document.getElementById("html")
     html.className = 'homepage'
-    init()
+    // init()
   }
 
   componentWillUnmount () {

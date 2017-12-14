@@ -19,6 +19,9 @@ $aGrey: #858585;
   padding: 0;
 }
 
+html {
+  // overflow: hidden;
+}
 html.homepage{
   overflow: hidden;
 }
@@ -104,19 +107,23 @@ div.nav {
     &.thinking { right: calc(35px + 66px + 33px);}   // width 70px
     &.about { right: calc(35px + 66px + 33px + 70px + 25px);}
     a {
+      font-family: 'dinmedium', sans-serif;
       text-transform: uppercase;
       padding: 2px 5px;
-      font-size: 13px;
+      font-size: 14px;
       color:$relturk;
+      color: $stark;
       transition: 0.2s ease;
       &:hover {
-        font-size: 14px;
+        font-size: 16px;
         color:$hovercolor;
+        color: white;
       }
     }
     &.active a{
       color:$hovercolor;
-      font-size: 14px;
+      color: white;
+      font-size: 16px;
     }
 
   }
@@ -166,143 +173,68 @@ div.homepage {
   position: absolute;
   width: 100%;
   height: 100vh;
+  border: 12px solid #f2f4f7;
   background: $blueblack;
   color: $stark;
 }
 
-div.contact {
-  h2 {
-    top: 32%;
-  }
-}
-div.about {
-  h2 {
-  }
-}
-
-div.thinking {
-  h2 {
-  }
-}
-div.other {
-  width: 100%;
+div.page {
   height: 100vh;
-  background: $blueblack;
-  color: $stark;
-  h2 {
-    top: 32%;
+  > span {
+    display: block;
+    height: 100%;
   }
 }
-div.content {
-  height: 100vh;
-  background: white;
+span.innerpage {
   position: relative;
-  div.grid {
-    position: absolute;
-    height: 100vh;
-    top:0;
+  display: block;
+  height: 100%;
+  border: 12px solid #f2f4f7;
+  div.dropdown {
     width: 100%;
-    overflow: hidden;
-    div.vert{
-      position: absolute;
-      height: 100vh;
-      top:0;
-      width: 1px;
-      background: #eaeaea;
-      z-index: 200;
-      display: none;
-      position: absolute;
-      left: 0%;
-
-      &:nth-of-type(1) {left: 16.66%;}
-      &:nth-of-type(2) {left: 33.33%;}
-      &:nth-of-type(3) {left: 50%;}
-      &:nth-of-type(4) {left: 66.66%;}
-      &:nth-of-type(5) {left: 83.33%;}
-
-      // &:nth-of-type(1) {left: 7.14285%;}
-      // &:nth-of-type(2) {left: 14.285%;}
-      // &:nth-of-type(3) {left: 21.428%;}
-      //
-      // &:nth-of-type(4) {left: 28.571%;}
-      // &:nth-of-type(5) {left: 35.714%;}
-      // &:nth-of-type(6) {left: 42.857%;}
-      //
-      // &:nth-of-type(7) {left: 49.999%;}
-      // &:nth-of-type(8) {left: 57.142%;}
-      //
-      // &:nth-of-type(9) {left: 64.285%;}
-      // &:nth-of-type(10) {left: 71.428%;}
-      // &:nth-of-type(11) {left: 78.571%;}
-      //
-      // &:nth-of-type(12) {left: 85.714%;}
-      // &:nth-of-type(13) {left: 92.857%;}
-
-
-      // &:nth-of-type(1) {left: -50%;}
-      // &:nth-of-type(2) {left: -33.33%;}
-      // &:nth-of-type(3) {left: 0%;}
-      //
-      // &:nth-of-type(4) {left: 16.66%;}
-      // &:nth-of-type(5) {left: 33.33%;}
-      // &:nth-of-type(6) {left: 50%;}
-      // &:nth-of-type(7) {left: 66.66%;}
-      // &:nth-of-type(8) {left: 83.33%;}
-      //
-      // &:nth-of-type(9) {left: 100%;}
-      // &:nth-of-type(10) {left: 116.66%;}
-      // &:nth-of-type(11) {left: 133.33%;}
-      //
-      // &:nth-of-type(12) {left: -66.66%;}
-      // &:nth-of-type(13) {left: -83.33%;}
-      // &:nth-of-type(14) {left: -100%;}
-      //
-      // &:nth-of-type(15) {left: 150%;}
-      // &:nth-of-type(16) {left: 166.66%;}
-      // &:nth-of-type(17) {left: 183.33%;}
-      //
-      // &:nth-of-type(18) {left: -116.66%;}
-      // &:nth-of-type(19) {left: -133.33%;}
-      //
-      // &:nth-of-type(19) {left: -150%;}
-      // &:nth-of-type(20) {left: -166.66%;}
-      // &:nth-of-type(21) {left: -183.33%;}
-      //
-      // &:nth-of-type(22) {left: -16.66%;}
-
-      // &::after {
-      //   content: '';
-      //   position: absolute;
-      //   height: 200vh;
-      //   top:0;
-      //   width: 1px;
-      //   background: #eaeaea;
-      //   z-index: 200;
-      //   display: block;
-      //   position: absolute;
-      //   transform: rotate(180deg);
-      //   transform-origin: top left;
-      // }
-      // &::before {
-      //   content: '';
-      //   position: absolute;
-      //   height: 200vh;
-      //   top:0;
-      //   width: 1px;
-      //   background: #eaeaea;
-      //   z-index: 200;
-      //   display: block;
-      //   position: absolute;
-      //   transform: rotate(90deg);
-      //   // transform-origin: bottom left;
-      // }
-    }
+    height: 0%;
+    background: $blueblack;
+    color: $stark;
+    transition: 1.2s ease;
   }
+  div.content {
+    height: 100%;
+    width: 100%;
+    transition: 1.2s ease;
+    background: white;
+  }
+
+  &.contact {
+    div.dropdown { background: #2d283e; } //
+    div.content { background: #d1d7e0; } //
+  }
+  &.thinking {
+    div.dropdown { background: #4cd3bb ; } // #4cd3bb mint
+    div.content { background: #eae5e4; } // #eae5e4 grey
+  }
+  &.about {
+    div.dropdown {  background: #314455;  } //
+    div.content { background: #c96567;}
+  }
+
+  &.SlideIn-appear {
+    div.dropdown { height: 0vh; }
+    div.content  { height: 100%; }
+  }
+  &.SlideIn-appear.SlideIn-appear-active {
+    div.dropdown { height: 100%; }
+    div.content  { height: 0vh; }
+  }
+
 }
+
+
 
 canvas {
+  // border: 13px solid ghostwhite;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  // margin: 13px;
   // background: $blueblack;
   // background: grey;
 }
@@ -350,6 +282,38 @@ div.footer {
   }
 }
 
+// .SlideIn-appear {
+//   background: green;
+//   // transform: translateX(30px);
+//   // opacity: 0;
+// }
+// .SlideIn-appear.SlideIn-appear-active {
+//   // background: red;
+//   height: 120vh;
+//   // opacity: 1;
+//   // transform: translateX(0);;
+//   // transition: all 0.6s linear;
+// }
+// .SlideIn-enter {
+//     opacity: 0;
+//     transform: translateX(30px);
+// }
+// .SlideIn-enter.SlideIn-enter-active {
+//     opacity: 1;
+//     transform: translateX(0);
+//     transition: all 0.2s linear 0.4s;
+// }
+// .SlideIn-leave {
+//     opacity: 1.0;
+//     transform: translateX(0);
+// }
+// .SlideIn-leave.SlideIn-leave-active {
+//     opacity: 0;
+//     position: absolute;
+//     width: 100%;
+//     transform: translateX(-30px);
+//     transition: all 0.2s linear;
+// }
 
 @font-face {
     font-family: 'dinregular';
