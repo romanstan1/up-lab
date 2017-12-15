@@ -105,7 +105,8 @@ h2.title {
   left: 0%;
   transform: translate(0%, -50%);
   width: 100%;
-  top: 50%; }
+  top: 50%;
+  color: #011727; }
   h2.title div {
     font-size: 170%; }
   h2.title span {
@@ -114,10 +115,8 @@ h2.title {
     color: #00cdd7; }
   h2.title span.colorful {
     font-size: 160%;
-    background: -webkit-linear-gradient(left, #35d6d1 12%, #ecff28 88%) no-repeat;
-    -webkit-background-clip: text;
     color: #b4f25f;
-    -webkit-text-fill-color: transparent; }
+    color: #e0043f; }
   h2.title.story-enter {
     opacity: 0.01;
     transform: translate(0%, -300%); }
@@ -132,11 +131,21 @@ div.homepage {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: #011727;
+  background: #d1d7e0;
   color: #e7dfdd; }
 
 div.page {
   height: 100vh; }
+  div.page:after {
+    content: "";
+    display: block;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    border: 12px solid #00cdd7; }
   div.page > span {
     display: block;
     height: 100%; }
@@ -165,6 +174,8 @@ span.innerpage {
     background: #2d283e; }
   span.innerpage.contact div.dropdown {
     background: #011727; }
+  span.innerpage.contact div.dropdown {
+    background: #00cdd7; }
   span.innerpage.contact div.content {
     background: #d1d7e0; }
   span.innerpage.thinking div.dropdown {
@@ -174,13 +185,17 @@ span.innerpage {
   span.innerpage.thinking div.dropdown {
     background: #2d283e; }
   span.innerpage.thinking div.dropdown {
-    background: #FF0A3B; }
+    background: #00cdd7; }
   span.innerpage.thinking div.content {
     background: #d1d7e0; }
   span.innerpage.about div.dropdown {
     background: #314455; }
+  span.innerpage.about div.dropdown {
+    background: #00cdd7; }
   span.innerpage.about div.content {
     background: #c96567; }
+  span.innerpage.about div.content {
+    background: #d1d7e0; }
   span.innerpage.SlideIn-appear div.dropdown {
     height: 0vh; }
   span.innerpage.SlideIn-appear div.content {
@@ -194,16 +209,17 @@ span.innerpage {
 
 div.blogPost {
   position: relative;
-  margin: 25% auto;
+  margin: 5% auto;
   font-size: 0px;
-  width: calc(75%);
+  width: 75%;
   text-align: left;
   overflow: hidden; }
   div.blogPost:nth-of-type(1) {
-    margin-top: 12%; }
+    margin-top: 15%; }
   div.blogPost:nth-of-type(even) > div {
     float: right; }
   div.blogPost > div {
+    float: right;
     max-width: 50vw;
     width: 100%;
     height: 100%;
@@ -215,88 +231,57 @@ div.blogPost {
         transition: 0.6s ease;
         width: 100%;
         height: 100%; }
-  div.blogPost:nth-of-type(even) h4 {
-    font-family: 'dinmedium', sans-serif;
-    position: absolute;
-    color: white;
-    color: #00cdd7;
-    left: 8%;
-    top: 32%;
-    font-size: 47px;
-    z-index: 10;
-    transition: 0.15s ease-out;
-    text-transform: uppercase; }
-  div.blogPost:nth-of-type(even) span.date {
-    display: none;
-    position: absolute;
-    left: 20%;
-    top: 52%;
-    font-size: 24px;
-    z-index: 10;
-    color: #00848b;
-    transition: 0.15s ease-out; }
-  div.blogPost:nth-of-type(even) span.summary {
-    display: block;
-    position: absolute;
-    left: 8%;
-    top: 52%;
-    font-size: 22px;
-    z-index: 10;
-    width: 40%;
-    color: #00cdd7;
-    text-align: left;
-    transition: 0.15s ease-out; }
-  div.blogPost:nth-of-type(even) > div a:hover img {
-    transform: scale(1.1, 1.1); }
-  div.blogPost:nth-of-type(odd) {
+  div.blogPost:nth-of-type(n) {
     transition: 0.3s ease-out;
     cursor: pointer; }
-    div.blogPost:nth-of-type(odd):after {
+    div.blogPost:nth-of-type(n):after {
       content: "";
       position: absolute;
       top: 0;
       width: 100%;
       height: 100%;
       background: transparent;
+      background: #00cdd7;
+      opacity: 0;
       transition: 0.15s ease-out;
-      z-index: 8; }
-    div.blogPost:nth-of-type(odd) h4 {
+      z-index: 8;
+      mix-blend-mode: difference; }
+    div.blogPost:nth-of-type(n) h4 {
       position: absolute;
       color: #011727;
-      right: 0;
+      left: 0;
       top: 1px;
       font-size: 18px;
       z-index: 10;
       transition: 0.15s ease-out;
       text-transform: uppercase; }
-    div.blogPost:nth-of-type(odd) span.date {
+    div.blogPost:nth-of-type(n) span.summary {
       display: block;
       position: absolute;
-      right: 0px;
+      left: 0px;
       top: 35px;
       font-size: 14px;
       z-index: 10;
       color: #011727;
-      transition: 0.15s ease-out; }
-    div.blogPost:nth-of-type(odd):hover {
+      transition: 0.15s ease-out;
+      width: 27%; }
+    div.blogPost:nth-of-type(n):hover {
       box-shadow: 1px 30px 35px rgba(0, 205, 215, 0.25); }
-      div.blogPost:nth-of-type(odd):hover:after {
-        opacity: 0.87;
-        background: #011727;
-        background: #00cdd7;
-        mix-blend-mode: difference; }
-      div.blogPost:nth-of-type(odd):hover h4, div.blogPost:nth-of-type(odd):hover span.date {
+      div.blogPost:nth-of-type(n):hover:after {
+        opacity: 0.87; }
+      div.blogPost:nth-of-type(n):hover h4, div.blogPost:nth-of-type(n):hover span.summary {
         color: #00cdd7;
-        right: 3%;
+        left: 2%;
         top: 18px; }
-      div.blogPost:nth-of-type(odd):hover span.date {
+      div.blogPost:nth-of-type(n):hover span.summary {
         top: 52px; }
-    div.blogPost:nth-of-type(odd) > div {
+    div.blogPost:nth-of-type(n) > div {
       position: relative; }
-      div.blogPost:nth-of-type(odd) > div a {
+      div.blogPost:nth-of-type(n) > div a {
         background: red; }
 
 canvas {
+  border: 13px solid ghostwhite;
   width: 100%;
   height: 100%; }
 

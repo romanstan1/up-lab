@@ -13,7 +13,7 @@ const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
 export const BlogPost = ({post,i}) =>
   <div className='blogPost'>
     <h4>{post.seo_title}</h4>
-    <span className="date">{moment(post.published).format('Do MMMM YYYY')}</span>
+    {/* <span className="date">{moment(post.published).format('Do MMMM YYYY')}</span> */}
     <span className="summary">{post.summary}</span>
     <div>
       <Link to={`/thinking/${post.slug}`} className='link'>
