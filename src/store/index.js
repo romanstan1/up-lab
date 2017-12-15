@@ -21,7 +21,7 @@ function smoothscroll(){
 
 const logger = store => next => action => {
   let result = next(action)
-  console.log('STORE STATE:', store.getState(), action)
+  // console.log('STORE STATE:', store.getState(), action)
   if(action.type === '@@router/LOCATION_CHANGE') {
     // smoothscroll()
      // window.scrollTo(0,0);

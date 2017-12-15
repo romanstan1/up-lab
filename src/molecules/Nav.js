@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import Logo from './Logo'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {selectNav} from '../store/modules/actions'
 
 const NavLink = ({text, selected, children}) => {
   const active = selected === text? `item ${text} active` : `item ${text}`

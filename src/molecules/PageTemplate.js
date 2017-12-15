@@ -2,12 +2,12 @@ import React from 'react';
 import Nav from './Nav'
 import Footer from './Footer'
 
-const PageTemplate = ({page}) =>
+const PageTemplate = ({page, children}) =>
   <span className={`innerpage ${page}`}>
     <div className='dropdown'/>
     <Nav />
     <div className='content'>
-      {page}
+      {children}
     </div>
     {/* <Footer/> */}
   </span>

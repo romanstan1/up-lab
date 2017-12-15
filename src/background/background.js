@@ -1,11 +1,10 @@
 import * as THREE from 'three'
 import {TweenMax, Power1, Back} from "gsap";
-import np from './perlin'
 import fragmentShader from './shaders/frag.glsl.js'
 import vertexShader from './shaders/vertex.glsl.js'
 
 var canvas, width, height, renderer, scene, camera, loader, dotTexture, radius
-var bufferDotsGeom, positions, attributePositions, frameRequest
+var bufferDotsGeom, positions, attributePositions
 var shaderMaterial, mouse, dots, sphereGeom, dotsGeom, resizeTm
 
 export function stopAnimation() {
@@ -18,9 +17,9 @@ export function stopAnimation() {
 }
 
 export function init () {
-    canvas = document.querySelector('#scene');
-    width = canvas.offsetWidth,
-    height = canvas.offsetHeight;
+    canvas = document.querySelector('#scene')
+    width = canvas.offsetWidth
+    height = canvas.offsetHeight
 
     renderer = new THREE.WebGLRenderer({
         canvas: canvas,

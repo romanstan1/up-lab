@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import Nav from '../molecules/Nav'
 import {PageStory} from '../molecules/PageTitle'
 import {init, stopAnimation} from '../background/background.js'
-import { Shaders, Node, GLSL } from "gl-react";
-import {Surface} from "gl-react-dom";
 
 const story = [
   <h2 className='title' key='0'><div>We provide the <span>sandbox</span> and the <span>toys</span> to <span className='colorful'>create.</span></div></h2>,
@@ -27,7 +25,6 @@ class Background extends Component {
 
 var scrollValue = 0;
 var scrollIncrement = 1
-var scrollTimeout
 
 export default class Homepage extends Component {
 
@@ -45,7 +42,7 @@ export default class Homepage extends Component {
   onScroll = (e) => {
     scrollValue = scrollValue + scrollIncrement;
     if(scrollValue > 15) this.nextStory()
-    scrollTimeout = setTimeout(() => {
+    setTimeout(() => {
       scrollIncrement = 1
       scrollValue = 0
     }, 800);
