@@ -6,22 +6,33 @@ import {connect} from 'react-redux'
 import Butter from 'buttercms';
 import moment from 'moment';
 import {Link} from 'react-router-dom'
+import Nav from '../molecules/Nav'
 const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
 
 
-
-export const BlogPost = ({post,i}) =>
-  <div className='blogPost'>
-    <h4>{post.seo_title}</h4>
-    {/* <span className="date">{moment(post.published).format('Do MMMM YYYY')}</span> */}
-    <span className="summary">{post.summary}</span>
-    <div>
-      <Link to={`/thinking/${post.slug}`} className='link'>
-        <img src={post.featured_image} alt={post.seo_title}/>
-      </Link>
-    </div>
+const LandingSection = ({children}) =>
+<section className='grid thinking'>
+  <div className='column1'></div>
+  <div className='column2'>
+    <h2 className='mainTitle'>{children}</h2>
   </div>
+</section>
 
+const ThinkingSection = ({children}) =>
+<section className='grid thinking'>
+    <div className='column1'>
+      <h2 className='sideHeading'>{children.seo_title}</h2>
+      <p className="summary">{children.summary}</p>
+
+      <Link to={`/thinking/${children.slug}`} className="link">
+        Read more
+      </Link>
+
+    </div>
+    <div className='column2'>
+      <div className='image'><img src={children.featured_image} alt={children.seo_title}/></div>
+    </div>
+</section>
 
 
 class Thinking extends Component {
@@ -43,11 +54,17 @@ class Thinking extends Component {
     const {blogPosts} = this.props
     let posts = null
     if(!!blogPosts) posts = blogPosts
-    return (
+    return [
       <PageTemplate key='thinking' page='thinking'>
-          {!!posts? posts.map((post, i) => <BlogPost key={i} post={post} i={i + 1}/>): <LoadingSpinner/> }
-      </PageTemplate>
-    )
+        <LandingSection>Some thoughts and some ideas that we'd like to share...</LandingSection>
+        {  !!posts? posts.map((post, i) =>
+          <ThinkingSection key={i}>{post}</ThinkingSection>)
+          : <LoadingSpinner/>
+        }
+        <br/><br/><br/><br/>
+      </PageTemplate>,
+      <Nav key='nav'/>
+    ]
   }
 }
 

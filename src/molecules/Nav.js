@@ -17,16 +17,14 @@ class Nav extends Component {
   render () {
     const {selected} = this.props
     return (
-    <div className="wrapper">
-
       <div key='nav' className='nav'>
-
         <Logo/>
-        {['about','thinking', 'contact'].map(item =>
-          <NavLink key={item} selected={selected} text={item}/>)}
-
+        <div className='navitems'>
+          {['about','thinking', 'contact'].map(item =>
+            <NavLink key={item} selected={selected} text={item}/>)}
+        </div>
       </div>
-    </div>)
+    )
   }
 }
 

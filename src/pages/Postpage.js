@@ -1,43 +1,61 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import Butter from 'buttercms';
+import PageTemplate from '../molecules/PageTemplate'
+import Nav from '../molecules/Nav'
+import LoadingSpinner from '../molecules/LoadingSpinner'
+import moment from 'moment'
 
+const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
+
+const SinglePost = ({singlePost}) =>
+  <section className='grid singlepost' >
+    <div className='column1'>
+      <h3 className='author'> By {singlePost.author.first_name} {singlePost.author.last_name}</h3>
+      <h3 className='date'>Posted on {moment(singlePost.created).format('Do MMM YYYY')}</h3>
+      <div className='image'><img src={singlePost.featured_image} alt={singlePost.seo_title}/></div>
+    </div>
+    <div className='column2'>
+      <h2 className='posttitle'>{singlePost.title}</h2>
+      <div className='inner' dangerouslySetInnerHTML={{__html: singlePost.body}}/>
+    </div>
+  </section>
 
 class Postpage extends Component {
 
   state = {
     singlePost: null
   }
-  //
-  // fetchSinglePost = (slug) => {
-  //   butter.post.retrieve(slug).then((resp) => {
-  //     this.setState({ singlePost: resp.data.data })
-  //   })
-  // }
-  //
-  // fetchSimilarityPosts = () =>{
-  //   butter.post.list({page: 1, page_size: 3}).then(response => {
-  //     this.props.dispatch(loadBlogPosts(response.data, true))
-  //   });
-  // }
-  //
-  // componentDidMount() {
-  //   const {slug} = this.props.match.params
-  //   this.fetchSinglePost(slug)
-  //   if(!this.props.blogPosts.length) this.fetchSimilarityPosts()
-  // }
-  //
-  // componentWillReceiveProps(newProps){
-  //   const {slug} = newProps.match.params
-  //   if(slug !== this.props.match.params.slug) {
-  //     this.fetchSinglePost(slug)
-  //   }
-  // }
+
+  fetchSinglePost = (slug) => {
+    butter.post.retrieve(slug).then((resp) => {
+      console.log('response for single post ', resp)
+      this.setState({ singlePost: resp.data.data })
+    })
+  }
+
+  componentDidMount() {
+    const {slug} = this.props.match.params
+    this.fetchSinglePost(slug)
+  }
+
+  componentWillReceiveProps(newProps){
+    const {slug} = newProps.match.params
+    if(slug !== this.props.match.params.slug) {
+      this.fetchSinglePost(slug)
+    }
+  }
 
   render () {
-    return (
-      <div>Post page</div>
-    )
+    const {blogPosts} = this.props
+    const {singlePost} = this.state
+    return [
+      <PageTemplate key='postpage' page='about'>
+        { !!singlePost? <SinglePost singlePost={singlePost}/> : <LoadingSpinner/> }
+      </PageTemplate>,
+      <Nav key='nav'/>
+    ]
   }
 }
 
