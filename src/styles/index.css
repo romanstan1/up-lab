@@ -20,6 +20,7 @@ div.border {
   position: relative;
   width: 100%;
   border: 12px solid white;
+  border: 10px solid #5000ff;
   height: 100vh; }
   div.border div.wrapper {
     position: relative;
@@ -36,13 +37,13 @@ a {
 
 ::selection {
   mix-blend-mode: difference;
-  background: #4cd3bb;
+  background: #5000ff;
   color: red;
   /* WebKit/Blink Browsers */ }
 
 ::-moz-selection {
   mix-blend-mode: difference;
-  background: #4cd3bb;
+  background: #5000ff;
   /* Gecko Browsers */ }
 
 div.draw-button {
@@ -65,8 +66,7 @@ div.nav {
   transform: translate(-50%, 0);
   display: flex;
   justify-content: center;
-  padding-top: 60px;
-  mix-blend-mode: difference; }
+  padding-top: 60px; }
   div.nav div.logo {
     display: inline-block;
     position: relative;
@@ -90,12 +90,13 @@ div.nav {
         margin-left: 3px;
         background: #66fcf1;
         background: #00848b;
+        background: #5000ff;
         transition: 0.2s ease;
         width: 6px;
         height: 6px;
         bottom: 5px; }
       div.nav div.logo a:hover span.square {
-        background: #4cd3bb;
+        background: #5000ff;
         width: 12px;
         height: 12px; }
   div.nav div.navitems {
@@ -122,7 +123,7 @@ div.nav {
           left: 0px;
           right: 100%;
           bottom: -8px;
-          background: #e7dfdd;
+          background: #5000ff;
           height: 3px;
           opacity: 0.9;
           transition-property: left right;
@@ -143,17 +144,20 @@ h2.title {
   transform: translate(0%, -50%);
   width: 60%;
   top: 48%;
-  color: #011727; }
+  color: ghostwhite; }
   h2.title div {
     font-size: 170%; }
   h2.title span {
     font-family: 'dinmedium', sans-serif;
     font-size: 140%;
-    color: #4cd3bb; }
+    color: #5000ff;
+    line-height: 75px; }
   h2.title span.colorful {
-    font-size: 160%;
-    color: #b4f25f;
-    color: #e0043f; }
+    font-size: 170%;
+    background: -webkit-linear-gradient(left, #35d6d1 12%, #ecff28 88%) no-repeat;
+    -webkit-background-clip: text;
+    color: #5000ff;
+    -webkit-text-fill-color: transparent; }
   h2.title.story-enter {
     opacity: 0.01;
     transform: translate(0%, -300%); }
@@ -168,13 +172,15 @@ div.homepage {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #eae5e4;
+  background-image: linear-gradient(to bottom, #404344, #949697);
+  background-image: linear-gradient(to bottom, #182023, #949697);
+  background-image: linear-gradient(to bottom, #182023, #576970);
   color: #e7dfdd; }
   div.homepage div.scrolldown {
     position: absolute;
     bottom: 7.5%;
     left: calc(40%);
-    color: #011727;
+    color: white;
     font-family: 'dinmedium', sans-serif; }
     div.homepage div.scrolldown div {
       position: absolute;
@@ -182,8 +188,8 @@ div.homepage {
       left: calc(50% - 9px);
       width: 19px;
       height: 19px;
-      border-left: 3px solid #011727;
-      border-bottom: 3px solid #011727;
+      border-left: 3px solid white;
+      border-bottom: 3px solid white;
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
       -webkit-animation: sdb05 3s infinite;
@@ -201,11 +207,11 @@ div.homepage {
       display: inline-block;
       width: 14px;
       height: 14px;
-      border: 2px solid #011727;
+      border: 2px solid white;
       border-radius: 50px;
       transition: 0.6s ease-out; }
       div.homepage div.bubbles div.stage {
-        background: #011727; }
+        background: white; }
 
 @-webkit-keyframes sdb05 {
   0% {
@@ -249,7 +255,7 @@ span.innerpage {
   span.innerpage div.dropdown {
     width: 100%;
     height: 0%;
-    background: #011727;
+    background: white;
     color: #e7dfdd;
     transition: 1.2s ease; }
   span.innerpage div.content {
@@ -264,11 +270,12 @@ span.innerpage {
   span.innerpage.contact div.dropdown {
     background: #2d283e; }
   span.innerpage.contact div.dropdown {
-    background: #011727; }
+    background: white; }
   span.innerpage.contact div.dropdown {
-    background: #4cd3bb; }
+    background: #5000ff; }
   span.innerpage.contact div.content {
-    background: #eae5e4; }
+    background: #eae5e4;
+    background-image: linear-gradient(to bottom, #182023, #576970); }
   span.innerpage.thinking div.dropdown {
     background: #4cd3bb; }
   span.innerpage.thinking div.content {
@@ -276,15 +283,17 @@ span.innerpage {
   span.innerpage.thinking div.dropdown {
     background: #2d283e; }
   span.innerpage.thinking div.dropdown {
-    background: #4cd3bb; }
+    background: #5000ff; }
   span.innerpage.thinking div.content {
-    background: #eae5e4; }
+    background: #eae5e4;
+    background-image: linear-gradient(to bottom, #182023, #576970); }
   span.innerpage.about div.dropdown {
     background: #314455; }
   span.innerpage.about div.dropdown {
-    background: #4cd3bb; }
+    background: #5000ff; }
   span.innerpage.about div.content {
-    background: #eae5e4; }
+    background: #eae5e4;
+    background-image: linear-gradient(to bottom, #182023, #576970); }
   span.innerpage.SlideIn-appear div.dropdown {
     height: 0vh; }
   span.innerpage.SlideIn-appear div.content {
@@ -329,14 +338,14 @@ a.blogPost {
       width: 100%;
       height: 100%;
       background: transparent;
-      background: #4cd3bb;
+      background: #5000ff;
       opacity: 0;
       transition: 0.15s ease-out;
       z-index: 8;
       mix-blend-mode: difference; }
     a.blogPost:nth-of-type(n) h4 {
       position: absolute;
-      color: #011727;
+      color: white;
       left: 0;
       top: 1px;
       font-size: 18px;
@@ -350,7 +359,7 @@ a.blogPost {
       top: 35px;
       font-size: 14px;
       z-index: 10;
-      color: #011727;
+      color: white;
       transition: 0.15s ease-out;
       width: 27%; }
     a.blogPost:nth-of-type(n):hover {
@@ -358,7 +367,7 @@ a.blogPost {
       a.blogPost:nth-of-type(n):hover:after {
         opacity: 0.87; }
       a.blogPost:nth-of-type(n):hover h4, a.blogPost:nth-of-type(n):hover span.summary {
-        color: #4cd3bb;
+        color: #5000ff;
         left: 2%;
         top: 18px; }
       a.blogPost:nth-of-type(n):hover span.summary {
@@ -374,14 +383,14 @@ span.loader {
   height: 50px;
   position: relative;
   margin-top: 10px;
-  border: 5px solid #011727;
+  border: 5px solid #5000ff;
   animation: loader 6s infinite ease-in; }
 
 span.loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: #011727;
+  background-color: #5000ff;
   animation: loader-inner 3s infinite ease; }
 
 div.dot-canvas, div.scene {
@@ -396,7 +405,7 @@ div.dot-canvas, div.scene {
 
 div.footer {
   height: 14vh;
-  background: #011727;
+  background: white;
   position: relative; }
   div.footer div.logo {
     display: inline-block;
@@ -424,7 +433,7 @@ div.footer {
         width: 6px;
         height: 6px; }
       div.footer div.logo a:hover span.square {
-        background: #4cd3bb;
+        background: #5000ff;
         width: 12px;
         height: 12px; }
 
@@ -440,7 +449,8 @@ div.column2 {
 section.grid {
   display: flex;
   margin-top: 60px;
-  transition: 0.3s ease-out; }
+  transition: 0.3s ease-out;
+  color: white; }
   section.grid:first-of-type {
     margin-top: 160px;
     padding-top: 0px !important; }
@@ -449,7 +459,7 @@ section.grid {
     font-size: 50px; }
   section.grid.about h2.sideHeading {
     float: right;
-    border-top: 3px solid #011727;
+    border-top: 3px solid #5000ff;
     padding-top: 20px;
     padding-left: 30px;
     margin-top: 10px;
@@ -466,7 +476,7 @@ section.grid {
   section.grid.contact h2.mainTitle a {
     position: relative;
     padding: 3px 0;
-    color: #011727; }
+    color: white; }
     section.grid.contact h2.mainTitle a:after {
       content: "";
       position: absolute;
@@ -474,8 +484,8 @@ section.grid {
       left: 0px;
       right: 100%;
       bottom: -9px;
-      background: #011727;
-      height: 4px;
+      background: #5000ff;
+      height: 5px;
       opacity: 0.9;
       transition-property: left right;
       transition-duration: 0.2s;
@@ -487,7 +497,7 @@ section.grid {
     section.grid.singlepost div.column1 h3.author {
       margin-top: 15px;
       display: inline-block;
-      border-top: 3px solid #011727;
+      border-top: 3px solid white;
       font-size: 14px;
       padding: 20px 0 10px 0; }
     section.grid.singlepost div.column1 h3.date {
@@ -528,10 +538,10 @@ section.grid {
       display: inline-block;
       margin-top: 8px;
       font-family: 'dinmedium', sans-serif;
-      color: #4cd3bb;
+      color: #5000ff;
       padding: 6px 30px;
       font-size: 16px;
-      border: 2px solid #4cd3bb;
+      border: 2px solid #5000ff;
       z-index: 1;
       transition: 0.3s ease; }
       section.grid.thinking a.link:before {
@@ -542,7 +552,7 @@ section.grid {
         height: 100%;
         top: 0;
         left: 0;
-        background: #4cd3bb;
+        background: #5000ff;
         transition: 0.3s ease; }
       section.grid.thinking a.link:hover {
         color: #eae5e4; }
@@ -578,7 +588,7 @@ div.hoverSection {
   div.hoverSection div.infoIcon {
     margin: 20px 40px 0 0;
     cursor: pointer;
-    border: 4px solid black;
+    border: 4px solid #5000ff;
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -594,12 +604,12 @@ div.hoverSection {
       height: 0%;
       left: 30px;
       overflow: hidden;
-      border-left: 4px solid black;
+      border-left: 4px solid #5000ff;
       padding-left: 30px;
       height: 0%;
       transition: height 0.2s 0.3s ease; }
     div.hoverSection div.infoIcon:hover {
-      background: black;
+      background: #5000ff;
       margin-bottom: 190px; }
       div.hoverSection div.infoIcon:hover::after {
         height: 60%; }

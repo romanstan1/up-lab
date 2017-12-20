@@ -7,11 +7,13 @@ $stark: #e7dfdd;
 $theturk: #66fcf1;
 
 $blueblack: #011727;
-// $blueblack: white;
+$blueblack: white;
 
 $relturk: #00848b;
 // $hovercolor:#00cdd7;
 $hovercolor:#4cd3bb;
+$hovercolor:#65e8c8;
+$hovercolor:#5000ff;
 // $greyBackground:#d1d7e0;
 $greyBackground:#eae5e4;
 // $greyBackground:white;
@@ -46,6 +48,8 @@ div.border {
   position: relative;
   width: 100%;
   border: 12px solid white;
+  border: 10px solid $hovercolor;
+  // border: 15px solid #dfdee8;
   height: 100vh;
   div.wrapper {
     position: relative;
@@ -98,7 +102,7 @@ div.nav {
   justify-content: center;
   // opacity: 0.7;
   padding-top: 60px;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
     // display: none;
   div.logo {
     display: inline-block;
@@ -130,6 +134,7 @@ div.nav {
         margin-left: 3px;
         background: $theturk;
         background: $relturk;
+        background: $hovercolor;
         transition: 0.2s ease;
         width: 6px;
         height: 6px;
@@ -179,7 +184,7 @@ div.nav {
           left: 0px;
           right: 100%;
           bottom: -8px;
-          background: $stark;
+          background: $hovercolor;
           height: 3px;
           opacity: 0.9;
           transition-property: left right;
@@ -214,7 +219,8 @@ h2.title {
   transform: translate(0%, -50%);
   width: 60%;
   top: 48%;
-  color: $blueblack;
+  color: ghostwhite;
+  // mix-blend-mode: difference;
   div {
     font-size: 170%;
   }
@@ -222,16 +228,19 @@ h2.title {
     font-family: 'dinmedium', sans-serif;
     font-size: 140%;
     color: $hovercolor;
+    line-height: 75px;
+
+    // color: #1ce0ea;
     // color: $blueblack;
   }
   span.colorful {
-    font-size: 160%;
-    // background: -webkit-linear-gradient(left,#35d6d1 12%,#ecff28 88%) no-repeat;
-    // background: -webkit-linear-gradient(left,#35d6d1 12%,#e0043f 88%) no-repeat;
-    // -webkit-background-clip: text;
-    color: #b4f25f;
-    color:#e0043f;
-    // -webkit-text-fill-color: transparent;
+    font-size: 170%;
+    background: -webkit-linear-gradient(left,#35d6d1 12%,#ecff28 88%) no-repeat;
+    // background: -webkit-linear-gradient(left,#ecff28 12%,#5000ff 88%) no-repeat;
+    -webkit-background-clip: text;
+    color: #5000ff;
+    // color:#e0043f;
+    -webkit-text-fill-color: transparent;
   }
 
   &.story-enter {
@@ -252,7 +261,11 @@ div.homepage {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: $greyBackground;
+  // background: $greyBackground;
+  // background-image: linear-gradient(to top, #65e8c8, #949697);
+  background-image: linear-gradient(to bottom, #404344, #949697);
+  background-image: linear-gradient(to bottom, #182023, #949697);
+  background-image: linear-gradient(to bottom, #182023, #576970);
   color: $stark;
   div.scrolldown {
     position: absolute;
@@ -389,7 +402,7 @@ span.innerpage {
     div.dropdown { background: #2d283e; } //
     div.dropdown { background: $blueblack; } //
     div.dropdown { background: $hovercolor; }
-    div.content { background: $greyBackground; } // $greyBackground;
+    div.content { background: $greyBackground;background-image: linear-gradient(to bottom, #182023, #576970); } // $greyBackground;
   }
   &.thinking {
     div.dropdown { background: #4cd3bb ; } // #4cd3bb mint
@@ -397,13 +410,16 @@ span.innerpage {
 
     div.dropdown { background: #2d283e; } //
     div.dropdown { background: $hovercolor; }
-    div.content { background: $greyBackground; } //
+    div.content { background: $greyBackground; background-image: linear-gradient(to bottom, #182023, #576970);} //
   }
   &.about {
     div.dropdown {  background: #314455;  } //
     div.dropdown { background: $hovercolor; }
     // div.content { background: #c96567;}
-    div.content { background: $greyBackground; } //
+    div.content {
+      background: $greyBackground;
+      background-image: linear-gradient(to bottom, #182023, #576970);
+    } //
   }
 
   &.SlideIn-appear {
@@ -578,7 +594,7 @@ span.loader {
   margin-top: 10px;
   // top: calc(50% - 25px);
   // left: calc(50% - 25px);
-  border: 5px solid $blueblack;
+  border: 5px solid $hovercolor;
   animation: loader 6s infinite ease-in;
 
 }
@@ -587,7 +603,7 @@ span.loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;
-  background-color: $blueblack;
+  background-color: $hovercolor;
   animation: loader-inner 3s infinite ease;
 }
 
@@ -701,6 +717,7 @@ section.grid {
   display: flex;
   margin-top: 60px;
   transition: 0.3s ease-out;
+  color: $blueblack;
 
   &:first-of-type {
     margin-top: 160px;
@@ -714,7 +731,7 @@ section.grid {
     // background: red;
     h2.sideHeading {
       float:right;
-      border-top: 3px solid $blueblack;
+      border-top: 3px solid $hovercolor;
       padding-top: 20px;
       padding-left: 30px;
       margin-top: 10px;
@@ -751,8 +768,8 @@ section.grid {
           left: 0px;
           right: 100%;
           bottom: -9px;
-          background: $blueblack;
-          height: 4px;
+          background: $hovercolor;
+          height: 5px;
           opacity: 0.9;
           transition-property: left right;
           transition-duration: 0.2s;
@@ -912,7 +929,7 @@ div.hoverSection {
   div.infoIcon {
     margin: 20px 40px 0 0;
     cursor: pointer;
-    border: 4px solid black;
+    border: 4px solid $hovercolor;
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -931,14 +948,14 @@ div.hoverSection {
       left: 30px;
       overflow: hidden;
       // transition: 0.1s ease-out;
-      border-left: 4px solid black;
+      border-left: 4px solid $hovercolor;
       // background: red;
       padding-left: 30px;
       height: 0%;
       transition: height 0.2s 0.3s ease;
     }
     &:hover {
-      background: black;
+      background: $hovercolor;
       margin-bottom: 190px;
         &::after{
           height: 60%;

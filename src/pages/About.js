@@ -62,7 +62,10 @@ export default class About extends Component {
   }
 
 
-  onChange = (isVisible) => console.log('Element is now %s', isVisible ? 'visible' : 'hidden')
+  onChange = (isVisible) => {
+    console.log(isVisible)
+
+  }
 
 
 
@@ -89,7 +92,6 @@ export default class About extends Component {
   render () {
     return [
       <PageTemplate key='about' page='about'>
-        {/* <VisibilitySensor onChange={this.onChange}></VisibilitySensor> */}
         <AboutSection x={this.state.scrollValue} refValue='one' sideHeading={null}>
           <h2 className='mainTitle'> We do loads of magical, extraordinary and amazing stuff that takes up at least three lines of writing.</h2>
         </AboutSection>
@@ -101,6 +103,7 @@ export default class About extends Component {
           Test 6 (anchor)
         </Link> */}
         {/* <VisibilitySensor onChange={this.onChange}> */}
+        <VisibilitySensor onChange={this.onChange}>
         <AboutSection x={this.state.scrollValue} refValue='two' sideHeading='Our story'>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -114,6 +117,7 @@ export default class About extends Component {
             <InfoIcon>Tempora, autem, eos. Nobis, voluptatum molestias animi porro doloribus consequatur, qui enim iusto sit sequi minus, asperiores eaque ullam tenetur nihil. Tempora, autem, eos.</InfoIcon>
           </div>
         </AboutSection>
+        </VisibilitySensor>
         {/* </VisibilitySensor> */}
 
         <AboutSection x={this.state.scrollValue} refValue='three' sideHeading='What we do'>
