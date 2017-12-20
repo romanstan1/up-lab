@@ -45,6 +45,16 @@ a {
   background: #4cd3bb;
   /* Gecko Browsers */ }
 
+div.draw-button {
+  bottom: 5px;
+  position: absolute;
+  font-size: 11px; }
+  div.draw-button div {
+    color: grey;
+    cursor: pointer; }
+    div.draw-button div:hover {
+      color: white; }
+
 div.nav {
   z-index: 1000;
   position: fixed;
@@ -61,7 +71,7 @@ div.nav {
     display: inline-block;
     position: relative;
     width: 40%;
-    padding-right: 7.5%;
+    padding-right: calc(7.5% + 9px);
     text-align: right; }
     div.nav div.logo a {
       font-size: 16px;
@@ -75,15 +85,19 @@ div.nav {
         color: white;
         margin-left: 2px; }
       div.nav div.logo a span.square {
+        position: absolute;
         color: white;
         margin-left: 3px;
         background: #66fcf1;
         background: #00848b;
         transition: 0.2s ease;
         width: 6px;
-        height: 6px; }
+        height: 6px;
+        bottom: 5px; }
       div.nav div.logo a:hover span.square {
-        background: #4cd3bb; }
+        background: #4cd3bb;
+        width: 12px;
+        height: 12px; }
   div.nav div.navitems {
     display: inline-block;
     width: 60%; }
@@ -370,9 +384,15 @@ span.loader-inner {
   background-color: #011727;
   animation: loader-inner 3s infinite ease; }
 
-canvas {
-  width: 100%;
+div.dot-canvas, div.scene {
+  display: inline-block;
+  width: calc(40% - 12px);
   height: 100%; }
+  div.dot-canvas canvas, div.scene canvas {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    overflow: hidden; }
 
 div.footer {
   height: 14vh;

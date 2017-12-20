@@ -7,12 +7,14 @@ $stark: #e7dfdd;
 $theturk: #66fcf1;
 
 $blueblack: #011727;
+// $blueblack: white;
 
 $relturk: #00848b;
 // $hovercolor:#00cdd7;
 $hovercolor:#4cd3bb;
 // $greyBackground:#d1d7e0;
 $greyBackground:#eae5e4;
+// $greyBackground:white;
 
 $aGrey: #858585;
 
@@ -71,7 +73,18 @@ a {
   mix-blend-mode: difference;
   background: $hovercolor; /* Gecko Browsers */
 }
-
+div.draw-button {
+  bottom: 5px;
+  position: absolute;
+  font-size:11px;
+  div {
+    color: grey;
+    cursor: pointer;
+    &:hover {
+        color: white;
+    }
+  }
+}
 div.nav {
   z-index: 1000;
   position: fixed;
@@ -86,12 +99,14 @@ div.nav {
   // opacity: 0.7;
   padding-top: 60px;
   mix-blend-mode: difference;
+    // display: none;
   div.logo {
     display: inline-block;
     position: relative;
     width: 40%;
-    padding-right: 7.5%;
+    padding-right: calc(7.5% + 9px);
     text-align: right;
+    // display: none;
     // background: green;
     // mix-blend-mode: difference;
     a {
@@ -110,6 +125,7 @@ div.nav {
         margin-left: 2px;
       }
       span.square {
+        position: absolute;
         color:white;
         margin-left: 3px;
         background: $theturk;
@@ -117,12 +133,15 @@ div.nav {
         transition: 0.2s ease;
         width: 6px;
         height: 6px;
+        // right: 0;
+        bottom: 5px;
       }
       &:hover {
         span.square {
           background: $hovercolor;
-          // width: 12px;
-          // height: 12px;
+          // transform: scale(2, 2);
+          width: 12px;
+          height: 12px;
         }
       }
     }
@@ -572,13 +591,23 @@ span.loader-inner {
   animation: loader-inner 3s infinite ease;
 }
 
-canvas {
+div.dot-canvas, div.scene {
+  display: inline-block;
   // border: 13px solid ghostwhite;
-  width: 100%;
+  width: calc(40% - 12px);
+  // height: 100%;
   height: 100%;
   // margin: 13px;
   // background: $blueblack;
-  // background: grey;
+  // background: $blueblack;
+  canvas {
+    height: 100%;;
+    width: 100%;
+    // background: #070a0f;
+    // background-image: radial-gradient(#273447, #17202d, #070a0f);
+    margin: 0px;
+    overflow: hidden;
+  }
 }
 
 div.footer {
@@ -591,6 +620,7 @@ div.footer {
     top: 7vh;
     left:0;
     transform: translate(0%, -50%);
+    // display: none;
     a {
       font-size: 16px;
       padding: 2px 5px;

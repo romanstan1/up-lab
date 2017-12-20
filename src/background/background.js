@@ -34,9 +34,9 @@ export function init () {
     var light = new THREE.HemisphereLight(0xffffff, 0x0C056D, 0.6);
     scene.add(light);
 
-    radius = 14;
+    radius = 5;
     camera = new THREE.PerspectiveCamera(10, width / height, 0.1, 2000);
-    camera.position.set(0, 0, 80);
+    camera.position.set(0, 0, 120);
 
     loader = new THREE.TextureLoader();
     loader.crossOrigin = "Anonymous";

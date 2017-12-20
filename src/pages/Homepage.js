@@ -3,7 +3,7 @@ import Nav from '../molecules/Nav'
 import {PageStory} from '../molecules/PageTitle'
 import {init, stopAnimation} from '../background/background.js'
 import LoadingSpinner from '../molecules/LoadingSpinner'
-
+import DotAnimation from '../molecules/DotAnimation'
 
 const story = [
   <h2 className='title' key='0'><div>We provide the <br/><span>sandbox</span> and the <span>toys</span> <br/>to <span className='colorful'>create.</span></div></h2>,
@@ -21,7 +21,7 @@ class Background extends Component {
     return false;
   }
   render() {
-    return <canvas className="scene scene--full" id="scene"></canvas>
+    return <div className="scene scene--full" id="scene"></div>
   }
 }
 
@@ -51,15 +51,15 @@ export default class Homepage extends Component {
   }
 
   componentDidMount () {
-    const html = document.getElementById("html")
-    html.className = 'homepage'
+    // const html = document.getElementById("html")
+    // html.className = 'homepage'
     // init()
   }
 
   componentWillUnmount () {
-    const html = document.getElementById("html")
-    html.className = ''
-    stopAnimation()
+    // const html = document.getElementById("html")
+    // html.className = ''
+    // stopAnimation()
   }
 
   render () {
@@ -68,7 +68,8 @@ export default class Homepage extends Component {
 			<div onWheel={this.onScroll} key='homepage' className='homepage'>
 				<Nav/>
         <PageStory>{story[this.state.storyNumber]}</PageStory>
-        <Background />
+        {/* <Background /> */}
+        <DotAnimation/>
         <div className="scrolldown">
           <div></div>Scroll down
         </div>
