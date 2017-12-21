@@ -38,8 +38,9 @@ export function CreateCubes(cubes, scene, camera, renderer) {
     const cubeMaterial = new THREE.MeshStandardMaterial( {
       // color: item.index%halfRowLength === 0? 0xffffff : 0x07ccc5,
       color: item.index%halfRowLength === (halfRowLength - 1)?
-      0x00030a : item.index%halfRowLength === 0? // b20059 is pink
-      0x00030a : 0x00030a, // ffffff is white
+      0x5000ff : item.index%halfRowLength === 0? // b20059 is pink
+      0x5000ff : 0x5000ff,
+      emissive: 0x4300d6, // ffffff is white
       // wireframe: true,
       // wireframe_linewidth: 2,
       // color: 0xb20059,
@@ -70,9 +71,9 @@ export function CreateCubes(cubes, scene, camera, renderer) {
     var geo = new THREE.EdgesGeometry( cube.geometry ); // or WireframeGeometry
     var mat = new THREE.LineBasicMaterial( {
       // color: 0xffffff,
-      color: 0x00030a,
+      color: 0x4300d6,
       linewidth: 1,
-      blending: THREE.AdditiveBlending, transparent: true } );
+      blending: THREE.AdditiveBlending, transparent: false } );
     var wireframe = new THREE.LineSegments( geo, mat );
    cube.add( wireframe );
  })
@@ -84,7 +85,7 @@ export function CreateCubes(cubes, scene, camera, renderer) {
 
 export function CreateLights(scene, helper) {
 
-  let light = new THREE.AmbientLight( 0xffffff, 0.5 );
+  let light = new THREE.AmbientLight( 0xffffff, 0.01 );
   // var light = new THREE.HemisphereLight(0xaaaaaa,0x000000, .9)
   scene.add( light );
 
@@ -105,7 +106,7 @@ export function CreateLights(scene, helper) {
   spotLight.shadow.camera.fov = 30;
   spotLight.decay = 0;
 
-  scene.add( spotLight );
+  // scene.add( spotLight );
 
   let spotLight2 = new THREE.SpotLight( 0xffffff, 1.0 );
   spotLight2.position.set( 0, 1000, 500 );
@@ -124,7 +125,7 @@ export function CreateLights(scene, helper) {
   spotLight2.shadow.camera.fov = 30;
   spotLight2.decay = 0;
 
-  scene.add( spotLight2 );
+  // scene.add( spotLight2 );
 
   if(helper) {
     let lightHelper = new THREE.SpotLightHelper( spotLight );

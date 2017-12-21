@@ -16,9 +16,9 @@ const LandingSection = ({children}) =>
 </section>
 
 const ContactSection = () =>
-<section className='grid contact'>
+<section className='contact'>
     <div className='column1'>
-      {/* <div className='image'><img ssrc={contactImageOne} alt=''/></div> */}
+      <div className='image'><img ssrc={contactImageOne} alt=''/></div>
     </div>
     <div className='column2'>
       col 2
@@ -29,7 +29,7 @@ export default class Contact extends Component {
   render () {
     return [
       <PageTemplate key='contact' page='contact'>
-          <LandingSection>Give us a call or send us an email at <br/><a href="mailto:hello@uniprosandbox.com?Subject=Hello">hello@uniprosandbox.com</a></LandingSection>
+          <LandingSection>Give us a call or send us an email at <a href="mailto:hello@uniprosandbox.com?Subject=Hello">hello@uniprosandbox.com</a></LandingSection>
           {/* <ContactSection></ContactSection> */}
       </PageTemplate>,
       <Nav/>

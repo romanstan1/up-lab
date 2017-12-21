@@ -11,28 +11,22 @@ const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
 
 
 const LandingSection = ({children}) =>
-<section className='grid thinking'>
-  <div className='column1'></div>
-  <div className='column2'>
+<section className='landingSection'>
     <h2 className='mainTitle'>{children}</h2>
-  </div>
 </section>
 
+{/* <section className='grid thinking'> */}
 const ThinkingSection = ({children}) =>
-<section className='grid thinking'>
+<Link to={`/thinking/${children.slug}`} className='blogPost'>
     <div className='column1'>
       <h2 className='sideHeading'>{children.seo_title}</h2>
       <p className="summary">{children.summary}</p>
-
-      <Link to={`/thinking/${children.slug}`} className="link">
-        Read more
-      </Link>
-
     </div>
     <div className='column2'>
       <div className='image'><img src={children.featured_image} alt={children.seo_title}/></div>
     </div>
-</section>
+</Link>
+// </section>
 
 
 class Thinking extends Component {
