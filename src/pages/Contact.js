@@ -5,32 +5,35 @@ import {Link} from 'react-router-dom'
 import contactImageOne from '../assets/contact-image.jpg';
 
 
-const LandingSection = ({children}) =>
-<section className='grid contact'>
-  <div className='column1'>
-    {/* <div className='image'><img src={contactImageOne} alt=''/></div> */}
-  </div>
-  <div className='column2'>
-    <h2 className='mainTitle'>{children}</h2>
-  </div>
-</section>
-
-const ContactSection = () =>
+const ContactSection = ({children}) =>
 <section className='contact'>
-    <div className='column1'>
-      <div className='image'><img ssrc={contactImageOne} alt=''/></div>
+    <div className='col1'>
+
     </div>
-    <div className='column2'>
-      col 2
-    </div>
+    <div className='col2'>{children}</div>
 </section>
 
 export default class Contact extends Component {
   render () {
     return [
       <PageTemplate key='contact' page='contact'>
-          <LandingSection>Give us a call or send us an email at <a href="mailto:hello@uniprosandbox.com?Subject=Hello">hello@uniprosandbox.com</a></LandingSection>
-          {/* <ContactSection></ContactSection> */}
+        <section className='contact'>
+          <div className='row1'>
+            Give us a call or <br/>send us an email at <a href="mailto:sandbox@theuniprogroup.com?Subject=Hello">sandbox@theuniprogroup.com</a>
+          </div>
+          <div className='row2'>
+            <div>
+              <h3>Visit us</h3>
+              <span>
+                44 77 555 000 999 <br/>
+                Unipro at Wework <br/>
+                St Katharine's Way <br/>
+                St Katharine's & Wapping <br/>
+                London E1W 1UN
+              </span>
+            </div>
+          </div>
+        </section>
       </PageTemplate>,
       <Nav/>
     ]

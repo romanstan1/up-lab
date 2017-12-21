@@ -10,16 +10,19 @@ import moment from 'moment'
 const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
 
 const SinglePost = ({singlePost}) =>
-  <section className='grid singlepost' >
-    <div className='column1'>
-      <h3 className='author'> By {singlePost.author.first_name} {singlePost.author.last_name}</h3>
-      <h3 className='date'>Posted on {moment(singlePost.created).format('Do MMM YYYY')}</h3>
-      <div className='image'><img src={singlePost.featured_image} alt={singlePost.seo_title}/></div>
+  <section className='singlepost' >
+    <div>
+      <div className='col1'>
+        <div className='image'><img src={singlePost.featured_image} alt={singlePost.seo_title}/></div>
+        <h3 className='author'> By {singlePost.author.first_name} {singlePost.author.last_name}</h3>
+        <h3 className='date'>Posted on {moment(singlePost.created).format('Do MMM YYYY')}</h3>
+      </div>
+      <div className='col2'>
+        <h2 className='posttitle'>{singlePost.title}</h2>
+        <div className='inner' dangerouslySetInnerHTML={{__html: singlePost.body}}/>
+      </div>
     </div>
-    <div className='column2'>
-      <h2 className='posttitle'>{singlePost.title}</h2>
-      <div className='inner' dangerouslySetInnerHTML={{__html: singlePost.body}}/>
-    </div>
+    <footer><div>This is a footer <span className="square"></span></div></footer>
   </section>
 
 class Postpage extends Component {

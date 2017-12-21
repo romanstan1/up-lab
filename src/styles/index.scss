@@ -40,6 +40,7 @@ body {
   padding: 0;
   font-size: 16px;
   position: relative;
+  width: 100vw;
   // height: 150vh;
   // background: red;
   // border: 25px solid ghostwhite;
@@ -70,13 +71,14 @@ a {
 }
 
 ::selection {
-  mix-blend-mode: difference;
-  background: $hovercolor;
-  color:red;/* WebKit/Blink Browsers */
+  // mix-blend-mode: difference;
+  background:white;
+  color:$greyBackground;/* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  mix-blend-mode: difference;
-  background: $hovercolor; /* Gecko Browsers */
+  // mix-blend-mode: difference;
+  background:white;
+  color:$greyBackground;
 }
 div.draw-button {
   bottom: 5px;
@@ -159,14 +161,9 @@ div.nav {
     text-align: right;
     div.item  {
       display: inline-block;
-      padding: 0;
+      padding: 0 3px;
       font-size: 0;
       margin-left: 35px;
-      // transform: translate(50%, 50%);
-      // &.contact { right: 33px;} // width 66px at 13px font-size
-      // &.thinking { right: calc(35px + 66px + 33px);}   // width 70px
-      // &.about { right: calc(35px + 66px + 33px + 70px + 25px);}
-      // background: blue;
       a {
         // font-family: 'dinmedium', sans-serif;
         text-transform: uppercase;
@@ -371,6 +368,7 @@ span.innerpage {
   position: relative;
   display: block;
   height: 100%;
+  width: calc(100vw - 0px);
   overflow: hidden;
   div.dropdown {
     width: 100%;
@@ -381,43 +379,37 @@ span.innerpage {
   }
   div.content {
     height: 100%;
-    width: 100%;
+    width: calc(100% - 0px);
     transition: height 1.2s ease;
     transition: padding-top 2s ease-out;
     padding-top: 0vh;
     background: white;
     position: relative;
-    overflow-x: scroll;
-
-    &::-webkit-scrollbar {
-      // width: 5px;  /* remove scrollbar space */
-      // background: $hovercolor;  /* optional: just make scrollbar invisible */
-    }
+    overflow-y: scroll;
   }
 
   &.contact {
-    div.dropdown { background: #2d283e; } //
-    div.dropdown { background: $blueblack; } //
     div.dropdown { background: $hovercolor; }
     div.content { background: $greyBackground;
-      // background-image: linear-gradient(to bottom, #182023, #576970);
-    } // $greyBackground;
+    }
   }
   &.thinking {
-    div.dropdown { background: #4cd3bb ; } // #4cd3bb mint
-    div.content { background: #eae5e4; } // #eae5e4 grey
 
-    div.dropdown { background: #2d283e; } //
     div.dropdown { background: $hovercolor; }
-    div.content { background: $greyBackground;
-      // background-image: linear-gradient(to bottom, #182023, #576970);
+    div.content {
+      background: $greyBackground;
       &::-webkit-scrollbar {
+        position: relative;
         width: 5px;  /* remove scrollbar space */
-        background: transparent;  /* optional: just make scrollbar invisible */
+        background: transparent;
+        overflow: visible;/* optional: just make scrollbar invisible */
+        transition: 3s ease;
       }
       &::-webkit-scrollbar-thumb {
         background: $hovercolor;
         width: 5px;
+        height: 100px;
+        position: absolute;
       }
       &::-webkit-scrollbar-corner {
       background: transparent;
@@ -445,6 +437,62 @@ span.innerpage {
   }
 }
 
+section.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+  flex-direction: column;
+  color: white;
+  div.row2 {
+    padding-top: 45px;
+    align-self: center;
+    width: 60%;
+    // background: red;
+    font-size: 20px;
+    h3 {
+      padding-bottom: 10px;
+      // font-size: 12px;
+    }
+    span {
+
+    }
+  }
+  div.row1 {
+    align-self: center;
+    width: 80%;
+    font-size: 55px;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
+    a {
+      padding: 2px 0;
+      color: white;
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: 100;
+        left: 0px;
+        right: 100%;
+        bottom: -9px;
+        background: $hovercolor;
+        height: 5px;
+        opacity: 0.9;
+        transition-property: left right;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+        // right:0;
+      }
+      &:hover {
+        &:after {
+          right:-1px;
+        }
+      }
+    }
+  }
+}
 section.landingSection {
   width: 60%;
   position: relative;
@@ -461,7 +509,7 @@ a.blogPost {
   position: relative;
   margin: 7% auto;
   font-size: 0px;
-  width: 85%;
+  width: 85vw;
   text-align: left;
   overflow: hidden;
   > div {
@@ -475,7 +523,7 @@ a.blogPost {
       height: 100%;
       display: block;
       left: 50%;
-      transform: translate(-50%,0 );
+      transform: translate(-50%,0);
     }
   }
   &:nth-of-type(n) {
@@ -515,7 +563,7 @@ a.blogPost {
       top: 1px;
       font-size: 18px;
       z-index: 10;
-      transition: 0.6s ease;
+      transition: 0.4s ease;
       text-transform: uppercase;
     }
     p.summary {
@@ -523,10 +571,11 @@ a.blogPost {
       position: absolute;
       left: 0px;
       top: 40px;
+      // background: red;
       font-size: 14px;
       z-index: 10;
       color: white;
-      transition: 0.6s ease;
+      transition: 0.4s ease;
       width: 80%;
       text-align: left;
     }
@@ -547,6 +596,77 @@ a.blogPost {
   }
 }
 
+
+section.singlepost {
+  // padding-top: 10% white;
+  border-top: 120px solid $greyBackground;
+  width: 100%;
+  background: white;
+  overflow-y: scroll;
+  > div {
+    padding: 7.5%;
+    display: flex;
+  }
+  &::-webkit-scrollbar {
+    width: 5px;
+    background: transparent;
+    overflow: visible;/* optional: just make scrollbar invisible */
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $hovercolor;
+    width: 5px;
+    height: 50px;
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+  div.col1 {
+    width: 35%;
+    padding-right: 0%;
+    padding-top: 0px;
+    h3 {
+      text-align: right;
+      color: $greyBackground;
+      font-size: 16px;
+      padding: 5px 0;
+      &.author {
+        font-style: italic;
+        padding-bottom: 10px;
+      }
+    }
+    div.image {
+      width: 100%;
+      img {
+        margin: 10px 0 20px 0;
+        width: 100%;
+      }
+    }
+  }
+  div.col2 {
+    width: 65%;
+    padding-left:8%;
+    // background: red;
+    h2.posttitle {
+      font-size: 48px;
+      margin-bottom: 35px;
+    }
+    div.inner {
+      color: $greyBackground;
+      width: 100%;
+      h1, h2, h3, h4 {
+        padding-top: 10px;
+        margin: 10px 0;
+      }
+      p {
+        margin: 0px 0 15px 0;
+      }
+      img {
+        margin: 10px 0;
+        width: 100%;
+      }
+    }
+  }
+}
 
 span.loader {
   display: inline-block;
@@ -588,46 +708,34 @@ div.dot-canvas, div.scene {
   }
 }
 
-div.footer {
-  height: 14vh;
-  background: $blueblack;
+footer {
+  margin-top: calc(7.5% + 30px);
+  height: 135px;
+  width: 100%;
+  background: $hovercolor;
   position: relative;
-  div.logo {
-    display: inline-block;
-    position: absolute;
-    top: 7vh;
-    left:0;
-    transform: translate(0%, -50%);
-    // display: none;
-    a {
-      font-size: 16px;
-      padding: 2px 5px;
-      span {
-        color:$aGrey;
-        display: inline-block;
-        letter-spacing: 3px;
-      }
-      span.sandbox {
-        font-family: 'dinmedium', sans-serif;
-        color:$stark;
-        margin-left: 2px;
-      }
-      span.square {
-        color:white;
-        margin-left: 3px;
-        background: $theturk;
-        background: $relturk;
-        transition: 0.2s ease;
-        width: 6px;
-        height: 6px;
-      }
-      &:hover {
-        span.square {
-          background: $hovercolor;
-          width: 12px;
-          height: 12px;
-        }
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  // mix-blend-mode: difference;
+  div {
+    height: 18px;
+    position: relative;
+    // background: red;
+    span.square {
+      right: -20px;
+      position: absolute;
+      color:white;
+      margin-left: 3px;
+      background: $theturk;
+      background: $relturk;
+      background: $greyBackground;
+      transition: 0.2s ease;
+      width: 14px;
+      height: 14px;
+      // right: 0;
+      bottom: 1px;
     }
   }
 }
@@ -651,14 +759,24 @@ div.panel {
   position: relative;
   z-index: 2;
   width: 48%;
-  // &::-webkit-scrollbar {
-  //   width: 5px;  /* remove scrollbar space */
-  //   background: white;  /* optional: just make scrollbar invisible */
-  // }
-  // justify-content: center;
-  // align-content: center;
+  overflow-y: scroll;
   align-self: center;
-  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    position: relative;
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;
+    overflow: visible;/* optional: just make scrollbar invisible */
+    transition: 3s ease;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    width: 12px;
+    height: 100px;
+    position: absolute;
+  }
+  &::-webkit-scrollbar-corner {
+    background: transparent;
+  }
   &:first-of-type { margin-left: 7.5%;}
   &:last-of-type { margin-right: 7.5%;}
   h2 {
@@ -670,17 +788,17 @@ div.panel {
   }
   div.paneltext {
     color: white;
-    font-size: 100%;
-    margin-top: 10%;
+    font-size: 0%;
+    margin-top: 30px;
     transition: 0.3s ease;
     overflow: hidden;
-    display: block ;
-    // height: 100%;
+    display: block;
+    height: 10%;
     overflow: hidden;
     // background: red;
     width: 100%;
-    transform: translate(0, 50%);
-    transition: 0.4s ease;
+    // transform: translate(0, 50%);
+    transition: 0.2s 0.2s ease;
     opacity: 0;
     h3 {
       font-size: 140%;
@@ -693,16 +811,28 @@ div.panel {
     img {
       margin: 15px 0;
       width: 100%;
+      height:0%;
     }
   }
   &:hover {
     // margin: 10vh 0% 0 0%;
+    &::-webkit-scrollbar {
+      width: 8px;  /* remove scrollbar space */
+    }
+    &::-webkit-scrollbar-thumb {
+      background: white;
+    }
     width: 250%;
     height: 75%;
     padding: 3%;
     div.paneltext {
+      font-size: 100%;
       opacity: 1;
-      transform: translate(0, 0%);
+      height: auto;
+      // transform: translate(0, 0%);
+      img {
+        height:auto;
+      }
     }
   }
 }

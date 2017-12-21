@@ -55,7 +55,7 @@ class Thinking extends Component {
           <ThinkingSection key={i}>{post}</ThinkingSection>)
           : <LoadingSpinner/>
         }
-        <br/><br/><br/><br/>
+        <footer><div>This is a footer <span className="square"></span></div></footer>
       </PageTemplate>,
       <Nav key='nav'/>
     ]
