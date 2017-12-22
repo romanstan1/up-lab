@@ -1,25 +1,8 @@
 
-$void: #0e0b16;
-$niceblue: #0e01b6;
-$jewel: #4717F6;
-$fuschia: #a239ca;
 $stark: #e7dfdd;
-$theturk: #66fcf1;
-
-$blueblack: #011727;
 $blueblack: white;
-
-$relturk: #00848b;
-// $hovercolor:#00cdd7;
-$hovercolor:#4cd3bb;
-$hovercolor:#65e8c8;
 $hovercolor:#5000ff;
-// $greyBackground:#d1d7e0;
-$greyBackground:#eae5e4;
 $greyBackground:#182023;
-// $greyBackground:white;
-
-$aGrey: #858585;
 
 * {
   box-sizing: border-box;
@@ -49,9 +32,6 @@ body {
 div.border {
   position: relative;
   width: 100%;
-  border: 12px solid white;
-  border: 0px solid $hovercolor;
-  // border: 15px solid #dfdee8;
   height: 100vh;
   div.wrapper {
     position: relative;
@@ -72,12 +52,12 @@ a {
 
 ::selection {
   // mix-blend-mode: difference;
-  background:white;
+  background:$hovercolor;
   color:$greyBackground;/* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   // mix-blend-mode: difference;
-  background:white;
+  background:$hovercolor;
   color:$greyBackground;
 }
 div.draw-button {
@@ -98,7 +78,6 @@ div.nav {
   top: 0;
   width: calc(100%);
   max-width: 1920px;
-  // background: blue;
   left: calc(50%);
   transform: translate(-50%,0);
   display: flex;
@@ -106,7 +85,6 @@ div.nav {
   // opacity: 0.7;
   padding-top: 60px;
   // mix-blend-mode: difference;
-    // display: none;
   div.logo {
     display: inline-block;
     position: relative;
@@ -116,8 +94,6 @@ div.nav {
     // display: none;
     // mix-blend-mode: difference;
     a {
-      // background: blue;
-      // mix-blend-mode: difference;
       font-size: 16px;
       padding: 2px 0px;
       span {
@@ -134,8 +110,6 @@ div.nav {
         position: absolute;
         color:white;
         margin-left: 3px;
-        background: $theturk;
-        background: $relturk;
         background: $hovercolor;
         transition: 0.2s ease;
         width: 6px;
@@ -146,7 +120,6 @@ div.nav {
       &:hover {
         span.square {
           background: $hovercolor;
-          // transform: scale(2, 2);
           width: 12px;
           height: 12px;
         }
@@ -170,9 +143,7 @@ div.nav {
         text-transform: capitalize;
         padding: 2px 1px;
         font-size: 17px;
-        color:$relturk;
         color: $stark;
-        // letter-spacing: 3px;
         transition: 0.2s ease;
         position: relative;
 
@@ -189,7 +160,6 @@ div.nav {
           transition-property: left right;
           transition-duration: 0.2s;
           transition-timing-function: ease-out;
-          // right:0;
         }
         &:hover {
           &:after {
@@ -201,11 +171,9 @@ div.nav {
         &:after {
           right:-1px;
         }
-        // letter-spacing: 2px;
       }
     }
   }
-
 }
 
 h2.title {
@@ -228,9 +196,6 @@ h2.title {
     font-size: 140%;
     color: $hovercolor;
     line-height: 75px;
-
-    // color: #1ce0ea;
-    // color: $blueblack;
   }
   span.colorful {
     font-size: 170%;
@@ -318,45 +283,6 @@ div.homepage {
   }
 }
 
-@-webkit-keyframes sdb05 {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-@keyframes sdb05 {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-
 div.page {
   height: 100%;
   > span {
@@ -368,7 +294,7 @@ span.innerpage {
   position: relative;
   display: block;
   height: 100%;
-  width: calc(100vw - 0px);
+  width: calc(100%);
   overflow: hidden;
   div.dropdown {
     width: 100%;
@@ -385,7 +311,7 @@ span.innerpage {
     padding-top: 0vh;
     background: white;
     position: relative;
-    overflow-y: scroll;
+    // overflow-y: scroll;
   }
 
   &.contact {
@@ -397,6 +323,7 @@ span.innerpage {
 
     div.dropdown { background: $hovercolor; }
     div.content {
+      overflow-y: scroll;
       background: $greyBackground;
       &::-webkit-scrollbar {
         position: relative;
@@ -419,12 +346,10 @@ span.innerpage {
   &.about {
     div.dropdown {  background: #314455;  } //
     div.dropdown { background: $hovercolor; }
-    // div.content { background: #c96567;}
     div.content {
       background: $greyBackground;
       display: flex;
-      // background-image: linear-gradient(to bottom, #182023, #576970);
-    } //
+    }
   }
 
   &.SlideIn-appear {
@@ -509,21 +434,28 @@ a.blogPost {
   position: relative;
   margin: 7% auto;
   font-size: 0px;
-  width: 85vw;
+  width: 85%;
   text-align: left;
-  overflow: hidden;
-  > div {
+  // overflow: hidden;
+  div.column1 {
+    width: 50%;
+    position: relative;
+    // background: red;
+  }
+  div.image {
     position: relative;
     width: 50%;
     height: 400px;
-    overflow: hidden;
-    img {
-      position: absolute;
-      transition: 0.6s ease;
+    // overflow: hidden;
+    background: red;
+    div.imageinner {
+      width: 100%;
       height: 100%;
-      display: block;
-      left: 50%;
-      transform: translate(-50%,0);
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position:center;
+      overflow: hidden;
     }
   }
   &:nth-of-type(n) {
@@ -728,8 +660,6 @@ footer {
       position: absolute;
       color:white;
       margin-left: 3px;
-      background: $theturk;
-      background: $relturk;
       background: $greyBackground;
       transition: 0.2s ease;
       width: 14px;

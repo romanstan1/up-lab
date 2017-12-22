@@ -15,25 +15,24 @@ const LandingSection = ({children}) =>
     <h2 className='mainTitle'>{children}</h2>
 </section>
 
-{/* <section className='grid thinking'> */}
 const ThinkingSection = ({children}) =>
 <Link to={`/thinking/${children.slug}`} className='blogPost'>
-    <div className='column1'>
-      <h2 className='sideHeading'>{children.seo_title}</h2>
-      <p className="summary">{children.summary}</p>
+  <div className='column1'>
+    <h2 className='sideHeading'>{children.seo_title}</h2>
+    <p className="summary">{children.summary}</p>
+  </div>
+  <div className='image'>
+    <div className='imageinner' style={{ backgroundImage: "url(" + children.featured_image + ")"}}>
+      {/* <img src={children.featured_image} alt={children.seo_title}/> */}
     </div>
-    <div className='column2'>
-      <div className='image'><img src={children.featured_image} alt={children.seo_title}/></div>
-    </div>
+  </div>
 </Link>
-// </section>
 
 
 class Thinking extends Component {
 
   fetchPosts = (page, replace) =>{
     butter.post.list({page: page, page_size: 8}).then(response => {
-      console.log("response",response)
       this.setState({page: response.data.meta.next_page})
       this.props.dispatch(loadBlogPosts(response.data, replace))
     });

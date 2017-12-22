@@ -20,8 +20,6 @@ body {
 div.border {
   position: relative;
   width: 100%;
-  border: 12px solid white;
-  border: 0px solid #5000ff;
   height: 100vh; }
   div.border div.wrapper {
     position: relative;
@@ -37,12 +35,12 @@ a {
   text-decoration: none; }
 
 ::selection {
-  background: white;
+  background: #5000ff;
   color: #182023;
   /* WebKit/Blink Browsers */ }
 
 ::-moz-selection {
-  background: white;
+  background: #5000ff;
   color: #182023; }
 
 div.draw-button {
@@ -87,8 +85,6 @@ div.nav {
         position: absolute;
         color: white;
         margin-left: 3px;
-        background: #66fcf1;
-        background: #00848b;
         background: #5000ff;
         transition: 0.2s ease;
         width: 6px;
@@ -113,7 +109,6 @@ div.nav {
         text-transform: capitalize;
         padding: 2px 1px;
         font-size: 17px;
-        color: #00848b;
         color: #e7dfdd;
         transition: 0.2s ease;
         position: relative; }
@@ -214,34 +209,6 @@ div.homepage {
       div.homepage div.bubbles div.stage {
         background: white; }
 
-@-webkit-keyframes sdb05 {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  50% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0; } }
-
-@keyframes sdb05 {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  50% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0; } }
-
 div.page {
   height: 100%; }
   div.page > span {
@@ -252,7 +219,7 @@ span.innerpage {
   position: relative;
   display: block;
   height: 100%;
-  width: calc(100vw - 0px);
+  width: calc(100%);
   overflow: hidden; }
   span.innerpage div.dropdown {
     width: 100%;
@@ -267,8 +234,7 @@ span.innerpage {
     transition: padding-top 2s ease-out;
     padding-top: 0vh;
     background: white;
-    position: relative;
-    overflow-y: scroll; }
+    position: relative; }
   span.innerpage.contact div.dropdown {
     background: #5000ff; }
   span.innerpage.contact div.content {
@@ -276,6 +242,7 @@ span.innerpage {
   span.innerpage.thinking div.dropdown {
     background: #5000ff; }
   span.innerpage.thinking div.content {
+    overflow-y: scroll;
     background: #182023; }
     span.innerpage.thinking div.content::-webkit-scrollbar {
       position: relative;
@@ -366,21 +333,24 @@ a.blogPost {
   position: relative;
   margin: 7% auto;
   font-size: 0px;
-  width: 85vw;
-  text-align: left;
-  overflow: hidden; }
-  a.blogPost > div {
+  width: 85%;
+  text-align: left; }
+  a.blogPost div.column1 {
+    width: 50%;
+    position: relative; }
+  a.blogPost div.image {
     position: relative;
     width: 50%;
     height: 400px;
-    overflow: hidden; }
-    a.blogPost > div img {
-      position: absolute;
-      transition: 0.6s ease;
+    background: red; }
+    a.blogPost div.image div.imageinner {
+      width: 100%;
       height: 100%;
-      display: block;
-      left: 50%;
-      transform: translate(-50%, 0); }
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden; }
   a.blogPost:nth-of-type(n) {
     transition: 0.3s ease-out;
     cursor: pointer; }
@@ -535,8 +505,6 @@ footer {
       position: absolute;
       color: white;
       margin-left: 3px;
-      background: #66fcf1;
-      background: #00848b;
       background: #182023;
       transition: 0.2s ease;
       width: 14px;
