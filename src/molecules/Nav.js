@@ -11,6 +11,14 @@ const NavLink = ({text, selected, children}) => {
       </div>
     )
 }
+const NavLinkBurger = ({text, selected, children}) => {
+  const active = selected === text? `burgeritem ${text} active` : `burgeritem ${text}`
+  return (
+      <div className={active} data-value={text}>
+        <Link to={`/${text}`}>{children || text}</Link>
+      </div>
+    )
+}
 
 class Nav extends Component {
 
@@ -22,6 +30,19 @@ class Nav extends Component {
         <div className='navitems'>
           {['about','thinking', 'contact'].map(item =>
             <NavLink key={item} selected={selected} text={item}/>)}
+            <div className='burger'>
+              <input className='burger' type="checkbox"/>
+              <span></span>
+              <span></span>
+              <span></span>
+              <div className='burgerPopOut'>
+                <div>
+                  {['about','thinking', 'contact'].map(item =>
+                    <NavLinkBurger key={item} selected={selected} text={item}/>
+                  )}
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     )

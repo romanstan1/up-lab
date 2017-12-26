@@ -86,6 +86,8 @@ div.nav {
   padding-top: 60px;
   // mix-blend-mode: difference;
   div.logo {
+    // background: grey;
+    z-index: 2000;
     display: inline-block;
     position: relative;
     width: 50%;
@@ -94,6 +96,7 @@ div.nav {
     // display: none;
     // mix-blend-mode: difference;
     a {
+      // background: red;
       font-size: 16px;
       padding: 2px 0px;
       span {
@@ -107,7 +110,7 @@ div.nav {
         margin-left: 2px;
       }
       span.square {
-        position: absolute;
+        position: relative;
         color:white;
         margin-left: 3px;
         background: $hovercolor;
@@ -115,7 +118,7 @@ div.nav {
         width: 6px;
         height: 6px;
         // right: 0;
-        bottom: 5px;
+        // bottom: 5px;
       }
       &:hover {
         span.square {
@@ -130,13 +133,15 @@ div.nav {
     display: inline-block;
     width: 50%;
     padding-right: 7.5%;
-    // background: red;
+    // background: grey;
     text-align: right;
     div.item  {
+      // background: red;
       display: inline-block;
       padding: 0 3px;
       font-size: 0;
       margin-left: 35px;
+      &:first-of-type { margin-left: 0px;}
       a {
         // font-family: 'dinmedium', sans-serif;
         text-transform: uppercase;
@@ -176,11 +181,115 @@ div.nav {
   }
 }
 
+  div.burger {
+    display: none;
+    position: relative;
+    top: 0px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    div.burgerPopOut {
+      position: fixed;
+      display: block;
+      top:0px;
+      width: 100%;
+      height: 0vh;
+      left: 0;
+      overflow: hidden;
+      transition: 0.2s ease-out;
+      > div {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        padding: 30vh 7.5%;
+        text-align: right;
+        background: $greyBackground;
+        height:calc(100vh);
+        div.burgeritem {
+          a {
+            text-transform: capitalize;
+            color: white;
+            font-size: 52px;
+            line-height: 80px;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              z-index: 100;
+              left: 0px;
+              right: 100%;
+              bottom: -11px;
+              background: $hovercolor;
+              height: 5px;
+              opacity: 0.9;
+              transition-property: left right;
+              transition-duration: 0.2s;
+              transition-timing-function: ease-out;
+            }
+          }
+          &.active a{
+            &:after {
+              right:-1px;
+            }
+          }
+        }
+      }
+    }
+    input {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      top: -7px;
+      left: -3px;
+      cursor: pointer;
+      opacity: 0; /* hide this */
+      z-index: 2; /* and place it over the hamburger */
+      -webkit-touch-callout: none;
+    }
+    span {
+      display: block;
+      width: 33px;
+      height: 2px;
+      position: relative;
+      background: white;
+      z-index: 1;
+      transform-origin: 2px 0px;
+      margin-bottom: 6px;
+      transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+      background: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    span:nth-child(4) {
+      margin-bottom: 0px;
+    }
+
+    input:checked ~ span {
+      transform: rotate(45deg) translate(-3px, -1px);
+    }
+    input:checked ~ div.burgerPopOut {
+      display: block;
+      height: calc(100vh);
+    }
+
+    input:checked ~ span:nth-child(3) {
+      opacity: 0;
+      transform: scale(0,0) ;
+    }
+
+    input:checked ~ span:nth-child(4) {
+      transform: rotate(-45deg) translate(-3px, -1px);
+    }
+  }
+
+
+
+
 h2.title {
   text-align: center;
   position: absolute;
   transition: 0.4s ease;
-  font-size: 30px;
+  font-size: 57px;
   display: block;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -189,7 +298,7 @@ h2.title {
   color: ghostwhite;
   mix-blend-mode: difference;
   div {
-    font-size: 160%;
+    font-size: 100%;
   }
   span {
     font-family: 'dinmedium', sans-serif;
@@ -316,8 +425,7 @@ span.innerpage {
 
   &.contact {
     div.dropdown { background: $hovercolor; }
-    div.content { background: $greyBackground;
-    }
+    div.content { background: $greyBackground; }
   }
   &.thinking {
 
@@ -341,7 +449,7 @@ span.innerpage {
       &::-webkit-scrollbar-corner {
       background: transparent;
       }
-    } //
+    }
   }
   &.about {
     div.dropdown {  background: #314455;  } //
@@ -355,6 +463,7 @@ span.innerpage {
   &.SlideIn-appear {
     div.dropdown { height: 0vh; }
     div.content  { height: 100%; padding-top: 100vh; }
+    &.thinking div.content::-webkit-scrollbar-thumb { background: transparent; }
   }
   &.SlideIn-appear.SlideIn-appear-active {
     div.dropdown { height: 100%; }
@@ -370,6 +479,7 @@ section.contact {
   height: 100%;
   flex-direction: column;
   color: white;
+  overflow: hidden;
   div.row2 {
     padding-top: 45px;
     align-self: center;
@@ -447,7 +557,6 @@ a.blogPost {
     width: 50%;
     height: 400px;
     // overflow: hidden;
-    background: red;
     div.imageinner {
       width: 100%;
       height: 100%;
@@ -493,7 +602,7 @@ a.blogPost {
       color: white;
       left: 0;
       top: 1px;
-      font-size: 18px;
+      font-size: 22px;
       z-index: 10;
       transition: 0.4s ease;
       text-transform: uppercase;
@@ -504,7 +613,7 @@ a.blogPost {
       left: 0px;
       top: 40px;
       // background: red;
-      font-size: 14px;
+      font-size: 16px;
       z-index: 10;
       color: white;
       transition: 0.4s ease;
@@ -577,9 +686,8 @@ section.singlepost {
   div.col2 {
     width: 65%;
     padding-left:8%;
-    // background: red;
     h2.posttitle {
-      font-size: 48px;
+      font-size: 57px;
       margin-bottom: 35px;
     }
     div.inner {
@@ -654,18 +762,18 @@ footer {
   div {
     height: 18px;
     position: relative;
-    // background: red;
+    font-size: 16px;
     span.square {
-      right: -20px;
+      right: -16px;
       position: absolute;
       color:white;
       margin-left: 3px;
       background: $greyBackground;
       transition: 0.2s ease;
-      width: 14px;
-      height: 14px;
+      width: 9px;
+      height: 9px;
       // right: 0;
-      bottom: 1px;
+      bottom: 2px;
     }
   }
 }
@@ -835,53 +943,9 @@ div.hoverSection {
 }
 
 @keyframes loader-inner {
-  0% {
-    height: 100%;
-  }
-
-  50% {
-    height: 0%;
-  }
-
-  100% {
-    height: 100%;
-  }
-}
-
-@font-face {
-    font-family: 'dinregular';
-    src: url('dinregularalternate-webfont.eot');
-    src: url('dinregularalternate-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dinregularalternate-webfont.woff2') format('woff2'),
-         url('dinregularalternate-webfont.woff') format('woff'),
-         url('dinregularalternate-webfont.ttf') format('truetype'),
-         url('dinregularalternate-webfont.svg#dinregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'dinregular';
-    src: url('dinregular-webfont.eot');
-    src: url('dinregular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dinregular-webfont.woff2') format('woff2'),
-         url('dinregular-webfont.woff') format('woff'),
-         url('dinregular-webfont.ttf') format('truetype'),
-         url('dinregular-webfont.svg#dinregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'dinregular';
-    src: url('dinmediumalternate-webfont.eot');
-    src: url('dinmediumalternate-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dinmediumalternate-webfont.woff2') format('woff2'),
-         url('dinmediumalternate-webfont.woff') format('woff'),
-         url('dinmediumalternate-webfont.ttf') format('truetype'),
-         url('dinmediumalternate-webfont.svg#dinregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  0% {height: 100%;}
+  50% { height: 0%;}
+  100% { height: 100%;}
 }
 
 @font-face {
@@ -909,42 +973,129 @@ div.hoverSection {
 
 }
 
-@font-face {
-    font-family: 'dinregular';
-    src: url('dinlightalternate-webfont.eot');
-    src: url('dinlightalternate-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dinlightalternate-webfont.woff2') format('woff2'),
-         url('dinlightalternate-webfont.woff') format('woff'),
-         url('dinlightalternate-webfont.ttf') format('truetype'),
-         url('dinlightalternate-webfont.svg#dinregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+
+@media (max-width:1600px) {
+
+  section.landingSection h2, h2.title {
+    font-size: 52px !important;
+  }
+
+  a.blogPost {
+    h2 { font-size: 20px !important;}
+    p { font-size: 16px !important; }
+  }
+
+  div.navitems {
+    div.item  {
+      a { font-size: 16px !important;}
+    }
+  }
+}
+
+@media (max-width:1280px) {
+
+  section.landingSection h2, h2.title {
+    font-size:48px !important;
+  }
+
+  a.blogPost {
+    h2 { font-size: 20px !important;}
+    p { font-size: 15px !important; }
+  }
+
+  div.navitems {
+    div.item  {
+      a { font-size: 15px !important;}
+    }
+  }
 
 }
 
-@font-face {
-    font-family: 'dinregular';
-    src: url('dinbold-webfont.eot');
-    src: url('dinbold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dinbold-webfont.woff2') format('woff2'),
-         url('dinbold-webfont.woff') format('woff'),
-         url('dinbold-webfont.ttf') format('truetype'),
-         url('dinbold-webfont.svg#dinregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@media (max-width:1024px) {
+
+  section.landingSection h2, h2.title {
+    font-size:42px !important;
+  }
+
+  a.blogPost {
+    h2 { font-size: 20px !important;}
+    p { font-size: 15px !important; }
+  }
+
+  div.navitems {
+    div.item  {
+      a { font-size: 15px !important;}
+    }
+  }
 
 }
+@media (max-width:768px) {
 
+  h2.title {
+    font-size:42px;
+  }
+  section.landingSection h2 {
+    font-size:42px;
+    padding-top: 30px;
+  }
 
-@font-face {
-    font-family: 'dinregular';
-    src: url('dinblackalternate-webfont.eot');
-    src: url('dinblackalternate-webfont.eot?#iefix') format('embedded-opentype'),
-         url('dinblackalternate-webfont.woff2') format('woff2'),
-         url('dinblackalternate-webfont.woff') format('woff'),
-         url('dinblackalternate-webfont.ttf') format('truetype'),
-         url('dinblackalternate-webfont.svg#dinregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  a.blogPost {
+    h2 { font-size: 20px !important;}
+    p { font-size: 14px !important; }
+  }
 
+  div.navitems {
+    div.item  {
+      a { font-size: 14px !important;}
+    }
+  }
 }
+
+@media (max-width:640px) {
+  div.nav {
+    // display: block !important;
+  }
+  div.logo {
+    // display:block !important;
+    // width: 100% !important;
+  }
+  div.navitems {
+    // display: block !important;
+    // width: 100% !important;
+    div.burger {
+      display: inline-block !important;
+    }
+    padding-left: 7.5%;
+    // background: red;
+    div.item  {
+      display: none !important;
+      a { font-size: 14px; }
+    }
+  }
+}
+// @media (max-width:414px) {
+//
+//   h2.title {
+//     font-size:36px;
+//   }
+//   section.landingSection h2 {
+//     font-size:34px;
+//     padding-top: 30px;
+//   }
+//
+//   a.blogPost {
+//     h2 { font-size: 18px !important;}
+//     p { font-size: 14px !important; }
+//   }
+//
+//   div.navitems {
+//     div.item  {
+//       a { font-size: 14px; }
+//     }
+//   }
+// }
+
+
+//768px
+//480px
+//325px
