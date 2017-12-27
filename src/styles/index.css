@@ -813,13 +813,16 @@ div.hoverSection {
     font-size: 14px !important; }
   span.innerpage.about div.content {
     flex-direction: column;
-    padding: calc(90px + 6%) 0 calc(20px + 5%) 0;
     overflow: hidden; }
     span.innerpage.about div.content div.panel {
       margin: 2% 1% 1% 1%;
       padding: 2% 2%;
       padding: 0%;
       width: 70%; }
+      span.innerpage.about div.content div.panel:first-of-type {
+        margin-top: calc(90px + 7.5%); }
+      span.innerpage.about div.content div.panel:last-of-type {
+        margin-bottom: calc(15px + 5%); }
       span.innerpage.about div.content div.panel h2 {
         margin-top: calc(3% + 20px);
         padding-left: 30px;
