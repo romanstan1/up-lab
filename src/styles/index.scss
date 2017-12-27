@@ -76,9 +76,9 @@ div.nav {
   z-index: 1000;
   position: fixed;
   top: 0;
-  width: calc(100%);
+  width: 100%;
   max-width: 1920px;
-  left: calc(50%);
+  left: 50%;
   transform: translate(-50%,0);
   display: flex;
   justify-content: center;
@@ -90,7 +90,7 @@ div.nav {
     display: inline-block;
     position: relative;
     width: 50%;
-    padding-left: calc(7.5%);
+    padding-left: 7.5%;
     text-align: left;
     // display: none;
     // mix-blend-mode: difference;
@@ -181,9 +181,11 @@ div.nav {
 }
 
   div.burger {
+    // background: red;
     display: none;
     position: relative;
     top: 0px;
+    right: 5px;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
@@ -875,11 +877,7 @@ div.panel {
 div.hoverSection {
   position: relative;
   display: flex;
-  // background: grey;
-  // padding-left: 20%;
-  // transform: translate(-50%,0);
-  // justify-content: center;
-    padding-left: 10px;
+  padding-left: 10px;
   div.infoIcon {
     margin: 20px 40px 0 0;
     cursor: pointer;
@@ -1076,22 +1074,93 @@ div.hoverSection {
       a { font-size: 14px !important;}
     }
   }
+
+
+  div.panel {
+    border: 10px solid $hovercolor;
+    margin: 10vh 1% 0 1%;
+    padding: 2% 2%;
+    padding-top: 3.5%;
+    text-align: left;
+    height: 35%;
+    transition: 0.4s ease;
+    position: relative;
+    width: 48%;
+    overflow-y: scroll;
+    align-self: center;
+    div.paneltext {
+      color: white;
+      font-size: 0%;
+      margin-top: 30px;
+      transition: 0.3s ease;
+      overflow: hidden;
+      display: block;
+      height: 10%;
+      overflow: hidden;
+      // background: red;
+      width: 100%;
+      // transform: translate(0, 50%);
+      transition: 0.2s 0.2s ease;
+      opacity: 0;
+      h3 {
+        font-size: 140%;
+
+      }
+      p {
+        margin: 5px 0;
+        font-size: 100%;
+      }
+      img {
+        margin: 15px 0;
+        width: 100%;
+        height:0%;
+      }
+    }
+    &:hover {
+      // margin: 10vh 0% 0 0%;
+      &::-webkit-scrollbar {
+        width: 8px;  /* remove scrollbar space */
+      }
+      &::-webkit-scrollbar-thumb {
+        background: white;
+      }
+      width: 250%;
+      height: 75%;
+      padding: 3%;
+      div.paneltext {
+        font-size: 100%;
+        opacity: 1;
+        height: auto;
+        // transform: translate(0, 0%);
+        img {
+          height:auto;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width:640px) {
-  div.nav {
-    // display: block !important;
+
+  section.landingSection {
+    width: 80%;
+    margin: calc(8vh + 60px) auto calc(5vh + 60px) auto;
+    h2 {
+      margin-top: 40px;
+      font-size: 38px !important;
+    }
   }
+
   div.logo {
+    padding-left: 5% !important;
     width: 70% !important;
   }
   div.navitems {
+    padding-right: 5% !important;
     width: 30% !important;
-    div.burger {
-      display: inline-block !important;
-    }
-    padding-left: 7.5%;
-    // background: red;
+    div.burger { display: inline-block !important; }
+    padding-left: 7.5% !important;
+
     div.item  {
       display: none !important;
       a { font-size: 14px; }
@@ -1113,6 +1182,12 @@ div.hoverSection {
       height: 340px;
     }
   }
+
+
+  footer {
+    margin-top: 10px !important;
+  }
+
 
 
 }
@@ -1137,6 +1212,15 @@ div.hoverSection {
   //   }
   // }
 
+  section.landingSection {
+    width: 90%;
+    margin: calc(7vh + 60px) auto calc(0vh + 60px) auto;
+    h2 {
+      margin-top: 40px;
+      font-size: 34px !important;
+    }
+  }
+
   a.blogPost {
     width: 90%;
     div.column1 {
@@ -1144,14 +1228,20 @@ div.hoverSection {
       margin-top: 25px;
       padding-bottom: 45%;
       height: 100px;
-      h2 { font-size: 19px !important;}
-      p { font-size: 13px !important; }
+      h2 {
+        font-size: 19px !important;
+        position: relative !important;
+      }
+      p {
+        font-size: 13px !important;
+        position: relative !important;
+        top: 15px !important;
+      }
     }
     div.image {
-      height: 340px;
+      height: 260px;
     }
   }
-
 
 }
 @media (max-width:350px) {
@@ -1174,6 +1264,11 @@ div.hoverSection {
   //     a { font-size: 14px; }
   //   }
   // }
+  section.landingSection {
+    h2 {
+      font-size: 30px !important;
+    }
+  }
 
   a.blogPost {
     div.column1 {
@@ -1184,7 +1279,7 @@ div.hoverSection {
       p { font-size: 13px !important; }
     }
     div.image {
-      height: 340px;
+      height: 220px;
     }
   }
 
