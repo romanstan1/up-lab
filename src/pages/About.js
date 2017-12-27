@@ -13,46 +13,11 @@ var Element    = Scroll.Element;
 var Events     = Scroll.Events;
 var scroll     = Scroll.animateScroll;
 var scrollSpy  = Scroll.scrollSpy;
-  // //...
-  // componentDidMount() {
-  //   var rect = ReactDOM.findDOMNode(this)
-  //     .getBoundingClientRect()
-  // }
 
-//
-// class AboutSection extends Component {
-//   componentDidMount() {
-//     const ele = ReactDOM.findDOMNode(this).getBoundingClientRect()
-//     console.log("ele",ele)
-//   }
-//   render () {
-//     const {children, sideHeading, x} = this.props
-//     return (
-//       <section style={{transform: `translate(0,${x}px)`}} className='grid about'>
-//         <div className='column1'>
-//           {!!sideHeading? <h2 className='sideHeading'>{sideHeading}</h2> : <LoadingSpinner/> }
-//         </div>
-//         <div className='column2'>
-//           {children}
-//         </div>
-//       </section>
-//     )
-//   }
-// }
-//
 const AboutSection = ({children, sideHeading, x}) =>
 <section style={{transform: `translate(0,${x}px)`}} className='grid about'>
     {children}
 </section>
-// const AboutSection = ({children, sideHeading, x}) =>
-// <section style={{transform: `translate(0,${x}px)`}} className='grid about'>
-//   <div className='column1'>
-//     {!!sideHeading? <h2 className='sideHeading'>{sideHeading}</h2> : <LoadingSpinner/> }
-//   </div>
-//   <div className='column2'>
-//     {children}
-//   </div>
-// </section>
 
 
 const InfoIcon = ({children}) =>
@@ -78,7 +43,6 @@ export default class About extends Component {
 
   onChange = (isVisible) => {
     console.log(isVisible)
-
   }
 
 
@@ -106,13 +70,6 @@ export default class About extends Component {
   render () {
     return [
       <PageTemplate key='about' page='about'>
-
-
-
-        {/* <AboutSection x={this.state.scrollValue} refValue='one' sideHeading={null}>
-          <h2 className='mainTitle'> We do loads of magical, extraordinary and amazing stuff that takes up at least three lines of writing.</h2>
-        </AboutSection> */}
-
 
           <Panel col='one' origin='top left'>
             <h2>Story</h2>
@@ -221,7 +178,6 @@ export default class About extends Component {
             Ratione, nihil officiis itaque!
           </p>
         </AboutSection> */}
-        <br/><br/><br/><br/>
       </PageTemplate>,
       <Nav key='nav' />
     ]
