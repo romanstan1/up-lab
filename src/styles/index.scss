@@ -1073,22 +1073,35 @@ div.hoverSection {
     &.about {
       div.content {
         flex-direction: column;
-        padding: 15% 0 5% 0;
+        padding: calc(90px + 6%) 0 calc(20px + 5%) 0;
         // padding-top: 18%;
+        overflow: hidden;
         div.panel {
-          margin: 1% 1% 0 1%;
+          margin: 2% 1% 1% 1%;
           padding: 2% 2%;
+          padding: 0%;
           // padding-top: 3.5%;
           // text-align: left;
           // height: 35%;
           // position: relative;
           // display: inline-block;
-          width: 80%;
-          div.paneltext {
+          width: 70%;
+          h2 {
+            margin-top: calc(3% + 20px);
+            padding-left: 30px;
             display: inline-block;
-            margin-top: 30px;
+            width: 100%;
+            // float: left;
+          }
+          div.paneltext {
+            // margin-top: 1%;
+            padding-left: 30px;
+            padding-right: 20px;
+            padding-bottom: 10%;
+            display: inline-block;
+            // margin-top: 30px;
             display: block;
-            height: 10%;
+            height: 0%;
             overflow: hidden;
             width: 100%;
             h3 {

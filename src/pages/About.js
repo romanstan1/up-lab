@@ -2,17 +2,8 @@ import React, {Component} from 'react'
 import PageTemplate from '../molecules/PageTemplate'
 import Nav from '../molecules/Nav'
 import LoadingSpinner from '../molecules/LoadingSpinner'
-import * as Scroll from 'react-scroll';
-import VisibilitySensor from 'react-visibility-sensor'
 import ReactDOM from 'react-dom';
 import image from '../assets/contact-image.jpg';
-
-
-var Link       = Scroll.Link;
-var Element    = Scroll.Element;
-var Events     = Scroll.Events;
-var scroll     = Scroll.animateScroll;
-var scrollSpy  = Scroll.scrollSpy;
 
 const AboutSection = ({children, sideHeading, x}) =>
 <section style={{transform: `translate(0,${x}px)`}} className='grid about'>
@@ -22,8 +13,6 @@ const AboutSection = ({children, sideHeading, x}) =>
 
 const InfoIcon = ({children}) =>
 <div data-descr={children} className='infoIcon'/>
-
-var scrollValue = 0;
 
 
 const Panel = ({col, children, origin}) =>
@@ -36,36 +25,6 @@ const Panel = ({col, children, origin}) =>
 
 
 export default class About extends Component {
-  state = {
-    scrollValue:0
-  }
-
-
-  onChange = (isVisible) => {
-    console.log(isVisible)
-  }
-
-
-
-   componentDidMount() {
-    // window.addEventListener("wheel", (e) => {
-    //   console.log("e",e, e.screenY, e.offsetY)
-    //   // this.setState({scrollValue: e.deltaY})
-    // })
-    // window.addEventListener("drag", (e) => {
-    //   console.log("drag",e, e.screenY, e.offsetY)
-    //   // this.setState({scrollValue: e.deltaY})
-    // })
-    // Events.scrollEvent.register('begin', function(to, element) {
-    //   console.log("begin", arguments);
-    // });
-    //
-    // Events.scrollEvent.register('end', function(to, element) {
-    //   console.log("end", arguments);
-    // });
-    //
-    // scrollSpy.update();
-   }
 
   render () {
     return [
@@ -130,54 +89,6 @@ export default class About extends Component {
               Data Science ((link to more elaborate explanation (this will eventually link to our work))
             </div>
           </Panel>
-
-        {/* <Link activeClass="active" to="test1" spy={true} smooth={true} offset={50} duration={500} delay={1000}>
-          Test 2 (delay)
-        </Link>
-        <Link className="test6" to="anchor" spy={true} smooth={true} duration={500}>
-          Test 6 (anchor)
-        </Link> */}
-        {/* <VisibilitySensor onChange={this.onChange}> */}
-        {/* <VisibilitySensor onChange={this.onChange}> */}
-        {/* <AboutSection x={this.state.scrollValue} refValue='two' sideHeading='Our story'>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Beatae, nostrum necessitatibus. A ratione ipsum, numquam itaque qui explicabo neque atque.
-            Laborum quisquam error soluta. Quo dicta quam officia repudiandae consequatur. <br/><br/>
-          </p>
-          <div className='hoverSection'>
-            <InfoIcon>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet nobis, voluptatum molestias animi porro doloribus consequatur, qui enim iusto sit sequi minus, asperiores eaq.</InfoIcon>
-            <InfoIcon>Consectetur adipisicing elit. Amet nobis, voluptatum molestias animi porro doloribus consequatur, qui enim iusto sit sequi minus, asperiores eaque ullam tenetur nihil. </InfoIcon>
-            <InfoIcon>Amet nobis, voluptatum molestias animi porro doloribus consequatur, qui enim iusto sit sequi minus, asperiores eaque ullam tenetur nihil. Tempora, autem, eos.</InfoIcon>
-            <InfoIcon>Tempora, autem, eos. Nobis, voluptatum molestias animi porro doloribus consequatur, qui enim iusto sit sequi minus, asperiores eaque ullam tenetur nihil. Tempora, autem, eos.</InfoIcon>
-          </div>
-        </AboutSection> */}
-        {/* </VisibilitySensor> */}
-        {/* </VisibilitySensor> */}
-
-        {/* <AboutSection x={this.state.scrollValue} refValue='three' sideHeading='What we do'>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Beatae, nostrum necessitatibus. A ratione ipsum, numquam itaque qui explicabo neque atque.
-            Laborum quisquam error soluta. Quo dicta quam officia repudiandae consequatur.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, excepturi rerum explicabo amet.
-            <br/><br/>
-            Reiciendis quae. Dolores possimus sed dicta aut corrupti accusamus ea illo repudiandae, deserunt.
-            Ratione, nihil officiis itaque reiciendis quae. Dolores possimus sed dicta aut corrupti accusamus ea illo repudiandae, deserunt.
-            Ratione, nihil officiis itaque!
-          </p>
-        </AboutSection> */}
-
-        {/* <AboutSection x={this.state.scrollValue} refValue='four' sideHeading='How we do it'>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Beatae, nostrum necessitatibus. A ratione ipsum, numquam itaque qui explicabo neque atque.
-            Laborum quisquam error soluta. Quo dicta quam officia repudiandae consequatur.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, excepturi rerum explicabo amet,
-            reiciendis quae. Dolores possimus sed dicta aut corrupti accusamus ea illo repudiandae, deserunt.
-            Ratione, nihil officiis itaque!
-          </p>
-        </AboutSection> */}
       </PageTemplate>,
       <Nav key='nav' />
     ]
