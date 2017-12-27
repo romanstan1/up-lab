@@ -52,7 +52,7 @@ export default class Homepage extends Component {
   render () {
     const {storyNumber} = this.state
     return [
-			<div onWheel={this.onScroll} key='homepage' className='homepage'>
+			<div onWheel={this.onScroll} onTouchMove={this.onScroll} key='homepage' className='homepage'>
 				<Nav/>
         <PageStory>{story[this.state.storyNumber]}</PageStory>
         {/* <DotAnimation/> */}
