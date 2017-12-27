@@ -781,19 +781,85 @@ div.hoverSection {
   section.landingSection h2 {
     font-size: 42px;
     padding-top: 30px; }
-  a.blogPost h2 {
-    font-size: 20px !important; }
-  a.blogPost p {
-    font-size: 14px !important; }
+  a.blogPost {
+    margin: 7% auto;
+    width: 85%;
+    flex-direction: column-reverse; }
+    a.blogPost div.column1 {
+      width: 100%;
+      position: relative;
+      margin-top: 25px;
+      padding-bottom: 30%;
+      height: 130px; }
+      a.blogPost div.column1 h2 {
+        font-size: 20px !important; }
+      a.blogPost div.column1 p {
+        font-size: 14px !important; }
+    a.blogPost div.image {
+      width: 100%;
+      height: 400px; }
+    a.blogPost:nth-of-type(n) p.summary {
+      width: 100%; }
+    a.blogPost:nth-of-type(n):hover h2 {
+      left: 0px;
+      top: 1px; }
+    a.blogPost:nth-of-type(n):hover p.summary {
+      left: 0px;
+      top: 40px; }
+    a.blogPost:nth-of-type(n):hover:after, a.blogPost:nth-of-type(n):hover:before {
+      height: 0%; }
   div.navitems div.item a {
     font-size: 14px !important; } }
 
 @media (max-width: 640px) {
+  div.logo {
+    width: 70% !important; }
   div.navitems {
+    width: 30% !important;
     padding-left: 7.5%; }
     div.navitems div.burger {
       display: inline-block !important; }
     div.navitems div.item {
       display: none !important; }
       div.navitems div.item a {
-        font-size: 14px; } }
+        font-size: 14px; }
+  a.blogPost {
+    width: 90%; }
+    a.blogPost div.column1 {
+      width: 100%;
+      margin-top: 25px;
+      padding-bottom: 40%;
+      height: 100px; }
+      a.blogPost div.column1 h2 {
+        font-size: 20px !important; }
+      a.blogPost div.column1 p {
+        font-size: 14px !important; }
+    a.blogPost div.image {
+      height: 340px; } }
+
+@media (max-width: 464px) {
+  a.blogPost {
+    width: 90%; }
+    a.blogPost div.column1 {
+      width: 100%;
+      margin-top: 25px;
+      padding-bottom: 45%;
+      height: 100px; }
+      a.blogPost div.column1 h2 {
+        font-size: 19px !important; }
+      a.blogPost div.column1 p {
+        font-size: 13px !important; }
+    a.blogPost div.image {
+      height: 340px; } }
+
+@media (max-width: 350px) {
+  a.blogPost div.column1 {
+    margin-top: 25px;
+    padding-bottom: 45%;
+    height: 170px; }
+    a.blogPost div.column1 h2 {
+      font-size: 19px !important; }
+    a.blogPost div.column1 p {
+      font-size: 13px !important; }
+  a.blogPost div.image {
+    height: 340px; } }
