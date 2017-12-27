@@ -941,7 +941,7 @@ div.hoverSection {
 @media (max-width: 464px) {
   h2.title {
     width: 90% !important;
-    padding: 0 0%;
+    padding: 0 1%;
     font-size: 38px !important; }
   section.landingSection {
     width: 90%;
@@ -969,12 +969,13 @@ div.hoverSection {
 @media (max-width: 395px) {
   h2.title {
     width: 90%  !important;
-    padding: 0 4%;
-    font-size: 34px !important; } }
+    font-size: 30px !important; } }
 
 @media (max-width: 350px) {
+  h2.title {
+    font-size: 28px !important; }
   section.landingSection h2 {
-    font-size: 30px !important; }
+    font-size: 28px !important; }
   a.blogPost div.column1 {
     margin-top: 25px;
     padding-bottom: 45%;
