@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import PageTemplate from '../molecules/PageTemplate'
-import LoadingSpinner from '../molecules/LoadingSpinner'
+import PageTemplate from '../modules/PageTemplate'
+import LoadingSpinner from '../modules/LoadingSpinner'
 import {loadBlogPosts} from '../store/modules/actions'
 import {connect} from 'react-redux'
 import Butter from 'buttercms';

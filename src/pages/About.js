@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import PageTemplate from '../molecules/PageTemplate'
-import Nav from '../molecules/Nav'
-import LoadingSpinner from '../molecules/LoadingSpinner'
+import PageTemplate from '../modules/PageTemplate'
+import Nav from '../modules/Nav'
+import LoadingSpinner from '../modules/LoadingSpinner'
 import ReactDOM from 'react-dom';
 import image from '../assets/contact-image.jpg';
 

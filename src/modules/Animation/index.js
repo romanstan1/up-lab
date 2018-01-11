@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import {stop, startstop, reinit, helper, nextAct} from '../three/dot_animation_three.js'
+import {stop, startstop, reinit, helper, nextAct} from './dot_animation_three.js'
 
 
-class Graph extends Component {
+class Scene extends Component {
   shouldComponentUpdate(nextProps) {
     return false;
   }
@@ -12,7 +12,7 @@ class Graph extends Component {
   }
 }
 
-export default class DotAnimation extends Component {
+export default class Animation extends Component {
   state = {
     start: false,
     act:1
@@ -47,7 +47,7 @@ export default class DotAnimation extends Component {
         {/* <div key='helper' onClick={this.handleHelper}> Light & Shadow Helpers</div> */}
         <div key='next' onClick={this.handleNextact}> Current Act {this.state.act} - Next</div>
       </div>,
-      <Graph key='graph'/>
+      <Scene key='scene'/>
     ]
   }
 }

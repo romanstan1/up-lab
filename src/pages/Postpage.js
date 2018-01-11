@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Butter from 'buttercms';
-import PageTemplate from '../molecules/PageTemplate'
-import Nav from '../molecules/Nav'
-import LoadingSpinner from '../molecules/LoadingSpinner'
+import PageTemplate from '../modules/PageTemplate'
+import Nav from '../modules/Nav'
+import LoadingSpinner from '../modules/LoadingSpinner'
 import moment from 'moment'
 
 const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');

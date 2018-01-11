@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
-
-import Nav from '../molecules/Nav'
-import Footer from '../molecules/Footer'
+import Nav from '../modules/Nav'
+import Footer from '../modules/Footer'
 
 export default class Error extends Component {
 

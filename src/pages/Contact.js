@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import PageTemplate from '../molecules/PageTemplate'
-import Nav from '../molecules/Nav'
+import PageTemplate from '../modules/PageTemplate'
+import Nav from '../modules/Nav'
 import {Link} from 'react-router-dom'
 import contactImageOne from '../assets/contact-image.jpg';
 

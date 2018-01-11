@@ -1,9 +1,4 @@
 
-
-
-
-
-
 const initialState = {
   selectedNav: '',
   posts: []

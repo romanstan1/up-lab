@@ -1,15 +1,27 @@
 import React, {Component} from 'react';
 import {Route,Switch} from 'react-router-dom'
-
 import Homepage from './pages/Homepage'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Thinking from './pages/Thinking'
 import Postpage from './pages/Postpage'
 import Error404 from './pages/Error404'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
-import PageShell from './molecules/PageShell'
-
+const PageShell = Page => {
+  return props =>
+    <div className="page">
+      <ReactCSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={1300}
+        transitionEnterTimeout={600}
+        transitionLeaveTimeout={200}
+        transitionName='SlideIn'
+      >
+        <Page {...props} />
+      </ReactCSSTransitionGroup>
+    </div>;
+}
 
 export default class App extends Component {
   render() {
