@@ -6,7 +6,7 @@ import {connect} from 'react-redux'
 import Butter from 'buttercms';
 import moment from 'moment';
 import {Link} from 'react-router-dom'
-import Nav from '../molecules/Nav'
+import Nav from '../modules/Nav'
 const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
 
 
