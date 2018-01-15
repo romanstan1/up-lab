@@ -2,6 +2,10 @@
 $stark: #e7dfdd;
 $blueblack: white;
 $hovercolor:#5000ff;
+// $hovercolor:#292cbc;
+$blendHoverColor:#4c4cff;
+$blendHoverColor:#4f4fff;
+// $blendHoverColor:#0061ff;
 $greyBackground:#182023;
 
 * {
@@ -15,6 +19,7 @@ html {
   width: 100%;
   position: absolute;
   overflow: hidden;
+  background: $hovercolor;
 }
 html.homepage{
   overflow: hidden;
@@ -46,9 +51,37 @@ div.border {
   }
 }
 
+
+
 h1 {
-  font-size: 0px;
+  font-size: 36px;
+  color: white;
+  font-weight: 600;
+  line-height: 72px;
 }
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: uppercase;
+  padding: 12px 0;
+  font-weight: 400;
+}
+p {
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  font-weight: 400;
+  line-height: 24px;
+  &.bodyHeading {
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+}
+
+
+
+
 
 a {
   text-decoration: none;
@@ -56,12 +89,14 @@ a {
 
 ::selection {
   // mix-blend-mode: difference;
-  background:$hovercolor;
+  background:white;
+  opacity: 1;
   color:$greyBackground;/* WebKit/Blink Browsers */
 }
 ::-moz-selection {
   // mix-blend-mode: difference;
-  background:$hovercolor;
+  background:white;
+  opacity: 1;
   color:$greyBackground;
 }
 div.draw-button {
@@ -150,7 +185,7 @@ div.nav {
         text-transform: uppercase;
         text-transform: capitalize;
         padding: 2px 1px;
-        font-size: 17px;
+        font-size: 16px;
         color: $stark;
         transition: 0.2s ease;
         position: relative;
@@ -254,7 +289,7 @@ div.nav {
     }
     span {
       display: block;
-      width: 33px;
+      width: 25px;
       height: 2px;
       position: relative;
       background: white;
@@ -270,7 +305,7 @@ div.nav {
     }
 
     input:checked ~ span {
-      transform: rotate(45deg) translate(-3px, -1px);
+      transform: rotate(45deg) translate(1px, -1px);
     }
     input:checked ~ div.burgerPopOut {
       display: block;
@@ -283,14 +318,14 @@ div.nav {
     }
 
     input:checked ~ span:nth-child(4) {
-      transform: rotate(-45deg) translate(-3px, -1px);
+      transform: rotate(-45deg) translate(1px, -1px);
     }
   }
 
 
 
 
-h2.title {
+h4.title {
   text-align: center;
   position: absolute;
   transition: 0.3s ease;
@@ -301,7 +336,9 @@ h2.title {
   width: 60%;
   top: 50%;
   color: ghostwhite;
-  mix-blend-mode: difference;
+  text-transform: none;
+  // line-height: normal;
+  // mix-blend-mode: difference;
   div {
     font-size: 100%;
   }
@@ -499,70 +536,89 @@ span.innerpage {
 }
 
 section.contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 100%;
-  flex-direction: column;
-  color: white;
-  overflow: hidden;
-  div.row2 {
-    padding-top: 45px;
-    align-self: center;
-    width: 60%;
-    // background: red;
-    font-size: 20px;
-    h3 {
-      padding-bottom: 10px;
-      // font-size: 12px;
-    }
-    span {
-
-    }
-  }
-  div.row1 {
-    align-self: center;
-    width: 80%;
-    font-size: 55px;
-    padding-top: 20px;
-    color: white;
-    text-align: center;
-    a {
-      padding: 2px 0;
+  // display: flex;
+  // justify-content:space-between;
+  // align-items: center;
+  // align-content: center;
+  overflow-y: scroll;
+  // flex-direction: column;
+  // color: white;
+  // justify-content:flex-end;
+  // overflow:auto;
+  // background: red;
+  height: 100vh;
+  > div {
+    // display: flex;
+    // flex-direction: column;
+    min-height: 100vh;
+    div.row1 {
+      // align-self: center;
+      width: 80%;
+      padding-top: 220px;
       color: white;
-      position: relative;
-      &:after {
-        content: "";
-        position: absolute;
-        z-index: 100;
-        left: 0px;
-        right: 100%;
-        bottom: -9px;
-        background: $hovercolor;
-        height: 5px;
-        opacity: 0.9;
-        transition-property: left right;
-        transition-duration: 0.2s;
-        transition-timing-function: ease-out;
-        // right:0;
-      }
-      &:hover {
-        &:after {
-          right:-1px;
+      text-align: center;
+      // height: 100px;
+      background: red;
+      h1 {
+        // line-height: normal;
+        a {
+          padding: 2px 0;
+          color: white;
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            z-index: 100;
+            left: 0px;
+            right: 100%;
+            bottom: -9px;
+            background: $hovercolor;
+            height: 5px;
+            opacity: 0.9;
+            transition-property: left right;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
+            // right:0;
+          }
+          &:hover {
+            &:after {
+              right:-1px;
+            }
+          }
         }
       }
     }
+    div.row2 {
+      background: red;
+      font-size: 20px;
+      height: 700px;
+      display: flex;
+      flex-direction: row;
+      margin-top: 40px;
+      div.image {
+        margin: 20px;
+        &.portrait {
+          height: 700px;
+          width: 200px;
+          background: green;
+        }
+        &.landscape {
+            background: blue;
+          height: 300px;
+          width: 700px;
+
+        }
+      }
+    }
+
   }
 }
 section.landingSection {
-  width: 60%;
+  width: 50%;
   position: relative;
-  margin: 16% auto 10% auto;
-  h2 {
-    font-size: 57px;
+  margin: 18% auto 10% auto;
+  h1 {
     text-align: center;
-    color: white;
   }
 }
 
@@ -602,6 +658,7 @@ a.blogPost {
       height: 0%;
       background: transparent;
       background: $hovercolor;
+      // background: $blendHoverColor;
       opacity: 0.7;
       transition: 0.5s ease;
       z-index: 8;
@@ -615,6 +672,7 @@ a.blogPost {
       height: 0%;
       background: transparent;
       background: $hovercolor;
+      // background: $blendHoverColor;
       opacity: 0.7;
       transition: 0.5s ease;
       z-index: 8;
@@ -624,20 +682,19 @@ a.blogPost {
     h2 {
       position: absolute;
       color: white;
-      left: 0;
-      top: 1px;
-      font-size: 22px;
+      left: 0px;
+      top: 0px;
+      // font-size: 22px;
       z-index: 10;
       transition: 0.4s ease;
-      text-transform: uppercase;
+      // text-transform: uppercase;
+      line-height: 0;
     }
     p.summary {
       display: block;
       position: absolute;
       left: 0px;
-      top: 40px;
-      // background: red;
-      font-size: 16px;
+      top: 38px;
       z-index: 10;
       color: white;
       transition: 0.4s ease;
@@ -648,11 +705,11 @@ a.blogPost {
     &:hover {
       h2 {
         left: 35px;
-        top: 35px;
+        top: 33px;
       }
       p.summary {
         left: 35px;
-        top: 75px;
+        top: 71px;
       }
       &:after, &:before {
         height: 100%;
@@ -668,8 +725,18 @@ section.singlepost {
   width: 100%;
   background: white;
   overflow-y: scroll;
+  position: relative;
+  background: white;
+  // display: flex;
+  // flex-direction: column;
   > div {
-    padding: 7.5%;
+    padding: calc( 4% + 50px) 7.5%;
+    padding-bottom: 0%;
+    position: relative;
+    min-height: calc(100vh - 355px);
+    // background: red;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
   }
   &::-webkit-scrollbar {
@@ -710,23 +777,44 @@ section.singlepost {
   div.col2 {
     width: 65%;
     padding-left:8%;
-    h2.posttitle {
-      font-size: 57px;
-      margin-bottom: 35px;
+    h1.posttitle {
+      color: black;
+      padding-bottom: 20px ;
+      margin-left: -1px;
+      line-height: normal;
+      // background: red;
+      // font-size: 57px;
+      // margin-bottom: 35px;
     }
     div.inner {
+        // background: red;
+      // max-width: 700px;
+      padding-top: 0;
+
       color: $greyBackground;
       width: 100%;
-      h1, h2, h3, h4 {
-        padding-top: 10px;
-        margin: 10px 0;
+      h3 {
+        line-height: 24px;
+        padding: 10px 0;
+      }
+      // h1, h2, h3, h4 {
+      //   padding-top: 10px;
+      //   margin: 10px 0;
+      // }
+      a {
+        color: blue;
+        text-decoration: underline;
       }
       p {
-        margin: 0px 0 15px 0;
+        color:inherit;
+        // margin: 0px 0 15px 0;
       }
       img {
-        margin: 10px 0;
+        margin: 10px 0 0 0;
         width: 100%;
+      }
+      figcaption {
+        padding-bottom: 15px;
       }
     }
   }
@@ -768,15 +856,17 @@ div.dot-canvas, div.scene {
 }
 
 footer {
-  margin-top: calc(7.5% + 30px);
+  margin-top: 100px;
   height: 135px;
   width: 100%;
   background: $hovercolor;
   position: relative;
   display: flex;
+  right: 0;
   justify-content: center;
   align-items: center;
   color: white;
+  bottom: 0;
   // mix-blend-mode: difference;
   div {
     height: 18px;
@@ -809,7 +899,6 @@ div.panel {
   border: 10px solid $hovercolor;
   margin: 10vh 1% 0 1%;
   padding: 2% 2%;
-  padding-top: 3.5%;
   text-align: left;
   height: 35%;
   transition: 0.4s ease;
@@ -836,17 +925,10 @@ div.panel {
   }
   &:first-of-type { margin-left: 7.5%;}
   &:last-of-type { margin-right: 7.5%;}
-  h2 {
-    font-size: 42px;
-    color:white;
-    // padding-right: 70px;
-    // background: red;
-    display: block;
-  }
   div.paneltext {
     color: white;
     font-size: 0%;
-    margin-top: 30px;
+    // margin-top: 30px;
     transition: 0.3s ease;
     overflow: hidden;
     display: block;
@@ -857,13 +939,18 @@ div.panel {
     // transform: translate(0, 50%);
     transition: 0.2s 0.2s ease;
     opacity: 0;
-    h3 {
-      font-size: 140%;
-
+    h2 {
+      display: block;
+      // height: 10px;
+      // overflow: hidden;
     }
     p {
-      margin: 5px 0;
-      font-size: 100%;
+      display: block;
+      // padding: 0;
+      // height: 0;
+      overflow: hidden;
+      // transition: 0.4s 0.1s ease;
+      // font-size: 0;
     }
     img {
       margin: 15px 0;
@@ -872,8 +959,8 @@ div.panel {
     }
   }
   &:hover {
-    &::-webkit-scrollbar {width: 8px; }
-    &::-webkit-scrollbar-thumb { background: white; }
+    &::-webkit-scrollbar {width: 0px; }
+    &::-webkit-scrollbar-thumb { background: transparent; }
     width: 250%;
     height: 75%;
     padding: 3%;
@@ -881,6 +968,11 @@ div.panel {
       font-size: 100%;
       opacity: 1;
       height: auto;
+      p {
+        font-size: 16px;
+        // padding: 10px 0;
+        // height: auto;
+      }
       img {
         height:auto;
       }
@@ -974,37 +1066,44 @@ div.hoverSection {
 
 
 @media (max-width:1600px) {
-
-  section.landingSection h2, h2.title {
-    font-size: 52px !important;
+  h4.title {
+    font-size: 54px !important;
   }
 
+  // section.landingSection h2, h2.title {
+  //   font-size: 54px !important;
+  // }
+
   a.blogPost {
-    h2 { font-size: 20px !important;}
-    p { font-size: 16px !important; }
+    // h2 { font-size: 20px !important;}
+    // p { font-size: 16px !important; }
   }
 
   div.navitems {
     div.item  {
-      a { font-size: 16px !important;}
+      // a { font-size: 16px !important;}
     }
   }
 }
 
 @media (max-width:1280px) {
 
-  section.landingSection h2, h2.title {
+  h4.title {
     font-size:48px !important;
   }
 
+  // section.landingSection h2, h2.title {
+  //   font-size:48px !important;
+  // }
+
   a.blogPost {
-    h2 { font-size: 20px !important;}
-    p { font-size: 15px !important; }
+    // h2 { font-size: 20px !important;}
+    // p { font-size: 15px !important; }
   }
 
   div.navitems {
     div.item  {
-      a { font-size: 15px !important;}
+      // a { font-size: 15px !important;}
     }
   }
 
@@ -1012,39 +1111,39 @@ div.hoverSection {
 
 @media (max-width:1024px) {
 
-  h2.title {
+  h4.title {
     width: 70% !important;
     font-size:44px  !important;
   }
 
   section.landingSection h2 {
-    font-size:42px !important;
+    // font-size:42px !important;
   }
 
   a.blogPost {
-    h2 { font-size: 20px !important;}
-    p { font-size: 15px !important; }
+    // h2 { font-size: 20px !important;}
+    // p { font-size: 15px !important; }
   }
 
   div.navitems {
     div.item  {
-      a { font-size: 15px !important;}
+      // a { font-size: 15px !important;}
     }
   }
 }
 
 @media (max-width:810px) {
-  h2.title {width: 80% !important;}
+  h4.title {width: 80% !important;}
 }
 
 @media (max-width:768px) {
 
-  h2.title {
+  h4.title {
     // width: 90%  !important;
     font-size: 40px !important;
   }
   section.landingSection h2 {
-    font-size:40px;
+    // font-size:40px;
     padding-top: 30px;
   }
 
@@ -1058,8 +1157,8 @@ div.hoverSection {
       margin-top: 25px;
       padding-bottom: 30%;
       height: 130px;
-      h2 { font-size: 20px !important;}
-      p { font-size: 14px !important; }
+      // h2 { font-size: 20px !important;}
+      // p { font-size: 14px !important; }
     }
     div.image {
       width: 100%;
@@ -1118,12 +1217,8 @@ div.hoverSection {
             height: 0%;
             overflow: hidden;
             width: 100%;
-            h3 {
-              font-size: 140%;
-            }
             p {
-              margin: 5px 0;
-              font-size: 100%;
+              // margin: 5px 0;
             }
           }
           &:hover {
@@ -1143,7 +1238,7 @@ div.hoverSection {
 
 @media (max-width:640px) {
 
-  h2.title {
+  h4.title {
     // text-align: left !important;
     width: 90%  !important;
     padding: 0 6%;
@@ -1172,7 +1267,7 @@ div.hoverSection {
     margin: calc(8vh + 60px) auto calc(5vh + 60px) auto;
     h2 {
       margin-top: 40px;
-      font-size: 38px !important;
+      // font-size: 38px !important;
     }
   }
 
@@ -1188,7 +1283,7 @@ div.hoverSection {
 
     div.item  {
       display: none !important;
-      a { font-size: 14px; }
+      // a { font-size: 14px; }
     }
   }
 
@@ -1200,8 +1295,8 @@ div.hoverSection {
       margin-top: 25px;
       padding-bottom: 40%;
       height: 100px;
-      h2 { font-size: 20px !important;}
-      p { font-size: 14px !important; }
+      // h2 { font-size: 20px !important;}
+      // p { font-size: 14px !important; }
     }
     div.image {
       height: 340px;
@@ -1215,16 +1310,16 @@ div.hoverSection {
 }
 
 @media (max-width:560px) {
-  h2.title {
+  h4.title {
     width: 90%  !important;
     padding: 0 2%;
-    font-size: 42px !important;
+    // font-size: 42px !important;
   }
 }
 
 @media (max-width:464px) {
 
-  h2.title {
+  h4.title {
     width: 90% !important;
     padding: 0 1%;
     font-size: 38px !important;
@@ -1235,7 +1330,7 @@ div.hoverSection {
     margin: calc(7vh + 60px) auto calc(0vh + 60px) auto;
     h2 {
       margin-top: 40px;
-      font-size: 34px !important;
+      // font-size: 34px !important;
     }
   }
 
@@ -1247,11 +1342,11 @@ div.hoverSection {
       padding-bottom: 45%;
       height: 100px;
       h2 {
-        font-size: 19px !important;
+        // font-size: 19px !important;
         position: relative !important;
       }
       p {
-        font-size: 13px !important;
+        // font-size: 13px !important;
         position: relative !important;
         top: 15px !important;
       }
@@ -1265,19 +1360,19 @@ div.hoverSection {
 // nav bar and logo font resize, and contact page
 
 @media (max-width:395px) {
-  h2.title {
+  h4.title {
     width: 90%  !important;
     font-size: 30px !important;
   }
 }
 @media (max-width:350px) {
 
-  h2.title {
+  h4.title {
     font-size: 28px !important;
   }
 
   section.landingSection {
-    h2 { font-size: 28px !important; }
+    // h2 { font-size: 28px !important; }
   }
 
   a.blogPost {
@@ -1285,8 +1380,8 @@ div.hoverSection {
       margin-top: 25px;
       padding-bottom: 45%;
       height: 170px;
-      h2 { font-size: 19px !important;}
-      p { font-size: 13px !important; }
+      // h2 { font-size: 19px !important;}
+      // p { font-size: 13px !important; }
     }
     div.image {
       height: 220px;

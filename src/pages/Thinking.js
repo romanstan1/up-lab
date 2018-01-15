@@ -12,7 +12,7 @@ const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
 
 const LandingSection = ({children}) =>
 <section className='landingSection'>
-    <h2 className='mainTitle'>{children}</h2>
+    <h1 className='mainTitle'>{children}</h1>
 </section>
 
 const ThinkingSection = ({children}) =>

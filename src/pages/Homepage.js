@@ -32,7 +32,7 @@ export default class Homepage extends Component {
      }, 200);
 
     scrollValue = scrollValue + scrollIncrement;
-    console.log("scrollValue",scrollValue)
+    // console.log("scrollValue",scrollValue)
 
     if(scrollValue > threshold) {
       this.nextStory()

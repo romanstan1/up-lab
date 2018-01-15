@@ -21,9 +21,6 @@ const Panel = ({col, children, origin}) =>
 </div>
 
 
-
-
-
 export default class About extends Component {
 
   render () {
@@ -31,62 +28,65 @@ export default class About extends Component {
       <PageTemplate key='about' page='about'>
 
           <Panel col='one' origin='top left'>
-            <h2>Story</h2>
+            <h1>Story</h1>
             <div className='paneltext'>
-              Most technologies start out with little application, and only basic functionality.
-              Either the technology works but we haven’t quite a purpose for it yet.
-              Or it’s just a hobby, something to play with in the garage.
-              They serve as cathartic instruments for enthusiasts, tools of entertainment – toys.
-              Society often dismisses them as such, and does so at it’s own peril.
-              <br/><br/>
-              Sandbox exists on this idea.
+              <p>
+                Most technologies start out with little application, and only basic functionality.
+                Either the technology works but we haven’t quite a purpose for it yet. Or it’s just a hobby, something to play with in the garage.
+                They serve as cathartic instruments for enthusiasts, tools of entertainment – toys.
+              </p>
+              <p>
+                Sandbox exists on this idea.
+              </p>
             </div>
           </Panel>
           <Panel col='two' origin='top right'>
-            <h2>Do</h2>
+            <h1>Do</h1>
             <div className='paneltext'>
-              We build deterministic systems for creating new services and technologies.
-              But really what we do is collaborate with people to make things better.
-              We don’t believe in tight, prescriptive briefs, instead we rely on a strong technical knowledge, a willingness to explore ideas and a system to uncover it all.
-              <br/><br/>
-              This normally happens in the form of workshops, prototypes and games.
+              <p>
+                We build deterministic systems for progressing digital services.
+              </p>
+              <p>
+                We don’t believe in tight, prescriptive briefs, instead we rely on a strong technical knowledge,
+                a willingness to explore ideas and a system to uncover it all – collaborating with people to make things better.
+              </p>
+              <p>
+                This normally happens in the form of workshops, prototypes and games.
+              </p>
             </div>
           </Panel>
           <Panel col='one' origin='bottom left'>
-            <h2>Why</h2>
+            <h1>Method</h1>
             <div className='paneltext'>
-              <h3>
-                Culture eats everything for breakfast.
-              </h3>
-              <p>
-                We don’t have a hard and fast list of values that create the perfect culture, but we do believe in a common methodology.
-                <br/><br/>
-                Build systems, don’t set goals. Goals are binary. Systems focus on inputs, feedback and ongoing adjustment.
-                Learn through doing. Nothing is as impactful as a mistake well made.
-                Look under rocks. Often, great technologies, as with great work, stem from that which has been dismissed.
-                The unthinkable, overlooked and mistaken.
-                Have fun. Nothing great has ever been accomplished without enthusiasm.
-              </p>
-              <img src={image} alt=""/>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-                <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-                <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-                <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-                <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-                <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-                <br/><br/> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus cupiditate dolorum nulla nam dolore, maiores distinctio doloremque laboriosam veniam ab aliquid animi illo debitis ad magnam modi eum, quisquam tempora.
-              </p>
+              <p>Culture eats everything for breakfast. We don’t have a hard and fast list of values that create the perfect culture, but we do believe in a common methodology.</p>
+
+              <p className='bodyHeading'>Build systems, don’t set goals</p>
+              <p>Goals are binary. Systems focus on inputs, feedback and ongoing adjustment.</p>
+
+              <p className='bodyHeading'>Learn through doing</p>
+              <p>Nothing is as impactful as a mistake well made.</p>
+
+              <p className='bodyHeading'>Look under rocks</p>
+              <p>Often, great technologies, as with great work, stem from that which has been dismissed. The unthinkable, overlooked and mistaken.</p>
+
+              <p className='bodyHeading'>Have fun</p>
+              <p>Nothing great has ever been accomplished without enthusiasm.</p>
             </div>
           </Panel>
           <Panel col='two' origin='bottom right'>
-            <h2>What</h2>
+            <h1>Focus</h1>
             <div className='paneltext'>
-              We work with clients, teams across our own agency and the wider industry to build new solutions, and empower others to do the same.
-              <br/><br/>
-              (probably need to rename this) Mobile Ecosystem (link to more elaborate explanation (this will eventually link to our work))
-              Machine Learning (link to more elaborate explanation (this will eventually link to our work))
-              Data Science ((link to more elaborate explanation (this will eventually link to our work))
+
+              <p>Provide a platform for our clients and teams to explore more.</p>
+              <p className='bodyHeading'>Mobile Ecosystem</p>
+              <p>Anything is an endpoint for digital. We design the world around a mobile user, not device. </p>
+
+              <p className='bodyHeading'>Machine Learning</p>
+              <p>Touches and layers everything. We explore tools and techniques to ingest, normalise, manipulate and visualise data – in order to establish patterns and insights.</p>
+
+              <p className='bodyHeading'>Data Science</p>
+              <p>Fundamental to improved decision making and experience. We leverage tools and techniques to better ingest, normalise, manipulate and visualise data.</p>
+
             </div>
           </Panel>
       </PageTemplate>,

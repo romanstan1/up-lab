@@ -18,21 +18,18 @@ export default class Contact extends Component {
     return [
       <PageTemplate key='contact' page='contact'>
         <section className='contact'>
-          <div className='row1'>
-            Give us a call or <br/>send us an email at <a href="mailto:sandbox@theuniprogroup.com?Subject=Hello">sandbox@theuniprogroup.com</a>
-          </div>
-          <div className='row2'>
-            <div>
-              <h3>Visit us</h3>
-              <span>
-                44 77 555 000 999 <br/>
-                Unipro at Wework <br/>
-                St Katharine's Way <br/>
-                St Katharine's & Wapping <br/>
-                London E1W 1UN
-              </span>
+          <div>
+            <div className='row1'>
+              <h1><a href="mailto:sandbox@theuniprogroup.com?Subject=Hello">sandbox@theuniprogroup.com</a></h1>
+              <h1>1 St Katharine's Way, London E1W 1UN</h1>
+            </div>
+            <div className='row2'>
+              <div className='image portrait'></div>
+              <div className='image landscape'></div>
+              <div className='image landscape'></div>
             </div>
           </div>
+          <footer><div>This is a footer <span className="square"></span></div></footer>
         </section>
       </PageTemplate>,
       <Nav/>

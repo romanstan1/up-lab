@@ -37,5 +37,8 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build"
+  },
+  "devDependencies": {
+    "jest": "^22.0.6"
   }
 }

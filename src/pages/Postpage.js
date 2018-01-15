@@ -18,7 +18,7 @@ const SinglePost = ({singlePost}) =>
         <h3 className='date'>Posted on {moment(singlePost.created).format('Do MMM YYYY')}</h3>
       </div>
       <div className='col2'>
-        <h2 className='posttitle'>{singlePost.title}</h2>
+        <h1 className='posttitle'>{singlePost.title}</h1>
         <div className='inner' dangerouslySetInnerHTML={{__html: singlePost.body}}/>
       </div>
     </div>
