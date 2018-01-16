@@ -6,7 +6,6 @@ const PageTemplate = ({page, children}) =>
   <div className='content'>
     {children}
   </div>
-  {/* <Footer/> */}
 </span>
 
 

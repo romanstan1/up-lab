@@ -19,7 +19,10 @@ export default class Homepage extends Component {
     scrollIncrement = 0
     scrollValue = 0
     if(this.state.chapter < storyText.length - 1) this.setState({chapter: this.state.chapter + 1 })
-    else this.setState({chapter: 0})
+    else {
+      this.setState({chapter: 0})
+      this.props.history.push('/about')
+    }
   }
 
   onWheel = (e) => {

@@ -13,8 +13,8 @@ const PageShell = Page => {
     <div className="page">
       <ReactCSSTransitionGroup
         transitionAppear={true}
-        transitionAppearTimeout={1300}
-        transitionEnterTimeout={600}
+        transitionAppearTimeout={1000}
+        transitionEnterTimeout={700}
         transitionLeaveTimeout={200}
         transitionName='SlideIn'
       >

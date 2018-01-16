@@ -12,6 +12,8 @@ import wework4 from '../assets/wework4.jpg';
 //   {children}
 // </section>
 
+console.log("wework1",wework1)
+
 export default class Contact extends Component {
   render () {
     return [
@@ -25,14 +27,14 @@ export default class Contact extends Component {
 
             <div className='row2'>
               <div className='image portrait'>
-                {/* <img src={wework1} alt=""/> */}
+                <div className='img' style={{ backgroundImage: "url(" + wework4 + ")"}}></div>
               </div>
               <div className='image landscapeWrap'>
                 <div className='image landscape'>
-                  {/* <img src={wework2} alt=""/> */}
+                  <div className='img' style={{ backgroundImage: "url(" + wework2 + ")"}}></div>
                 </div>
                 <div className='image landscape'>
-                  {/* <img src={wework3} alt=""/> */}
+                  <div className='img' style={{ backgroundImage: "url(" + wework3 + ")"}}></div>
                 </div>
               </div>
             </div>
