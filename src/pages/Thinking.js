@@ -49,7 +49,7 @@ class Thinking extends Component {
     if(!!blogPosts) posts = blogPosts
     return [
       <PageTemplate key='thinking' page='thinking'>
-        <LandingSection>Some thoughts and some ideas that we'd like to share...</LandingSection>
+        <LandingSection>Some thoughts and some ideas <br/>that we'd like to share...</LandingSection>
         {  !!posts? posts.map((post, i) =>
           <ThinkingSection key={i}>{post}</ThinkingSection>)
           : <LoadingSpinner/>

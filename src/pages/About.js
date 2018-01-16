@@ -3,7 +3,6 @@ import PageTemplate from '../modules/PageTemplate'
 import Nav from '../modules/Nav'
 import LoadingSpinner from '../modules/LoadingSpinner'
 import ReactDOM from 'react-dom';
-import image from '../assets/contact-image.jpg';
 
 const AboutSection = ({children, sideHeading, x}) =>
 <section style={{transform: `translate(0,${x}px)`}} className='grid about'>
