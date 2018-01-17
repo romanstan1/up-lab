@@ -14,24 +14,23 @@ $greyBackground:#182023;
 html {
   height: 100%;
   width: 100%;
-  // position: fixed;
+  position: fixed;
   overflow: hidden;
   background: $hovercolor;
-  position: relative;
+  // position: relative;
 }
 html.homepage{
   overflow: hidden;
 }
-// -webkit-overflow-scrolling: touch;
 body {
   font-family: 'dinlight', 'helvetica', 'arial', sans-serif;
-  padding: 0;
   font-size: 16px;
   width: 100%;
   height: 100%;
   top:0;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 div#root {
@@ -333,8 +332,6 @@ h4.title {
   top: 50%;
   color: ghostwhite;
   text-transform: none;
-  // line-height: normal;
-  // mix-blend-mode: difference;
   div {
     font-size: 100%;
   }
@@ -1369,6 +1366,10 @@ div.hoverSection {
     div.item  {
       display: none !important;
     }
+  }
+  
+  div.imageinner {
+    mix-blend-mode:normal !important;
   }
 
   a.blogPost {
