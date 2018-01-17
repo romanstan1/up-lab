@@ -739,11 +739,11 @@ div.dot-canvas, div.scene {
 footer {
   margin-top: 0px;
   height: 135px;
-  width: 100%;
+  width: calc(100% + 5px);
   background: #5000ff;
   position: relative;
   display: flex;
-  right: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   color: white;

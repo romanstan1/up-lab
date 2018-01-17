@@ -1,8 +1,6 @@
 $stark: white;
 $blueblack: white;
 $hovercolor:#5000ff;
-$blendHoverColor:#4c4cff;
-$blendHoverColor:#5a44ff;
 $greyBackground:#182023;
 
 * {
@@ -928,11 +926,11 @@ div.dot-canvas, div.scene {
 footer {
   margin-top: 0px;
   height: 135px;
-  width: 100%;
+  width: calc(100% + 5px);
   background: $hovercolor;
   position: relative;
   display: flex;
-  right: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   color: white;
