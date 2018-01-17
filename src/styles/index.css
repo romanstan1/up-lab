@@ -19,7 +19,9 @@ body {
   font-size: 16px;
   width: 100%;
   height: 100%;
-  position: relative; }
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
 
 div#root {
   position: relative;
@@ -389,8 +391,7 @@ span.innerpage {
   span.innerpage.thinking div.content {
     overflow-y: scroll;
     background: #182023;
-    min-height: 100vh;
-    -webkit-overflow-scrolling: touch; }
+    min-height: 100vh; }
     span.innerpage.thinking div.content::-webkit-scrollbar {
       position: relative;
       width: 5px;
