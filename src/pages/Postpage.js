@@ -7,7 +7,7 @@ import Nav from '../modules/Nav'
 import LoadingSpinner from '../modules/LoadingSpinner'
 import moment from 'moment'
 
-const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
+const butter = Butter('85681c254ae1fd0ecf057271cde2636970be0d38');
 
 const SinglePost = ({singlePost}) =>
   <section className='singlepost' >

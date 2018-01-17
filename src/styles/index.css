@@ -6,7 +6,7 @@
 html {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   background: #5000ff; }
 
@@ -455,7 +455,6 @@ section.contact {
         overflow: hidden; }
       section.contact > div div.row2 div.image.portrait {
         height: 100%;
-        background: grey;
         width: 43%; }
       section.contact > div div.row2 div.image.landscapeWrap {
         display: flex;
@@ -466,7 +465,6 @@ section.contact {
         section.contact > div div.row2 div.image.landscapeWrap div.landscape {
           height: calc(50% - 2.4%);
           width: 100%;
-          background: grey;
           overflow: hidden; }
     section.contact > div div.row3 {
       font-size: 20px;

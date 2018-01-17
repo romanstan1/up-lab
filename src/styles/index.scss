@@ -1,15 +1,8 @@
-
 $stark: white;
 $blueblack: white;
 $hovercolor:#5000ff;
-// $hovercolor:#1000ff;
-// $hovercolor:#2e30a2;
-// $hovercolor:#2e30a2;
 $blendHoverColor:#4c4cff;
-// $blendHoverColor:#4f4fff;
 $blendHoverColor:#5a44ff;
-// $blendHoverColor:#1000ff;
-// $blendHoverColor:#0061ff;
 $greyBackground:#182023;
 
 * {
@@ -21,7 +14,7 @@ $greyBackground:#182023;
 html {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   background: $hovercolor;
 }
@@ -35,11 +28,6 @@ body {
   font-size: 16px;
   width: 100%;
   height: 100%;
-  // position: relative;
-  // width: 100vw;
-  // height: 150vh;
-  // background: red;
-  // border: 25px solid ghostwhite;
 }
 
 div.border {
@@ -581,7 +569,6 @@ section.contact {
         }
         &.portrait {
           height: 100%;
-          background: grey;
           width: 43%;
         }
         &.landscapeWrap {
@@ -593,8 +580,6 @@ section.contact {
           div.landscape {
             height: calc(50% - 2.4%);
             width: 100%;
-            background: grey;
-
             overflow: hidden;
           }
         }
@@ -1362,7 +1347,6 @@ div.hoverSection {
       }
     }
   }
-  // div.navitems
 
   div.logo {
     padding-left: 5% !important;
