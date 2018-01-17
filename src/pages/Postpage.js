@@ -21,6 +21,7 @@ const SinglePost = ({singlePost}) =>
         <div className='inner' dangerouslySetInnerHTML={{__html: singlePost.body}}/>
       </div>
     </div>
+    <br/><br/><br/>
     <footer><div>This is a footer <span className="square"></span></div></footer>
   </section>
 

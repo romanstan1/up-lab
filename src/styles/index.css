@@ -389,7 +389,8 @@ span.innerpage {
   span.innerpage.thinking div.content {
     overflow-y: scroll;
     background: #182023;
-    min-height: 100vh; }
+    min-height: 100vh;
+    -webkit-overflow-scrolling: touch; }
     span.innerpage.thinking div.content::-webkit-scrollbar {
       position: relative;
       width: 5px;
