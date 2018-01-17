@@ -22,7 +22,7 @@ const SinglePost = ({singlePost}) =>
       </div>
     </div>
     <br/><br/><br/>
-    <footer><div>This is a footer <span className="square"></span></div></footer>
+    {/* <footer><div>This is a footer <span className="square"></span></div></footer> */}
   </section>
 
 class Postpage extends Component {
@@ -55,6 +55,7 @@ class Postpage extends Component {
       <PageTemplate key='postpage' page='about'>
         { !!singlePost? <SinglePost singlePost={singlePost}/> : <LoadingSpinner/> }
       </PageTemplate>,
+      <footer key='footer'><div>This is a footer <span className="square"></span></div></footer>,
       <Nav key='nav'/>
     ]
   }

@@ -249,6 +249,16 @@ div.burger {
   div.burger input:checked ~ span:nth-child(4) {
     transform: rotate(-45deg) translate(1px, -1px); }
 
+div.error {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: white; }
+  div.error h1 {
+    text-align: center;
+    align-self: center; }
+
 h4.title {
   text-align: center;
   position: absolute;

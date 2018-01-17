@@ -318,7 +318,17 @@ div.nav {
   }
 
 
-
+div.error {
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-content: center;
+  color: white;
+  h1 {
+    text-align: center;
+    align-self: center;
+  }
+}
 
 h4.title {
   text-align: center;
@@ -1239,7 +1249,7 @@ div.hoverSection {
     border-top: 75px solid $greyBackground;
   }
   div.nav {
-    padding-top: 30px; 
+    padding-top: 30px;
   }
 
   div.navitems {
