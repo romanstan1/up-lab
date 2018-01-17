@@ -84,16 +84,14 @@ a {
 }
 
 ::selection {
-  // mix-blend-mode: difference;
-  background:white;
+  background:$hovercolor;
   opacity: 1;
-  color:$greyBackground;/* WebKit/Blink Browsers */
+  color:white;/* WebKit/Blink Browsers */
 }
 ::-moz-selection {
-  // mix-blend-mode: difference;
-  background:white;
+  background:$hovercolor;
   opacity: 1;
-  color:$greyBackground;
+  color:white;
 }
 div.draw-button {
   bottom: 5px;

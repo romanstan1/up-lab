@@ -64,15 +64,15 @@ a {
   text-decoration: none; }
 
 ::selection {
-  background: white;
+  background: #5000ff;
   opacity: 1;
-  color: #182023;
+  color: white;
   /* WebKit/Blink Browsers */ }
 
 ::-moz-selection {
-  background: white;
+  background: #5000ff;
   opacity: 1;
-  color: #182023; }
+  color: white; }
 
 div.draw-button {
   bottom: 5px;

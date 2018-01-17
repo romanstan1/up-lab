@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import Nav from '../modules/Nav'
 import Story, {storyText} from '../modules/Story'
-// import LoadingSpinner from '../modules/LoadingSpinner'
-import Animation from '../modules/Animation'
+// import Animation from '../modules/Animation'
 
 var scrollValue = 0;
 var scrollIncrement = 1

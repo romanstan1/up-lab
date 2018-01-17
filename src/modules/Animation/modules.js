@@ -6,7 +6,7 @@ export let halfRowLength = 5
 export const numberOfCubes = (halfRowLength * 2) * (halfRowLength * 2)
 let halfwayIndex = (numberOfCubes / 2) - 1
 
-console.log("numberOfCubes",numberOfCubes)
+// console.log("numberOfCubes",numberOfCubes)
 
 export function CreateCubes(cubes, scene, camera, renderer) {
   var domEvents	= new THREEx.DomEvents(camera, renderer.domElement)

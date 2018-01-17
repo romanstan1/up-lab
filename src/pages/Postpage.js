@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Butter from 'buttercms';
 import PageTemplate from '../modules/PageTemplate'
@@ -33,7 +32,6 @@ class Postpage extends Component {
 
   fetchSinglePost = (slug) => {
     butter.post.retrieve(slug).then((resp) => {
-      console.log('response for single post ', resp)
       this.setState({ singlePost: resp.data.data })
     })
   }
@@ -51,7 +49,6 @@ class Postpage extends Component {
   }
 
   render () {
-    const {blogPosts} = this.props
     const {singlePost} = this.state
     return [
       <PageTemplate key='postpage' page='about'>

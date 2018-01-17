@@ -5,7 +5,7 @@ import {positionChange} from './sequence_functions.js'
 import THREEx from './THREEx.js'
 
 
-var container, camera, controls, scene, renderer
+var camera, controls, scene, renderer
 // var shadowCameraHelper
 // var lightHelper, lightHelper2, spotLight, spotLight2
 var cubes = []
@@ -56,9 +56,6 @@ function init() {
   var canvas = document.getElementById( 'scene' )
   var canvaswidth = canvas.offsetWidth
   var canvasheight = canvas.offsetHeight
-
-
-  // console.log("canvaswidth canvasheight",canvas, canvaswidth, canvasheight)
 
   camera = new THREE.PerspectiveCamera( 35,canvaswidth / canvasheight, 0.1, 50000 );
   camera.position.z = 460;

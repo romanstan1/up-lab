@@ -4,7 +4,7 @@ import LoadingSpinner from '../modules/LoadingSpinner'
 import {loadBlogPosts} from '../store/modules/actions'
 import {connect} from 'react-redux'
 import Butter from 'buttercms';
-import moment from 'moment';
+// import moment from 'moment';
 import {Link} from 'react-router-dom'
 import Nav from '../modules/Nav'
 const butter = Butter('85681c254ae1fd0ecf057271cde2636970be0d38');

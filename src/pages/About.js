@@ -1,18 +1,6 @@
 import React, {Component} from 'react'
 import PageTemplate from '../modules/PageTemplate'
 import Nav from '../modules/Nav'
-import LoadingSpinner from '../modules/LoadingSpinner'
-import ReactDOM from 'react-dom';
-
-const AboutSection = ({children, sideHeading, x}) =>
-<section style={{transform: `translate(0,${x}px)`}} className='grid about'>
-    {children}
-</section>
-
-
-const InfoIcon = ({children}) =>
-<div data-descr={children} className='infoIcon'/>
-
 
 const Panel = ({col, children, origin}) =>
 <div className={col === 'one'? `panel ${origin}`: `panel ${origin}`}>

@@ -1,9 +1,7 @@
 import * as d3 from 'd3'
 import {cubicOut} from 'eases'
 import _ from 'lodash'
-import {halfRowLength, numberOfCubes} from './modules'
-
-
+import {numberOfCubes} from './modules'
 
 export const iterateToTarget = (cube, xTarget, yTarget, xPrior, yPrior, xDirection, yDirection, x, y, speedup) => {
 

@@ -7,8 +7,6 @@ import Thinking from './pages/Thinking'
 import Postpage from './pages/Postpage'
 import Error404 from './pages/Error404'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {connect} from 'react-redux'
-
 
 const PageShell = Page => {
   return props =>
