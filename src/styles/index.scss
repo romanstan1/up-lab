@@ -22,16 +22,16 @@ html {
 html.homepage{
   overflow: hidden;
 }
-
+// -webkit-overflow-scrolling: touch;
 body {
   font-family: 'dinlight', 'helvetica', 'arial', sans-serif;
   padding: 0;
   font-size: 16px;
   width: 100%;
   height: 100%;
+  top:0;
   position: absolute;
   overflow: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
 div#root {
@@ -493,7 +493,6 @@ span.innerpage {
       overflow-y: scroll;
       background: $greyBackground;
       min-height: 100%;
-      // -webkit-overflow-scrolling: touch;
       &::-webkit-scrollbar {
         position: relative;
         width: 5px;  /* remove scrollbar space */
@@ -554,7 +553,7 @@ section.contact {
     min-height: 100%;
     div.row2 {
       font-size: 0px;
-      height: 55vh;
+      height: 55vw;
       max-height: 1000px;
       display: flex;
       flex-direction: row;
@@ -717,11 +716,9 @@ a.blogPost {
       height: 0%;
       background: transparent;
       background: $hovercolor;
-      // background: $blendHoverColor;
       opacity: 1;
       transition: 0.5s ease;
       z-index: 8;
-      // mix-blend-mode:difference;
     }
     &:before {
       content:"";
@@ -731,22 +728,17 @@ a.blogPost {
       height: 0%;
       background: transparent;
       background: $hovercolor;
-      // background: $blendHoverColor;
       opacity: 1;
       transition: 0.5s ease;
       z-index: 8;
-      // mix-blend-mode:darken;
-      // display: none;
     }
     h2 {
       position: absolute;
       color: white;
       left: 0px;
       top: 0px;
-      // font-size: 22px;
       z-index: 10;
       transition: 0.4s ease;
-      // text-transform: uppercase;
       line-height: 0;
     }
     p.summary {
