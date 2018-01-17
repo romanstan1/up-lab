@@ -107,8 +107,8 @@ div.draw-button {
   }
 }
 div.nav {
-  z-index: 1000;
-  position: fixed;
+  z-index: 2000;
+  position: absolute;
   top: 0;
   width: 100%;
   max-width: 1920px;
@@ -118,7 +118,7 @@ div.nav {
   justify-content: center;
   // opacity: 0.7;
   padding-top: 60px;
-  background: transparent;
+  // background: red;
   mix-blend-mode: difference;
   div.logo {
     z-index: 2000;
@@ -697,7 +697,6 @@ a.blogPost {
       background-size: cover;
       background-position:center;
       overflow: hidden;
-      // mix-blend-mode:difference;
       mix-blend-mode:luminosity;
       z-index: 1000;
     }
@@ -1183,6 +1182,9 @@ div.hoverSection {
 }
 
 @media (max-width:768px) {
+  div.imageinner {
+    mix-blend-mode:normal !important;
+  }
 
   h4.title {
     // width: 90%  !important;
@@ -1231,6 +1233,13 @@ div.hoverSection {
         }
       }
     }
+  }
+
+  section.singlepost {
+    border-top: 75px solid $greyBackground;
+  }
+  div.nav {
+    padding-top: 30px; 
   }
 
   div.navitems {
@@ -1366,10 +1375,6 @@ div.hoverSection {
     div.item  {
       display: none !important;
     }
-  }
-  
-  div.imageinner {
-    mix-blend-mode:normal !important;
   }
 
   a.blogPost {

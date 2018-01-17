@@ -87,8 +87,8 @@ div.draw-button {
       color: white; }
 
 div.nav {
-  z-index: 1000;
-  position: fixed;
+  z-index: 2000;
+  position: absolute;
   top: 0;
   width: 100%;
   max-width: 1920px;
@@ -97,7 +97,6 @@ div.nav {
   display: flex;
   justify-content: center;
   padding-top: 60px;
-  background: transparent;
   mix-blend-mode: difference; }
   div.nav div.logo {
     z-index: 2000;
@@ -923,6 +922,8 @@ div.hoverSection {
     font-size: 15px; } }
 
 @media (max-width: 768px) {
+  div.imageinner {
+    mix-blend-mode: normal !important; }
   h4.title {
     font-size: 40px !important; }
   a.blogPost {
@@ -953,6 +954,10 @@ div.hoverSection {
       -webkit-box-shadow: -1px 21px 96px 16px rgba(45, 29, 255, 0);
       -moz-box-shadow: -1px 21px 96px 16px rgba(45, 29, 255, 0);
       box-shadow: -1px 21px 96px 16px rgba(45, 29, 255, 0); }
+  section.singlepost {
+    border-top: 75px solid #182023; }
+  div.nav {
+    padding-top: 30px; }
   div.navitems div.item a {
     font-size: 14px !important; }
   span.innerpage.about div.content {
@@ -1039,8 +1044,6 @@ div.hoverSection {
       display: inline-block !important; }
     div.navitems div.item {
       display: none !important; }
-  div.imageinner {
-    mix-blend-mode: normal !important; }
   a.blogPost {
     width: 90%; }
     a.blogPost div.column1 {
