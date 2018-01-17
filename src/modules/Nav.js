@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import Logo from './Logo'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {clickBurgerMenu} from '../store/modules/actions'
+
 
 const NavLink = ({text, selected, children}) => {
   const active = selected === text? `item ${text} active` : `item ${text}`
@@ -22,6 +24,11 @@ const NavLinkBurger = ({text, selected, children}) => {
 
 class Nav extends Component {
 
+
+  handleClick = () => {
+    this.props.dispatch(clickBurgerMenu())
+  }
+
   render () {
     const {selected} = this.props
     return (
@@ -31,7 +38,7 @@ class Nav extends Component {
           {['about','thinking', 'contact'].map(item =>
             <NavLink key={item} selected={selected} text={item}/>)}
             <div className='burger'>
-              <input className='burger' type="checkbox"/>
+              <input className='burger' type="checkbox" onClick={this.handleClick}/>
               <span></span>
               <span></span>
               <span></span>

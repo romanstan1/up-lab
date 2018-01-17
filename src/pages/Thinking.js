@@ -7,7 +7,9 @@ import Butter from 'buttercms';
 import moment from 'moment';
 import {Link} from 'react-router-dom'
 import Nav from '../modules/Nav'
-const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
+// const butter = Butter('77c9282f79d8725882e7999b6dbecf298f49799d');
+const butter = Butter('85681c254ae1fd0ecf057271cde2636970be0d38');
+
 
 
 const LandingSection = ({children}) =>
@@ -50,7 +52,7 @@ class Thinking extends Component {
     return [
       <PageTemplate key='thinking' page='thinking'>
         <section className='thinkingpage'>
-          <LandingSection>Some thoughts and some ideas <br/>that we'd like to share...</LandingSection>
+          <LandingSection><span className='thinking'>Some thoughts and some ideas </span><span className='thinking'>that we'd like to share...</span></LandingSection>
           {  !!posts? posts.map((post, i) =>
             <ThinkingSection key={i}>{post}</ThinkingSection>)
             : <LoadingSpinner/>

@@ -14,7 +14,7 @@ const SinglePost = ({singlePost}) =>
     <div>
       <div className='col1'>
         <div className='image'><img src={singlePost.featured_image} alt={singlePost.seo_title}/></div>
-        <h3 className='author'> By {singlePost.author.first_name} {singlePost.author.last_name}</h3>
+        {/* <h3 className='author'> By {singlePost.author.first_name} {singlePost.author.last_name}</h3> */}
         <h3 className='date'>Posted on {moment(singlePost.created).format('Do MMM YYYY')}</h3>
       </div>
       <div className='col2'>

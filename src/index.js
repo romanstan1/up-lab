@@ -14,7 +14,7 @@ const history = createBrowserHistory()
 render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <App />
+      <App/>
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root'));
