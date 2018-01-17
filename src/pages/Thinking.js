@@ -37,8 +37,8 @@ class Thinking extends Component {
     });
   }
 
-  componentWillMount() {
-    this.fetchPosts(1, true)
+  componentDidMount() {
+    setTimeout(()=>this.fetchPosts(1, true), 2200);
   }
 
 
@@ -50,7 +50,7 @@ class Thinking extends Component {
       <PageTemplate key='thinking' page='thinking'>
         <section className='thinkingpage'>
           <LandingSection><span className='thinking'>Some thoughts and some ideas </span><span className='thinking'>that we'd like to share...</span></LandingSection>
-          {  !!posts? posts.map((post, i) =>
+          { posts.length? posts.map((post, i) =>
             <ThinkingSection key={i}>{post}</ThinkingSection>)
             : <LoadingSpinner/>
           }

@@ -689,6 +689,14 @@ section.singlepost {
       section.singlepost div.col2 div.inner figcaption {
         padding-bottom: 15px; }
 
+div.loader-wrap {
+  display: block;
+  text-align: center;
+  overflow: visible;
+  height: 200px;
+  position: relative;
+  z-index: 10; }
+
 span.loader {
   display: inline-block;
   width: 50px;
@@ -696,14 +704,16 @@ span.loader {
   position: relative;
   margin-top: 10px;
   border: 5px solid #5000ff;
-  animation: loader 6s infinite ease-in; }
+  animation: loader 6s infinite ease-in;
+  overflow: visible; }
 
 span.loader-inner {
   vertical-align: top;
   display: inline-block;
   width: 100%;
   background-color: #5000ff;
-  animation: loader-inner 3s infinite ease; }
+  animation: loader-inner 3s infinite ease;
+  overflow: visible; }
 
 div.dot-canvas, div.scene {
   display: inline-block;
@@ -716,7 +726,7 @@ div.dot-canvas, div.scene {
     overflow: hidden; }
 
 footer {
-  margin-top: 100px;
+  margin-top: 0px;
   height: 135px;
   width: 100%;
   background: #5000ff;
