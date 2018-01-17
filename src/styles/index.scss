@@ -492,7 +492,7 @@ span.innerpage {
     div.content {
       overflow-y: scroll;
       background: $greyBackground;
-      min-height: 100vh;
+      min-height: 100%;
       // -webkit-overflow-scrolling: touch;
       &::-webkit-scrollbar {
         position: relative;
@@ -547,14 +547,14 @@ section.contact {
   &::-webkit-scrollbar-corner {
     background: transparent;
   }
-  height: 100vh;
+  height: 100%;
   > div {
     margin: 0 auto;
     width: 85%;
-    min-height: 100vh;
+    min-height: 100%;
     div.row2 {
       font-size: 0px;
-      height: 55vw;
+      height: 55vh;
       max-height: 1000px;
       display: flex;
       flex-direction: row;
@@ -624,7 +624,7 @@ section.contact {
 
 section.thinkingpage {
   position: relative;
-  min-height: calc(100vh - 235px);
+  min-height: calc(100% - 135px);
   width: 100%;
   overflow: hidden;
   display: block;
@@ -796,7 +796,7 @@ section.singlepost {
     padding: calc( 4% + 50px) 7.5%;
     padding-bottom: 0%;
     position: relative;
-    min-height: calc(100vh - 355px);
+    min-height: calc(100% - 255px);
     // background: red;
     max-width: 1200px;
     margin: 0 auto;

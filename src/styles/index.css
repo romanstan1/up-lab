@@ -391,7 +391,7 @@ span.innerpage {
   span.innerpage.thinking div.content {
     overflow-y: scroll;
     background: #182023;
-    min-height: 100vh; }
+    min-height: 100%; }
     span.innerpage.thinking div.content::-webkit-scrollbar {
       position: relative;
       width: 5px;
@@ -429,7 +429,7 @@ span.innerpage {
 
 section.contact {
   overflow-y: scroll;
-  height: 100vh; }
+  height: 100%; }
   section.contact::-webkit-scrollbar {
     width: 5px;
     background: transparent;
@@ -444,10 +444,10 @@ section.contact {
   section.contact > div {
     margin: 0 auto;
     width: 85%;
-    min-height: 100vh; }
+    min-height: 100%; }
     section.contact > div div.row2 {
       font-size: 0px;
-      height: 55vw;
+      height: 55vh;
       max-height: 1000px;
       display: flex;
       flex-direction: row;
@@ -501,7 +501,7 @@ section.contact {
 
 section.thinkingpage {
   position: relative;
-  min-height: calc(100vh - 235px);
+  min-height: calc(100% - 135px);
   width: 100%;
   overflow: hidden;
   display: block; }
@@ -633,7 +633,7 @@ section.singlepost {
     padding: calc( 4% + 50px) 7.5%;
     padding-bottom: 0%;
     position: relative;
-    min-height: calc(100vh - 355px);
+    min-height: calc(100% - 255px);
     max-width: 1200px;
     margin: 0 auto;
     display: flex; }
