@@ -242,7 +242,6 @@ const actFour = (cube, velocity, direction, dimensions) => {                    
     if(!!thisCube.length) {
       let endOfSnake = snake.filter(item => item.mesh.userData.original === true)
       endOfSnake = endOfSnake[endOfSnake.length - 1].mesh.position
-      console.log("endOfSnake: ",endOfSnake)
       // last cube in stake body ie the tail
       const tgs = iterateToTargetLinear(cube, endOfSnake.x, endOfSnake.y, 5)
 

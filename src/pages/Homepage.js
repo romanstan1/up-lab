@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Nav from '../modules/Nav'
 import Story, {storyText} from '../modules/Story'
-import Animation from '../modules/Animation'
+// import Animation from '../modules/Animation'
 
 var scrollValue = 0;
 var scrollIncrement = 1
@@ -53,9 +53,10 @@ export default class Homepage extends Component {
     return [
 			<div onWheel={this.onWheel} onTouchMove={this.onWheel} key='homepage' className='homepage'>
 				<Nav/>
-        {/* <Story>{storyText[this.state.chapter]}</Story> */}
-        <Animation/>
+        <Story>{storyText[this.state.chapter]}</Story>
+        {/* <Animation/> */}
         <div className="scrolldown"><div></div></div>
+
         <div className="bubbles">
           {storyText.map((item, i) => <div key={i} className={chapter >=  i? 'stage': '' }></div>)}
         </div>

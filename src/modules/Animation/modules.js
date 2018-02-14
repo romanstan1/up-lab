@@ -85,8 +85,8 @@ export function CreateCubes(cubes, scene, camera, renderer) {
 
 export function CreateLights(scene, helper) {
 
-  let light = new THREE.AmbientLight( 0xffffff, 0.1 );
-  // var light = new THREE.HemisphereLight(0xaaaaaa, .9)
+  let light = new THREE.AmbientLight( 0xffffff, 0.01 );
+  // var light = new THREE.HemisphereLight(0xaaaaaa,0x000000, .9)
   scene.add( light );
 
   let spotLight = new THREE.SpotLight( 0xffffff, 1.0 );
@@ -96,7 +96,7 @@ export function CreateLights(scene, helper) {
   spotLight.distance = 3085;
 
   spotLight.castShadow = true;
-  spotLight.AmbientLight = 0.5;
+  // spotLight.AmbientLight = 0.5;
   spotLight.shadow.darkness = 0.5;
   spotLight.shadow.mapSize.width = 1024;
   spotLight.shadow.mapSize.height = 1024;
@@ -106,7 +106,7 @@ export function CreateLights(scene, helper) {
   spotLight.shadow.camera.fov = 30;
   spotLight.decay = 0;
 
-  scene.add( spotLight );
+  // scene.add( spotLight );
 
   let spotLight2 = new THREE.SpotLight( 0xffffff, 1.0 );
   spotLight2.position.set( 0, 1000, 500 );

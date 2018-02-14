@@ -43,8 +43,8 @@ export default class Animation extends Component {
     return [
       <div className='draw-button'>
         <div key='init' onClick={this.handleStartstop}>{this.state.start? 'Stop' : 'Start' }</div>
-        <div key='startstop' onClick={this.handleInit}> Re-Init</div>
-        <div key='helper' onClick={this.handleHelper}> Light & Shadow Helpers</div>
+        {/* <div key='startstop' onClick={this.handleInit}> Re-Init</div> */}
+        {/* <div key='helper' onClick={this.handleHelper}> Light & Shadow Helpers</div> */}
         <div key='next' onClick={this.handleNextact}> Current Act {this.state.act} - Next</div>
       </div>,
       <Scene key='scene'/>
