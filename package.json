@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "buttercms": "^1.1.0",
+    "d3": "^4.12.0",
+    "eases": "^1.0.8",
     "gl-react": "^2.3.1",
     "gl-react-dom": "^2.2.9",
     "gsap": "^1.20.3",
@@ -18,9 +20,12 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
     "react-scripts": "1.0.17",
+    "react-scroll": "^1.7.4",
     "react-transition-group": "^2.2.1",
+    "react-visibility-sensor": "^3.11.0",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "scrollmagic": "^2.0.5",
     "three": "^0.88.0",
     "wheel-react": "^1.0.3"
   },
@@ -32,5 +37,8 @@
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build"
+  },
+  "devDependencies": {
+    "jest": "^22.0.6"
   }
 }

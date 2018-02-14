@@ -10,21 +10,18 @@ export const history = createHistory()
 
 const enhancers = []
 
-
-function smoothscroll(){
-    const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    if (currentScroll > 0) {
-       window.requestAnimationFrame(smoothscroll);
-       window.scrollTo(0,currentScroll - (currentScroll/4));
-    }
-}
+// 
+// function smoothscroll(){
+//     const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+//     if (currentScroll > 0) {
+//        window.requestAnimationFrame(smoothscroll);
+//        window.scrollTo(0,currentScroll - (currentScroll/4));
+//     }
+// }
 
 const logger = store => next => action => {
   let result = next(action)
-  // console.log('STORE STATE:', store.getState(), action)
   if(action.type === '@@router/LOCATION_CHANGE') {
-    // smoothscroll()
-     // window.scrollTo(0,0);
     store.dispatch(selectNav(action.payload.pathname.substring(1)))
   }
   return result

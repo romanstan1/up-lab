@@ -13,3 +13,8 @@ export const loadBlogPosts = (posts, replace) => {
     replace
   })
 }
+export const clickBurgerMenu = () => {
+  return dispatch => dispatch({
+    type: 'CLICK_BURGER_MENU'
+  })
+}
